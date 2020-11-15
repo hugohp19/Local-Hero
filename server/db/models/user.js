@@ -3,12 +3,7 @@ moment = require('moment');
 
 const userSchema = new mongoose.Schema(
   {
-    firstName: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    lastName: {
+    name: {
       type: String,
       required: true,
       trim: true
@@ -21,12 +16,13 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     admin: {
       type: Boolean,
       required: true,
-      defualt: false
+      default: false
     },
     address: {
       city: {
@@ -57,3 +53,7 @@ userSchema.methods.toJSON = function () {
   }
   return taskObject;
 };
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;

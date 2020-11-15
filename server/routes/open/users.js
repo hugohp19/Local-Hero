@@ -1,4 +1,10 @@
-const router = require('express').Router();
+const router = require('express').Router(),
+  {
+    createUser,
+    loginUser,
+    requestPasswordReset,
+    passwordRedirect
+  } = require('../../controllers/users');
 
 router.get('/api/', (request, response) => {
   response.json({
@@ -10,20 +16,9 @@ router.post('/api/login', (request, response) => {
     message: 'login'
   });
 });
-router.patch('/api/user/:id', (request, response) => {
-  response.json({
-    message: 'update users'
-  });
-});
-router.post('/api/logout', (request, response) => {
-  response.json({
-    message: 'logout'
-  });
-});
-router.post('/api/signup', (request, response) => {
-  response.json({
-    message: 'signup'
-  });
-});
+router.post('/api/signup', createUser);
+
+// router.get('/password', requestPasswordReset);
+// router.get('/password/:token', passwordRedirect);
 
 module.exports = router;
