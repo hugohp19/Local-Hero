@@ -11,13 +11,12 @@ exports.createUser = async (req, res) => {
       address
     });
     // sendWelcomeEmail(user.email, user.name);
-    // const token = await user.generateAuthToken();
-    // res.cookie('jwt', token, {
-    //   httpOnly: true,
-    //   sameSite: 'Strict',
-    //   secure: process.env.NODE_ENV !== 'production' ? false : true
-    // });
-    await user.save();
+    const token = await user.generateAuthToken();
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      sameSite: 'Strict',
+      secure: process.env.NODE_ENV !== 'production' ? false : true
+    });
     res.status(201).json(user);
   } catch (e) {
     res.status(400).json({ error: e.toString() });
