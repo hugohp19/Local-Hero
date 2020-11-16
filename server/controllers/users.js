@@ -1,11 +1,11 @@
 const User = require('../db/models/user'),
-  jwt = require('jsonwebtoken'),
+  cloudinary = require('cloudinary').v2,
   {
     sendWelcomeEmail,
     sendCancellationEmail,
     forgotPasswordEmail
-  } = require('../email/index');
-
+  } = require('../email/index'),
+  jwt = require('jsonwebtoken');
 exports.createUser = async (req, res) => {
   const { name, email, password, address } = req.body;
   try {
@@ -73,6 +73,34 @@ exports.passwordRedirect = async (req, res) => {
       sameSite: 'Strict'
     });
     res.redirect(process.env.URL + '/update-password');
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+exports.getCurrentUser = async (req, res) => {
+  res.json(req.user);
+};
+
+exports.logoutUser = async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.cookies.jwt;
+    });
+    await req.user.save();
+    res.clearCookie('jwt');
+    res.json({ message: 'logged out!' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    await req.user.remove();
+    sendCancellationEmail(req.user.email, req.user.name);
+    res.clearCookie('jwt');
+    res.json({ message: 'user deleted' });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
