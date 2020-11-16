@@ -6,6 +6,11 @@ const User = require('../db/models/user'),
     forgotPasswordEmail
   } = require('../email/index'),
   jwt = require('jsonwebtoken');
+
+// ***********************************************//
+// Create a user
+// ***********************************************//
+
 exports.createUser = async (req, res) => {
   const { name, email, password, address } = req.body;
   try {
@@ -28,6 +33,10 @@ exports.createUser = async (req, res) => {
   }
 };
 
+// ***********************************************//
+// Login a user
+// ***********************************************//
+
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -43,6 +52,13 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ error: e.toString() });
   }
 };
+
+// ******************************
+// Password Reset Request
+// This route sends an email that the
+// user must click within 10 minutes
+// to reset their password.
+// ******************************
 
 exports.requestPasswordReset = async (req, res) => {
   try {
@@ -78,9 +94,19 @@ exports.passwordRedirect = async (req, res) => {
   }
 };
 
+// AUTHENTICATED REQUESTS
+
+// ***********************************************//
+// Get current user
+// ***********************************************//
+
 exports.getCurrentUser = async (req, res) => {
   res.json(req.user);
 };
+
+// ***********************************************//
+// Logout a user
+// ***********************************************//
 
 exports.logoutUser = async (req, res) => {
   try {
@@ -94,6 +120,10 @@ exports.logoutUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+// ***********************************************//
+// Delete a user
+// ***********************************************//
 
 exports.deleteUser = async (req, res) => {
   try {
