@@ -85,7 +85,7 @@ userSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
       _id: user._id.toString(),
-      email: user.email
+      name: user.name
     },
     process.env.JWT_SECRET,
     { expiresIn: '24h' }
@@ -99,7 +99,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) throw new Error('User not found');
   const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) throw new Error('Invalid password, try again.');
+  if (!isMatch) throw new Error('Invalid credentials, try again.');
   return user;
 };
 
@@ -109,6 +109,40 @@ userSchema.pre('save', async function (next) {
     user.password = await bcrypt.hash(user.password, 8);
   next();
 });
+
+exports.requestPasswordReset = async (req, res) => {
+  try {
+    const { email } = req.query;
+    const user = await User.findOne({ email });
+    if (!user) throw new Error('User not found');
+    const token = jwt.sign(
+      { _id: user._id.toString(), name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '10m' }
+    );
+    forgotPasswordEmail(email, token);
+    res.json({ message: 'reset password email sent!' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+exports.passwordRedirect = async (req, res) => {
+  const { token } = req.params;
+  try {
+    jwt.verify(token, process.env.JWT_SECRET, function (err) {
+      if (err) throw new Error(err.message);
+    });
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      maxAge: 600000,
+      sameSite: 'Strict'
+    });
+    res.redirect(process.env.URL + '/update-password');
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 const User = mongoose.model('User', userSchema);
 
