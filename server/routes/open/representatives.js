@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/api/representatives', (request, response) => {
+router.get('/api/representatives/:zipcode', (request, response) => {
   response.json({
     message: 'get all reps'
   });
