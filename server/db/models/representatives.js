@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 validator = require('validator');
 
-const userSchema = new mongoose.Schema({
+const repSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
@@ -12,37 +12,35 @@ const userSchema = new mongoose.Schema({
     trim: true,
     required: true
   },
-  contactInfo: {
-    email: {
+  position: {
+    type: String,
+    trim: true
+  },
+  roles: [
+    {
       type: String,
-      required: true,
-      unique: true,
-      trim: true,
-      lowercase: true,
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error('Email is invalid');
-        }
-      }
-    },
+      trim: true
+    }
+  ],
+  level: {
+    type: String,
+    trim: true
+  },
+  photo: {
+    type: String,
+    trim: true
+  },
+  contactInfo: {
     phoneNumber: [
       {
-        number: {
-          type: String,
-          trim: true
-        }
+        type: String,
+        trim: true
       }
     ],
     socialMedia: [
       {
-        socialMediaName: {
-          type: String,
-          trim: true
-        },
-        username: {
-          type: String,
-          trim: true
-        }
+        media: { type: String, trim: true },
+        username: { type: String, trim: true }
       }
     ],
     address: {
@@ -63,5 +61,15 @@ const userSchema = new mongoose.Schema({
         trim: true
       }
     }
-  }
+  },
+  urls: [
+    {
+      type: String,
+      trim: true
+    }
+  ]
 });
+
+const Representative = mongoose.model('Representative', repSchema);
+
+module.exports = Representative;
