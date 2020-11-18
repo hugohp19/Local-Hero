@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import ThankYou from './components/ThankYou';
 import WhoRepYou from './components/WhoRepYou';
 import YvYv from './components/YvYv';
+import RepProfile from './components/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route exact path="/ThankYou" component={ThankYou} />
         <Route exact path="/WhoRepYou" component={WhoRepYou} />
         <Route exact path="/YvYv" component={YvYv} />
+        <Route exact path="/RepProfile" component={RepProfile} />
       </Switch>
     </BrowserRouter>
   );
