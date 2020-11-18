@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
 import ContextDemo from './components/ContextDemo';
-
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
