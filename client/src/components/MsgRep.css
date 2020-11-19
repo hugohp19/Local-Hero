@@ -1,0 +1,20 @@
+.msgrep {
+  display: flex-column;
+}
+#label {
+  display: flex;
+}
+.send {
+  display: flex;
+  background-color: red;
+}
+.recipient {
+  display: flex;
+  position: relative;
+  border: 1px solid black;
+  margin-right: 69vw;
+}
+.reptitle {
+  background-color: blue;
+  color: white;
+}
