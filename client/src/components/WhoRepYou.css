@@ -1,0 +1,31 @@
+.page {
+  background-color: darkblue;
+}
+
+.form {
+  display: flex-column;
+}
+
+.inputbox {
+  display: flex;
+}
+
+.button {
+  background-color: red;
+  color: white;
+}
+
+.who {
+  color: white;
+}
+
+.rep {
+  color: red;
+}
+
+.you {
+  color: white;
+}
+.label {
+  color: white;
+}
