@@ -7,17 +7,19 @@ require('./db/config/index');
 const express = require('express'),
   app = express(),
   openRoutes = require('./routes/open/users'),
-  userRouter = require('./routes/secure/users'),
-  passport = require('./middleware/authentication/index'),
-  fileUpload = require('express-fileupload'),
-  cookieParser = require('cookie-parser'),
-  path = require('path');
+  openRoutesRep = require('./routes/open/representatives');
+(userRouter = require('./routes/secure/users')),
+  (passport = require('./middleware/authentication/index')),
+  (fileUpload = require('express-fileupload')),
+  (cookieParser = require('cookie-parser')),
+  (path = require('path'));
 
 //Middleware
 app.use(express.json());
 
 // Unauthenticated routes
 app.use(openRoutes);
+app.use(openRoutesRep);
 
 //Middleware to parse through incoming cookies in the requests.
 app.use(cookieParser());
