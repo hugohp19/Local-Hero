@@ -1,5 +1,4 @@
 import React from 'react';
-import './MsgRep.css';
 
 const MessageYourRep = () => {
   return (

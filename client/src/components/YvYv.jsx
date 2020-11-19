@@ -1,5 +1,4 @@
 import React from 'react';
-import './YvYv.css';
 
 const YvYv = () => {
   return (

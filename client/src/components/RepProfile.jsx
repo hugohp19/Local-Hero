@@ -1,5 +1,4 @@
 import React from 'react';
-import './RepProfile.css';
 
 const RepProfile = () => {
   return (

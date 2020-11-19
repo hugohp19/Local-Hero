@@ -1,5 +1,4 @@
 import React from 'react';
-import './LocalVoice.css';
 
 const LocalVoice = () => {
   return (
