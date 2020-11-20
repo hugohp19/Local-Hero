@@ -1,12 +1,15 @@
 import React from 'react';
-import navbar from '../components/Navbar';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+// import Maps from '../components/Maps';
 
-const home = () => {
+const Home = () => {
   return (
     <div>
       <Navbar />
+      <Footer />
     </div>
   );
 };
 
-export default home;
+export default Home;
