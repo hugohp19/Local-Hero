@@ -10,14 +10,15 @@ import WhoRepYou from './pages/WhoRepYou';
 import YvYv from './pages/YvYv';
 import RepProfile from './pages/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
+      <Navbar />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Homepage} />
         {/* <Route exact path="/LocalVoice" component={LocalVoice} />
         <Route exact path="/MsgRep" component={MsgRep} />
         <Route exact path="/ThankYou" component={ThankYou} />
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/YvYv" component={YvYv} />
         <Route exact path="/RepProfile" component={RepProfile} /> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };
