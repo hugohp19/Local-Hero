@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// import { AppContextProvider } from './context/AppContext';
-// import ContextDemo from './components/ContextDemo';
-// import Footer from './components/Footer';
-// import Homepage from './components/Homepage';
+
 import Home from './pages/Home';
-// import LocalVoice from './components/LocalVoice';
-// import MsgRep from './components/MsgRep';
-// import Navbar from './components/Navbar';
-// import ThankYou from './components/ThankYou';
-// import WhoRepYou from './components/WhoRepYou';
-// import YvYv from './components/YvYv';
-// import RepProfile from './components/RepProfile';
+import Homepage from './pages/Homepage';
+import LocalVoice from './pages/LocalVoice';
+import MsgRep from './pages/MsgRep';
+import Navbar from './components/Navbar';
+import ThankYou from './pages/ThankYou';
+import WhoRepYou from './pages/WhoRepYou';
+import YvYv from './pages/YvYv';
+import RepProfile from './pages/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
