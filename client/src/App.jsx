@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Home from './pages/Home';
 import Homepage from './pages/Homepage';
 import LocalVoice from './pages/LocalVoice';
 import MsgRep from './pages/MsgRep';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 import {
   Navbar,
   Nav,
@@ -37,7 +38,7 @@ const Navigation = () => {
             <Dropdown.Divider />
             <div className="d-flex">
               <Login />
-              <Dropdown.Item href="#action/3.4">Register</Dropdown.Item>
+              <Register />
             </div>
           </Dropdown.Menu>
         </Dropdown>
