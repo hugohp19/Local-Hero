@@ -1,0 +1,101 @@
+.body {
+  display: flex-column;
+}
+
+.actiondiv {
+  background-color: navy;
+  color: white;
+  padding: 15px;
+  height: 18rem;
+}
+.actionbutton {
+  background-color: red;
+  box-shadow: 5px 8px black;
+  color: white;
+  border: none;
+  border-radius: 8%;
+  padding: 15px;
+}
+.lhdiv {
+  position: relative;
+  background-color: white;
+  color: navy;
+  max-width: 350px;
+  border-radius: 5%;
+  box-shadow: 8px 10px red;
+  padding: 10px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-content: space-around;
+}
+.hpconnect {
+  position: relative;
+  color: white;
+  background-color: navy;
+  height: 150px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 5%;
+  margin-top: 15px;
+}
+.hpsubmit {
+  position: relative;
+  color: white;
+  background-color: navy;
+  height: 150px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 5%;
+  margin-top: 15px;
+}
+.hpvoter {
+  position: relative;
+  color: white;
+  background-color: navy;
+  height: 150px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 5%;
+  margin-top: 15px;
+}
+.hpcity {
+  position: relative;
+  color: white;
+  background-color: navy;
+  height: 150px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 5%;
+  margin-top: 15px;
+}
+.quiz {
+  position: relative;
+  justify-content: flex-end;
+  background-color: white;
+  color: navy;
+  height: 15rem;
+  min-width: 10rem;
+  max-width: 22rem;
+  box-shadow: 8px 10px red;
+  border-radius: 5%;
+  padding: 10px;
+  margin-top: 15px;
+}
+.quizbutton {
+  height: 30px;
+  width: 160px;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 8%;
+}
+.lhtitle {
+  position: relative;
+  color: gold;
+  padding: 10px;
+  margin-top: 2rem;
+  background-color: navy;
+}

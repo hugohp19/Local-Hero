@@ -1,0 +1,48 @@
+.title {
+  line-height: 0.75em;
+  background-color: navy;
+  height: 80px;
+  color: white;
+  padding: 20px;
+}
+.register {
+  display: flex;
+  margin-top: 100px;
+  background-color: lightblue;
+  padding: 15px;
+  max-width: 400px;
+  border-radius: 2%;
+}
+.regbutton {
+  position: relative;
+  max-height: 50px;
+  min-width: 150px;
+  max-width: 150px;
+  border-radius: 8%;
+  background-color: lightblue;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.ballot {
+  display: flex;
+  margin-top: 100px;
+  background-color: lightblue;
+  padding: 15px;
+  max-width: 400px;
+  border-radius: 2%;
+}
+.ballotbutton {
+  position: relative;
+  max-height: 50px;
+  min-width: 150px;
+  max-width: 150px;
+  border-radius: 8%;
+  background-color: lightblue;
+  margin-left: 30px;
+}
+.resources {
+  background-color: navy;
+  color: white;
+  line-height: 0.5em;
+  padding: 10px;
+}
