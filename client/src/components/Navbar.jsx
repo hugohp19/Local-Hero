@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../pages/Login';
 import {
   Navbar,
   Nav,
@@ -34,59 +35,61 @@ const Navigation = () => {
               About us
             </Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item href="#action/3.4">Login</Dropdown.Item>
-            <Dropdown.Item href="#action/3.4">Register</Dropdown.Item>
+            <div className="d-flex">
+              <Login />
+              <Dropdown.Item href="#action/3.4">Register</Dropdown.Item>
+            </div>
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Item>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto"></Nav>
-        <Nav>
+      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav"> */}
+      <Nav className="mr-auto"></Nav>
+      <Nav>
+        <Nav.Item>
+          <Dropdown drop="down" className="mr-1">
+            <Dropdown.Toggle variant="">
+              <Image
+                src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+                height={50}
+                width={50}
+                roundedCircle
+              />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item as={Link} to="/profile">
+                Profile
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Nav.Item>
+        <Nav.Item>
           <Nav.Item>
-            <Dropdown drop="down" className="mr-1">
-              <Dropdown.Toggle variant="">
-                <Image
-                  src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
-                  height={50}
-                  width={50}
-                  roundedCircle
-                />
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item as={Link} to="/profile">
-                  Profile
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <Accordion>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    <i class="fas fa-search" id="search"></i>
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Form inline>
+                      <FormControl
+                        type="text"
+                        placeholder="Search"
+                        className="mr-sm-2"
+                      />
+                      <Button variant="outline-success">Search</Button>
+                    </Form>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Item>
-              <Accordion>
-                <Card>
-                  <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                      <i class="fas fa-search" id="search"></i>
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                      <Form inline>
-                        <FormControl
-                          type="text"
-                          placeholder="Search"
-                          className="mr-sm-2"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                      </Form>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-            </Nav.Item>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
+        </Nav.Item>
+      </Nav>
+      {/* </Navbar.Collapse> */}
     </Navbar>
   );
 };
