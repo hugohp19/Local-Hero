@@ -6,7 +6,7 @@ import './Homepage.css';
 const Homepage = () => {
   return (
     <div className="body">
-      <Card className="actiondiv">
+      <div className="actiondiv">
         <h1>Think globally,</h1>
         <h1>ACT LOCALLY</h1>
         <p>
@@ -15,12 +15,12 @@ const Homepage = () => {
         <Link to="./LocalVoice">
           <Button className="actionbutton">TAKE ACTION</Button>
         </Link>
-      </Card>
-      <Card className="lhdiv">
+      </div>
+      <div className="lhdiv">
         <h3>Local heroes are born everyday.</h3>
         <h3>Get involved, get results.</h3>
-      </Card>
-      <Card className="buttons">
+      </div>
+      <div className="buttons">
         <Button className="hpconnect">
           <h3> Connect With Representatives</h3>
         </Button>
@@ -35,7 +35,7 @@ const Homepage = () => {
         <Button className="hpcity">
           <h3>City Calendar</h3>
         </Button>
-      </Card>
+      </div>
 
       <div className="quiz">
         <h2>How much do you know about local politics?</h2>
