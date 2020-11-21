@@ -37,11 +37,8 @@ const repSchema = new mongoose.Schema({
         trim: true
       }
     ],
-    socialMedia: [
-      {
-        media: { type: String, trim: true },
-        username: { type: String, trim: true }
-      }
+    channels: [
+      // media: { type: String, trim: true }
     ],
     address: {
       street: {

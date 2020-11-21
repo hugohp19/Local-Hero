@@ -26,7 +26,7 @@ exports.getRepByZipcode = async (req, res) => {
         rep.photo = officials[index].photoUrl;
         rep.urls = officials[index].urls;
         rep.contactInfo.phoneNumber = officials[index].phones;
-        rep.contactInfo.socialMedia = officials[index].channels; //X
+        rep.contactInfo.channels = officials[index].channels; //X
         rep.contactInfo.address.street = officials[index].address[0].line1;
         rep.contactInfo.address.city = officials[index].address[0].city;
         rep.contactInfo.address.state = officials[index].address[0].state;

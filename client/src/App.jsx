@@ -9,6 +9,7 @@ import WhoRepYou from './components/WhoRepYou/WhoRepYou';
 import YvYv from './components/YvYv/YvYv';
 import RepProfile from './components/RepProfile/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/YvYv" component={YvYv} />
         <Route exact path="/RepProfile" component={RepProfile} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };
