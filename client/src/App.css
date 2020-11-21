@@ -5,3 +5,7 @@
 #search {
   font-size: 2rem;
 }
+
+.profilePic {
+  border: 1px red solid;
+}
