@@ -39,7 +39,6 @@ const Homepage = () => {
           <h5>Calendar</h5>
         </button>
       </div>
-
       <div className="quiz">
         <h3>How much do you know about local politics?</h3>
         <p>(Don't worry we won't judge)</p>

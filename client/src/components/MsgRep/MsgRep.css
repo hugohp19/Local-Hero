@@ -1,0 +1,54 @@
+.msgrep {
+  display: flex-column;
+  position: relative;
+}
+#label {
+  display: flex;
+  position: relative;
+  top: 0.5rem;
+}
+.send {
+  display: flex;
+  margin-top: 1rem;
+  min-width: 20rem;
+  justify-content: center;
+  background-color: rgb(226, 79, 79);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 1ch;
+  font-weight: bold;
+}
+.recipient {
+  border: 1px solid black;
+  width: 13rem;
+  font-weight: bold;
+  padding: 8px;
+}
+.reptitle {
+  display: flex;
+  background-color: navy;
+  color: white;
+}
+.rep {
+  color: gold;
+  margin-top: 1.95rem;
+  font-weight: bold;
+}
+.title {
+  margin-top: 1rem;
+}
+.back {
+  background-color: navy;
+  color: white;
+  border: none;
+}
+.form {
+  padding: 2vw;
+  position: relative;
+  margin-left: 5vw;
+}
+#text {
+  width: 20rem;
+  position: relative;
+}
