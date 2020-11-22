@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button, Modal, Dropdown } from 'react-bootstrap';
+import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
 const Login = () => {
+  const setCurrentUser = useContext(AppContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', formData);
-      console.log(response.data);
+      setCurrentUser(response.data);
       // sessionStorage.setItem('user', response.data);
       // setCurrentUser(response.data.user);
       // history.push('/');
@@ -65,7 +67,7 @@ const Login = () => {
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Remember me" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={handleClose}>
               Submit
             </Button>
           </Form>

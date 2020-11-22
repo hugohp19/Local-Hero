@@ -115,7 +115,7 @@ const Register = () => {
               </Form.Group>
             </Form.Row>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={handleClose}>
               Submit
             </Button>
           </Form>

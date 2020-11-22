@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import { AppContext } from '../context/AppContext';
 import {
   Navbar,
   Nav,
@@ -15,6 +16,7 @@ import {
 } from 'react-bootstrap';
 
 const Navigation = () => {
+  const currentUser = useContext(AppContext);
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Nav.Item>
@@ -51,7 +53,11 @@ const Navigation = () => {
           <Dropdown drop="down" className="mr-1">
             <Dropdown.Toggle variant="">
               <Image
-                src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+                src={
+                  currentUser?.avatar
+                    ? currentUser.avatar
+                    : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+                }
                 height={50}
                 width={50}
                 roundedCircle
