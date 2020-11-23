@@ -4,6 +4,8 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [contextMessage, setContextMessage] = useState('');
+  const [repData, setRepData] = useState(null);
+  const [address, setAddress] = useState(null);
 
   const contextMethod = () => {
     setContextMessage('Hello from client/src/context/AppContext.jsx');
@@ -13,7 +15,11 @@ export const AppContextProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         contextMessage,
-        contextMethod
+        contextMethod,
+        repData,
+        setRepData,
+        address,
+        setAddress
       }}
     >
       {children}

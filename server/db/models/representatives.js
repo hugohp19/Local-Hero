@@ -40,24 +40,7 @@ const repSchema = new mongoose.Schema({
     channels: [
       // media: { type: String, trim: true }
     ],
-    address: {
-      street: {
-        type: String,
-        trim: true
-      },
-      city: {
-        type: String,
-        trim: true
-      },
-      state: {
-        type: String,
-        trim: true
-      },
-      zipCode: {
-        type: String,
-        trim: true
-      }
-    }
+    address: {}
   },
   urls: [
     {

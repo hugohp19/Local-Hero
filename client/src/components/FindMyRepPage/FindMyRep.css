@@ -1,0 +1,42 @@
+.whoRepresentsMe-container {
+  padding: 60px 20px;
+  background-color: #22409a;
+  height: 100vh;
+  font-family: Gibson, Arial, Helvetica, sans-serif;
+  color: #f9f1da;
+}
+
+.whoRepresentsMe-container h2 {
+  font-size: 2.4rem;
+}
+
+span {
+  color: #fec107;
+}
+
+.form-container {
+  margin-top: 30px;
+}
+
+.whoRepresentsMe-container p {
+  font-size: 0.9rem;
+}
+
+#searchbar {
+  margin-top: 10;
+}
+
+#searchbar-img {
+  background-color: #788ac1;
+}
+
+img {
+  width: 1.5rem;
+}
+
+#findmyrep-button {
+  background-color: #ff6b6b;
+  color: #f9f1da;
+  border: none;
+  width: 100%;
+}
