@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
-import RepsCard from '../RepsCard/RepsCard';
+import RepsCard from '../../components/RepsCard/RepsCard';
 
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
