@@ -3,9 +3,11 @@ const Representatives = require('../db/models/representatives');
 
 exports.getRepByZipcode = async (req, res) => {
   try {
-    const city = req.body.city;
+    const address = req.query.address;
+    //console.log(req.query);
+    //console.log(address);
     const { data } = await axios({
-      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.CIVIC_KEY}&address=${city}`,
+      url: `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.CIVIC_KEY}&address=${address}`,
       method: 'GET'
     });
     const offices = data.offices;
@@ -27,10 +29,12 @@ exports.getRepByZipcode = async (req, res) => {
         rep.urls = officials[index].urls;
         rep.contactInfo.phoneNumber = officials[index].phones;
         rep.contactInfo.channels = officials[index].channels; //X
-        rep.contactInfo.address.street = officials[index].address[0].line1;
-        rep.contactInfo.address.city = officials[index].address[0].city;
-        rep.contactInfo.address.state = officials[index].address[0].state;
-        rep.contactInfo.address.zipCode = officials[index].address[0].zip;
+        //console.log(officials[index].address);
+        rep.contactInfo.address = officials[index].address;
+        // rep.contactInfo.address.street = officials[index].address ? officials[index].address[0].line1 : 'NOPE';
+        // rep.contactInfo.address.city = officials[index].address ? officials[index].address[0].city : 'NOPE';
+        // rep.contactInfo.address.state = officials[index].address ? officials[index].address[0].state : 'NOPE';
+        // rep.contactInfo.address.zipCode = officials[index].address ? officials[index].address[0].zip : 'NOPE';
         repInformation.push(rep);
       } else {
         for (let j = 0; j < offices[i].officialIndices.length; j++) {
@@ -43,18 +47,17 @@ exports.getRepByZipcode = async (req, res) => {
           rep.urls = officials[index].urls;
           rep.contactInfo.phoneNumber = officials[index].phones;
           rep.contactInfo.socialMedia = officials[index].channels;
-          rep.contactInfo.address.street = officials[index].address.line1;
-          rep.contactInfo.address.city = officials[index].address.city;
-          rep.contactInfo.address.state = officials[index].address.state;
-          rep.contactInfo.address.zipCode = officials[index].address.zip;
+          rep.contactInfo.address = officials[index].address;
+          // rep.contactInfo.address.street = officials[index].address.line1;
+          // rep.contactInfo.address.city = officials[index].address.city;
+          // rep.contactInfo.address.state = officials[index].address.state;
+          // rep.contactInfo.address.zipCode = officials[index].address.zip;
           repInformation.push(rep);
         }
       }
     }
 
-    res.status(205).json(repInformation);
-    //res.status(202).json(officials);
-    //console.log(offices);
+    res.status(200).json(repInformation);
   } catch (error) {
     console.log(error);
   }
