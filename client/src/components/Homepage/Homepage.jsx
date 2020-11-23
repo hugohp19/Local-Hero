@@ -1,49 +1,52 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
 
 const Homepage = () => {
   return (
     <div className="body">
-      <Card className="actiondiv">
+      <div className="actiondiv">
         <h1>Think globally,</h1>
         <h1>ACT LOCALLY</h1>
         <p>
           Engaging with your local government can do more for you than you think
         </p>
         <Link to="./LocalVoice">
-          <Button className="actionbutton">TAKE ACTION</Button>
+          <button className="actionbutton">TAKE ACTION</button>
         </Link>
-      </Card>
-      <Card className="lhdiv">
-        <h3>Local heroes are born everyday.</h3>
+      </div>
+      <div className="lhdiv">
+        <p>Local heroes are born everyday.</p>
         <h3>Get involved, get results.</h3>
-      </Card>
-      <Card className="buttons">
-        <Button className="hpconnect">
-          <h3> Connect With Representatives</h3>
-        </Button>
-        <Button className="hpsubmit">
-          <h3>Submit Requests</h3>
-        </Button>
+      </div>
+      <div className="buttons">
+        <button className="hpconnect">
+          <h4>CONNECT</h4>
+          <h5>With Representatives</h5>
+        </button>
+        <button className="hpsubmit">
+          <h4>SUBMIT</h4>
+          <h5>Requests</h5>
+        </button>
         <Link to="./YvYv">
-          <Button className="hpvoter">
-            <h3>Voter Resources</h3>
-          </Button>
+          <button className="hpvoter">
+            <h4>VOTER</h4>
+            <h5>Resources</h5>
+          </button>
         </Link>
-        <Button className="hpcity">
-          <h3>City Calendar</h3>
-        </Button>
-      </Card>
-
+        <button className="hpcity">
+          <h4>CITY</h4>
+          <h5>Calendar</h5>
+        </button>
+      </div>
       <div className="quiz">
-        <h2>How much do you know about local politics?</h2>
+        <h3>How much do you know about local politics?</h3>
         <p>(Don't worry we won't judge)</p>
         <button className="quizbutton">Take the quiz</button>
       </div>
       <div className="lhtitle">
-        <h2>Local Heroes</h2>
+        <h3>Local</h3>
+        <h3>Heroes</h3>
       </div>
     </div>
   );

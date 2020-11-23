@@ -1,22 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './MsgRep.css';
+// import ThankYou from './ThankYou';
 
 const MessageYourRep = () => {
   return (
     <div className="msgrep">
       <div className="reptitle">
-        <h1>Messaging Your Rep</h1>
+        <Link to="./RepProfile">
+          <button className="back">
+            <h1>&lt;</h1>
+          </button>
+        </Link>
+        <h3 className="title"> Messaging Your </h3>
+        <h3 className="rep"> REP </h3>
       </div>
-      <form>
+      <div className="form">
         <label id="label">Your email address</label>
-        <input type="email"></input>
+        <input id="text" type="email"></input>
         <label id="label">Message recipient</label>
-        <p className="recipient">The Duke of Naboo</p>
+        <p id="text" className="recipient">
+          The Duke of Naboo
+        </p>
         <label id="label">Subject</label>
-        <input type="text"></input>
+        <input id="text" type="text"></input>
         <label id="label">Insert message</label>
-        <input type="text"></input>
+        <textarea rows="10" cols="34"></textarea>
         <button className="send">SEND</button>
-      </form>
+      </div>
     </div>
   );
 };

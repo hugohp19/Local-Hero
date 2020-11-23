@@ -1,7 +1,5 @@
 .body {
   display: flex-column;
-  position: relative;
-  background-color: blue;
 }
 
 .actiondiv {
@@ -19,11 +17,12 @@
   padding: 15px;
 }
 .lhdiv {
-  background-color: lightblue;
+  position: relative;
+  background-color: white;
   color: navy;
   max-width: 350px;
   border-radius: 5%;
-  box-shadow: 5px 10px;
+  box-shadow: 8px 10px red;
   padding: 10px;
 }
 .buttons {
@@ -31,7 +30,6 @@
   flex-wrap: wrap;
   position: relative;
   align-content: space-around;
-  justify-content: space-evenly;
 }
 .hpconnect {
   position: relative;
@@ -40,7 +38,6 @@
   height: 150px;
   width: 160px;
   padding: 10px;
-  box-shadow: 5px 10px navy;
   border-radius: 5%;
   margin-top: 15px;
 }
@@ -51,7 +48,6 @@
   height: 150px;
   width: 160px;
   padding: 10px;
-  box-shadow: 5px 10px navy;
   border-radius: 5%;
   margin-top: 15px;
 }
@@ -62,7 +58,6 @@
   height: 150px;
   width: 160px;
   padding: 10px;
-  box-shadow: 5px 10px navy;
   border-radius: 5%;
   margin-top: 15px;
 }
@@ -73,18 +68,18 @@
   height: 150px;
   width: 160px;
   padding: 10px;
-  box-shadow: 5px 10px darkblue;
   border-radius: 5%;
   margin-top: 15px;
 }
 .quiz {
   position: relative;
-  background-color: lightblue;
+  justify-content: flex-end;
+  background-color: white;
   color: navy;
-  height: 160px;
-  min-width: 300px;
-  max-width: 300px;
-  box-shadow: 5px 10px;
+  height: 15rem;
+  min-width: 10rem;
+  max-width: 22rem;
+  box-shadow: 8px 10px red;
   border-radius: 5%;
   padding: 10px;
   margin-top: 15px;
@@ -92,13 +87,15 @@
 .quizbutton {
   height: 30px;
   width: 160px;
-  box-shadow: 3px 5px navy;
-  background-color: lightblue;
-  border: 1px solid navy;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
   border-radius: 8%;
 }
 .lhtitle {
   position: relative;
-  color: white;
+  color: gold;
   padding: 10px;
+  margin-top: 2rem;
+  background-color: navy;
 }

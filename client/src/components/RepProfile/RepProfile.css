@@ -1,0 +1,39 @@
+.repcard {
+  background-color: navy;
+  border: 1px solid black;
+}
+.party {
+  background-color: white;
+  width: 7rem;
+  padding: 7px;
+  color: rgb(48, 173, 214);
+  font-weight: bold;
+}
+.name {
+  font-weight: bold;
+  color: white;
+}
+.jobtitle {
+  color: white;
+}
+.emailinfo {
+  color: white;
+}
+.phoneinfo {
+  color: white;
+}
+.sendbutton {
+  background-color: rgb(226, 79, 79);
+  color: white;
+  border-radius: 1ch;
+  border: none;
+  padding: 12px;
+  width: 10rem;
+  font-weight: bold;
+}
+.profilepic {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
