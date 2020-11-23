@@ -15,7 +15,6 @@ import {
 } from 'react-bootstrap';
 
 const Navigation = () => {
-  const currentUser = useContext(AppContext);
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Nav.Item>
@@ -52,11 +51,7 @@ const Navigation = () => {
           <Dropdown drop="down" className="mr-1">
             <Dropdown.Toggle variant="">
               <Image
-                src={
-                  currentUser?.avatar
-                    ? currentUser.avatar
-                    : 'https://files.willkennedy.dev/wyncode/wyncode.png'
-                }
+                src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
                 height={50}
                 width={50}
                 roundedCircle
