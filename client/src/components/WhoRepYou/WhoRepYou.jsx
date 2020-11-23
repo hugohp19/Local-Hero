@@ -1,5 +1,4 @@
 import React from 'react';
-import './WhoRepYou.css';
 
 const WhoRepYou = () => {
   return (

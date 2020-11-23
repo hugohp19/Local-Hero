@@ -1,0 +1,73 @@
+#title {
+  font-weight: bold;
+  color: rgb(223, 75, 75);
+}
+.voice {
+  margin-left: 8px;
+  font-weight: bold;
+  color: gold;
+}
+.lvtitle {
+  background-color: navy;
+  color: white;
+  padding: 30px;
+  display: flex;
+}
+.title2 {
+  padding: 2rem;
+  line-height: 0.5rem;
+  color: navy;
+}
+.buttons {
+  display: flex-wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.findrepbutton {
+  position: relative;
+  min-height: 130px;
+  max-height: 130px;
+  min-width: 350px;
+  max-width: 350px;
+  border-radius: 1ch;
+  background-color: navy;
+  color: white;
+  line-height: 0.5rem;
+  margin-top: 1rem;
+}
+.submitreqbutton {
+  position: relative;
+  min-height: 130px;
+  max-height: 130px;
+  min-width: 350px;
+  max-width: 350px;
+  border-radius: 1ch;
+  background-color: navy;
+  color: white;
+  line-height: 0.5rem;
+  margin-top: 1rem;
+}
+.essentialsbutton {
+  position: relative;
+  min-height: 130px;
+  max-height: 130px;
+  min-width: 350px;
+  max-width: 350px;
+  border-radius: 1ch;
+  background-color: navy;
+  color: white;
+  line-height: 0.5rem;
+  margin-top: 1rem;
+}
+.calendarbutton {
+  position: relative;
+  min-height: 130px;
+  max-height: 130px;
+  min-width: 350px;
+  max-width: 350px;
+  border-radius: 1ch;
+  background-color: navy;
+  color: white;
+  line-height: 0.5rem;
+  margin-top: 1rem;
+}
