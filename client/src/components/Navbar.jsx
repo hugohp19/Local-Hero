@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
+import Login from './Login';
+import Register from './Register';
 import {
   Navbar,
   Nav,
@@ -16,7 +16,7 @@ import {
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" sticky="top">
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">
