@@ -1,0 +1,26 @@
+.repCard-container {
+  background-color: red;
+  margin: 20px 10px;
+  border-radius: 10px;
+}
+
+.repName-container {
+  background-color: #22409a;
+  border-radius: 10px 10px 0 0;
+  padding: 5px 0 1px 10px;
+}
+
+.repName-container h3 {
+  font-size: 1rem;
+  color: white;
+}
+
+.repInfo-conatiner {
+  display: flex;
+}
+
+.repInfo-conatiner img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}

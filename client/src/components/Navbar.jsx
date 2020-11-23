@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
-import { AppContext } from '../context/AppContext';
+import Login from './Login';
+import Register from './Register';
 import {
   Navbar,
   Nav,

@@ -1,7 +1,7 @@
 const router = require('express').Router(),
   { getRepByZipcode } = require('../../controllers/representatives');
 
-router.get('/api/representatives/', getRepByZipcode);
+router.get('/representatives/', getRepByZipcode);
 
 // router.get('/api/representatives/:id', (request, response) => {
 //   response.json({
