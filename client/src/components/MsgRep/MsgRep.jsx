@@ -1,13 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MsgRep.css';
+// import ThankYou from './ThankYou';
 
 const MessageYourRep = () => {
   return (
     <div className="msgrep">
       <div className="reptitle">
-        <button className="back">
-          <h1>&lt;</h1>
-        </button>
+        <Link to="./RepProfile">
+          <button className="back">
+            <h1>&lt;</h1>
+          </button>
+        </Link>
         <h3 className="title"> Messaging Your </h3>
         <h3 className="rep"> REP </h3>
       </div>
