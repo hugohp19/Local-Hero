@@ -12,27 +12,26 @@ import Footer from './components/Footer';
 import FindMyRep from './pages/FindMyRepPage/FindMyRep';
 import YourReps from './pages/YourRepsPage/YourReps';
 import { AppContextProvider } from './context/AppContext';
+import MapContainer from './pages/MapContainer';
 import './App.css';
 
 const App = () => {
   return (
-    <AppContextProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/LocalVoice" component={LocalVoice} />
-          <Route exact path="/MsgRep" component={MsgRep} />
-          {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
-          <Route exact path="/WhoRepYou" component={WhoRepYou} />
-          <Route exact path="/YvYv" component={YvYv} />
-          <Route exact path="/RepProfile" component={RepProfile} />
-          <Route exact path="/findmyrep" component={FindMyRep} />
-          <Route exact path="/your-reps" component={YourReps} />
-        </Switch>
-        <Footer />
-      </BrowserRouter>
-    </AppContextProvider>
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/LocalVoice" component={LocalVoice} />
+        <Route exact path="/MsgRep" component={MsgRep} />
+        {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
+        <Route exact path="/WhoRepYou" component={WhoRepYou} />
+        <Route exact path="/YvYv" component={YvYv} />
+        <Route exact path="/RepProfile" component={RepProfile} />
+        {/* <Route exact path="/Profile" component={Profile} /> */}
+        <Route path="/Map" component={MapContainer} />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
   );
 };
 
