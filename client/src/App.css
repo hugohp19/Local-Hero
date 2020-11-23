@@ -5,3 +5,19 @@
 #search {
   font-size: 2rem;
 }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilePic {
+  display: flex;
+  justify-content: center;
+}
+
+.repFav {
+  width: 171px;
+  height: 180px;
+}
