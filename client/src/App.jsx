@@ -11,6 +11,7 @@ import RepProfile from './components/RepProfile/RepProfile';
 import Profile from './pages/Profile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
+import MapContainer from './pages/MapContainer';
 import './App.css';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route exact path="/YvYv" component={YvYv} />
         <Route exact path="/RepProfile" component={RepProfile} />
         <Route exact path="/Profile" component={Profile} />
+        <Route path="/Map" component={MapContainer} />
       </Switch>
       <Footer />
     </BrowserRouter>
