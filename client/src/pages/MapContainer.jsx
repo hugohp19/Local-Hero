@@ -41,7 +41,7 @@ const MapContainer = () => {
 
   return (
     <div className="body">
-      <button onClick={fetchMarkers}>hi</button>
+      <button onClick={fetchMarkers}>Confirm</button>
       <Map mapCenter={mapCenter} markers={mapMarkers} />
     </div>
   );

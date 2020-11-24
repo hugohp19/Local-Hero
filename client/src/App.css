@@ -21,3 +21,12 @@
   width: 171px;
   height: 180px;
 }
+
+.serviceIssues {
+  display: flex;
+  justify-content: center;
+}
+
+/* #serviceIssues {
+  display: flex;
+} */
