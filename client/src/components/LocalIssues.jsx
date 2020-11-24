@@ -4,28 +4,17 @@ import Cards from './Card';
 
 const LocalIssues = () => {
   const { apiData, setApiData } = useContext(AppContext);
-  // const getData = () => {
-  //   try {
-  //     fetch(`/localissuespage`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setDataLi(data);
-  //       });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+
   useEffect(() => {
     fetch(`/localissuespage`)
       .then((res) => res.json())
       .then((data) => {
         setApiData(data);
         console.log(data);
+        console.log(data[1].location.longitude);
       });
   }, []);
 
-  // getData();
   return (
     <div>
       {apiData.map((item) => (
@@ -33,7 +22,8 @@ const LocalIssues = () => {
           city={item.city}
           issueType={item.issue_type}
           streetAddress={item.street_address}
-          location={item.location ? item.location.latitude : 0}
+          locationLat={item.location ? item.location.latitude : 0}
+          locationLng={item.location ? item.location.longitude : 0}
         />
       ))}
     </div>
