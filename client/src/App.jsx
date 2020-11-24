@@ -13,6 +13,7 @@ import FindMyRep from './pages/FindMyRepPage/FindMyRep';
 import YourReps from './pages/YourRepsPage/YourReps';
 import { AppContextProvider } from './context/AppContext';
 import MapContainer from './pages/MapContainer';
+import Select from './components/Select';
 import './App.css';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route exact path="/RepProfile" component={RepProfile} />
         {/* <Route exact path="/Profile" component={Profile} /> */}
         <Route path="/Map" component={MapContainer} />
+        <Route path="/Select" component={Select} />
       </Switch>
       <Footer />
     </BrowserRouter>
