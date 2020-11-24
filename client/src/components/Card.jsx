@@ -13,7 +13,7 @@ const Cards = ({
       <Card id="serviceIssues" style={{ width: '18rem' }}>
         <Card.Img
           variant="top"
-          src={`https://maps.googleapis.com/maps/api/streetview?size=400x400&location=${locationLat},${locationLng}&fov=80&heading=70&pitch=0&key=AIzaSyBq7TpsUYTQJV9CqKwwDoFZgM-K4aHwMH8`}
+          src={`https://maps.googleapis.com/maps/api/streetview?size=400x400&location=${locationLat},${locationLng}&fov=80&heading=70&pitch=0&key=${process.env.REACT_APP_GOOGLEMAP_API_KEY}`}
         />
         <Card.Body className="serviceIssuesBody">
           <Card.Title>{city}</Card.Title>

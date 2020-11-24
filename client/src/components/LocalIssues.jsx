@@ -11,7 +11,6 @@ const LocalIssues = () => {
       .then((data) => {
         setApiData(data);
         console.log(data);
-        console.log(data[1].location.longitude);
       });
   }, []);
 
