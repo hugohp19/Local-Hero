@@ -13,6 +13,7 @@ const express = require('express'),
   fileUpload = require('express-fileupload'),
   cookieParser = require('cookie-parser'),
   path = require('path');
+axios = require('axios');
 
 //Middleware
 app.use(express.json());
@@ -48,3 +49,16 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 module.exports = app;
+
+// // this is the api for city of miami
+app.get('/localissuespage', async (req, res) => {
+  const apiURL = `https://data.miamigov.com/resource/6q9s-asrs.json?`;
+  const { data } = await axios.get(apiURL, {
+    headers: {
+      'X-App-Token': process.env.APP_TOKEN
+    }
+  });
+
+  // });
+  res.send(data);
+});
