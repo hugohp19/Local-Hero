@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import Cards from './Card';
 
 const LocalIssues = () => {
-  const [apiData, setApiData] = useState([]);
+  const { apiData, setApiData } = useContext(AppContext);
   // const getData = () => {
   //   try {
   //     fetch(`/localissuespage`)
