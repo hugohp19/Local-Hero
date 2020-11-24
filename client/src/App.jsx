@@ -9,6 +9,7 @@ import YvYv from './pages/YvYv/YvYv';
 import RepProfile from './pages/RepProfile/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
+import LocalIssuesPage from './pages/LocalIssuesPage/LocalIssuesPage';
 import FindMyRep from './pages/FindMyRepPage/FindMyRep';
 import YourReps from './pages/YourRepsPage/YourReps';
 import { AppContextProvider } from './context/AppContext';
@@ -28,7 +29,9 @@ const App = () => {
         <Route exact path="/YvYv" component={YvYv} />
         <Route exact path="/RepProfile" component={RepProfile} />
         {/* <Route exact path="/Profile" component={Profile} /> */}
-        <Route path="/Map" component={MapContainer} />
+        <Route exact path="/Map" component={MapContainer} />
+        <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
+        route
       </Switch>
       <Footer />
     </BrowserRouter>
