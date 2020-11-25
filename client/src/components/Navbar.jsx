@@ -53,16 +53,6 @@ const Navigation = () => {
               roundedCircle
             />
           </Button>
-          {/* <Dropdown drop="down" className="mr-1">
-            <Dropdown.Toggle>
-              <Image
-                src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
-                height={50}
-                width={50}
-                roundedCircle
-              />
-            </Dropdown.Toggle>
-          </Dropdown> */}
         </Nav.Item>
       </Nav>
     </Navbar>

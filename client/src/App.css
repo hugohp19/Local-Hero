@@ -2,10 +2,6 @@
   font-size: 2rem;
 }
 
-#search {
-  font-size: 2rem;
-}
-
 .profile {
   display: flex;
   flex-direction: column;
@@ -18,12 +14,10 @@
 }
 
 .repFav {
-  width: 171px;
-  height: 180px;
+  height: 7vh;
 }
 
 #serviceIssues {
-  /* border: solid 1px red; */
   margin: 2%;
   height: max-content;
   background: #f9f1da;
@@ -31,9 +25,5 @@
 }
 .serviceIssues {
   display: flex;
-  /* border: solid 1px red; */
   justify-content: center;
 }
-
-/* #imgGmaps {
-} */

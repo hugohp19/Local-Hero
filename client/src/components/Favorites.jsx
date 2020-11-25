@@ -5,7 +5,7 @@ const Favorites = () => {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="favorites">
           <Col>
             <Image
               className="repFav"

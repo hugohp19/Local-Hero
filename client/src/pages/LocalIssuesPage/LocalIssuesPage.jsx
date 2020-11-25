@@ -34,34 +34,6 @@ const LocalIssuesPage = () => {
             <MapContainer />
           </Tab>
         </Tabs>
-        {/* <Accordion>
-          <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                Map View
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <MapContainer />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
-        <Accordion>
-          <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                List View
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <LocalIssues />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion> */}
       </Container>
     </div>
   );
