@@ -2,18 +2,7 @@ import React, { useState } from 'react';
 import LocalIssues from '../../components/LocalIssues';
 import MapContainer from '../MapContainer';
 import './localIssues.css';
-import {
-  Form,
-  Container,
-  Tabs,
-  Tab,
-  ToggleButtonGroup,
-  ToggleButton,
-  Accordion,
-  Card,
-  Button,
-  Row
-} from 'react-bootstrap';
+import { Form, Container, Tabs, Tab } from 'react-bootstrap';
 
 const LocalIssuesPage = () => {
   const [value, setValue] = useState([1, 3]);

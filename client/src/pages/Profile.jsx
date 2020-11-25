@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Image, Row, Col, Card, Button } from 'react-bootstrap';
 import Favorites from '../components/Favorites';
+import { set } from 'mongoose';
 
 const Profile = () => {
-  const setCurrentUser = useContext(AppContext);
+  const { loginData } = useContext(AppContext);
+  console.log(loginData);
 
   return (
     <div className="profile">
@@ -19,11 +21,14 @@ const Profile = () => {
       </Row>
       <Card style={{ width: '18rem' }}>
         <Card.Body align="center">
-          <Card.Title>Pablo Escobar</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content
-          </Card.Text>
+          <form className="d-flex flex-column" onSubmit={handleSubmit}>
+            <input type="file" accept="image/*" onChange={handleImageSelect} />
+            <Button type="submit" size="sm" className="mt-4">
+              Save Image
+            </Button>
+          </form>
+          <Card.Title>{loginData.name}</Card.Title>
+          <Card.Text>{loginData.email}</Card.Text>
           <Button variant="primary">change password</Button>
         </Card.Body>
       </Card>
