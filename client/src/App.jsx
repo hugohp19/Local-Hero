@@ -15,6 +15,7 @@ import YourReps from './pages/YourRepsPage/YourReps';
 import { AppContextProvider } from './context/AppContext';
 import MapContainer from './pages/MapContainer';
 import Profile from './pages/Profile';
+import Select from './components/Select';
 import './App.css';
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
           <Route exact path="/findmyreps" component={FindMyRep} />
           <Route exact path="/your-reps" component={YourReps} />
+          <Route exact path="/Select" component={Select} />
         </Switch>
         <Footer />
       </BrowserRouter>
