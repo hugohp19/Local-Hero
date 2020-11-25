@@ -13,8 +13,9 @@ const Map = ({ mapCenter, markers }) => {
     <MapContainer
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
-        height: '60vh',
-        width: '60vw'
+        height: '50vh',
+        width: '100%',
+        border: 'red 1px solid'
       }}
       center={mapCenter}
     >

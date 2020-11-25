@@ -15,7 +15,7 @@ const LocalIssues = () => {
   }, []);
 
   return (
-    <div>
+    <div className="test">
       {apiData.map(
         (item) =>
           Object.keys(item).length && (
@@ -23,6 +23,7 @@ const LocalIssues = () => {
               city={item.city}
               issueType={item.issue_type}
               streetAddress={item.street_address}
+              zipCode={item.zip_code}
               locationLat={item.location ? item.location.latitude : 0}
               locationLng={item.location ? item.location.longitude : 0}
             />
