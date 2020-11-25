@@ -8,8 +8,6 @@ const MessageYourRep = () => {
   const [formData, setFormData] = useState(null);
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
-    console.log(event);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
