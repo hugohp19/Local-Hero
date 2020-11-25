@@ -24,7 +24,6 @@ const App = () => {
         <Route exact path="/" component={Homepage} />
         <Route exact path="/LocalVoice" component={LocalVoice} />
         <Route exact path="/MsgRep" component={MsgRep} />
-        {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
         <Route exact path="/WhoRepYou" component={WhoRepYou} />
         <Route exact path="/YvYv" component={YvYv} />
         <Route exact path="/RepProfile" component={RepProfile} />

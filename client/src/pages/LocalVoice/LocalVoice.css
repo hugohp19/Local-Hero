@@ -23,43 +23,8 @@
   justify-content: space-evenly;
   padding: 10px;
 }
-.findrepbutton {
-  position: relative;
-  min-height: 130px;
-  max-height: 130px;
-  min-width: 350px;
-  max-width: 350px;
-  border-radius: 1ch;
-  background-color: navy;
-  color: white;
-  line-height: 0.5rem;
-  margin-top: 1rem;
-}
-.submitreqbutton {
-  position: relative;
-  min-height: 130px;
-  max-height: 130px;
-  min-width: 350px;
-  max-width: 350px;
-  border-radius: 1ch;
-  background-color: navy;
-  color: white;
-  line-height: 0.5rem;
-  margin-top: 1rem;
-}
-.essentialsbutton {
-  position: relative;
-  min-height: 130px;
-  max-height: 130px;
-  min-width: 350px;
-  max-width: 350px;
-  border-radius: 1ch;
-  background-color: navy;
-  color: white;
-  line-height: 0.5rem;
-  margin-top: 1rem;
-}
-.calendarbutton {
+
+#lvtitles {
   position: relative;
   min-height: 130px;
   max-height: 130px;
