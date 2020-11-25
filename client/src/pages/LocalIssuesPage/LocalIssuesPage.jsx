@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LocalIssues from '../../components/LocalIssues';
 import MapContainer from '../MapContainer';
+import './localIssues.css';
 import {
   Form,
   Container,
@@ -22,11 +23,11 @@ const LocalIssuesPage = () => {
       <Container>
         <Form.Group>
           <br />
-          <Form.Control type="text" placeholder="TESTING" />
+          <Form.Control size="lg" type="text" placeholder="Enter ZipCode" />
           <br />
         </Form.Group>
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-          <Tab eventKey="list" title="List View">
+          <Tab className="tab" eventKey="list" title="List View">
             <LocalIssues />
           </Tab>
           <Tab eventKey="profile" title="Map">

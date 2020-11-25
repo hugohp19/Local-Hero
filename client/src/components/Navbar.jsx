@@ -45,7 +45,15 @@ const Navigation = () => {
       </Nav.Item>
       <Nav>
         <Nav.Item>
-          <Dropdown drop="down" className="mr-1">
+          <Button variant="link" as={Link} to="/Profile">
+            <Image
+              src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+              height={50}
+              width={50}
+              roundedCircle
+            />
+          </Button>
+          {/* <Dropdown drop="down" className="mr-1">
             <Dropdown.Toggle>
               <Image
                 src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
@@ -54,7 +62,7 @@ const Navigation = () => {
                 roundedCircle
               />
             </Dropdown.Toggle>
-          </Dropdown>
+          </Dropdown> */}
         </Nav.Item>
       </Nav>
     </Navbar>

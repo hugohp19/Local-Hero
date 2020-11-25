@@ -14,6 +14,7 @@ import FindMyRep from './pages/FindMyRepPage/FindMyRep';
 import YourReps from './pages/YourRepsPage/YourReps';
 import { AppContextProvider } from './context/AppContext';
 import MapContainer from './pages/MapContainer';
+import Profile from './pages/Profile';
 import './App.css';
 
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
           <Route exact path="/WhoRepYou" component={WhoRepYou} />
           <Route exact path="/YvYv" component={YvYv} />
           <Route exact path="/RepProfile" component={RepProfile} />
-          {/* <Route exact path="/Profile" component={Profile} /> */}
+          <Route exact path="/Profile" component={Profile} />
           <Route exact path="/Map" component={MapContainer} />
           <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
           route
