@@ -18,23 +18,26 @@ import './App.css';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/LocalVoice" component={LocalVoice} />
-        <Route exact path="/MsgRep" component={MsgRep} />
-        {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
-        <Route exact path="/WhoRepYou" component={WhoRepYou} />
-        <Route exact path="/YvYv" component={YvYv} />
-        <Route exact path="/RepProfile" component={RepProfile} />
-        {/* <Route exact path="/Profile" component={Profile} /> */}
-        <Route exact path="/Map" component={MapContainer} />
-        <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
-        route
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+    <AppContextProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/LocalVoice" component={LocalVoice} />
+          <Route exact path="/MsgRep" component={MsgRep} />
+          {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
+          <Route exact path="/WhoRepYou" component={WhoRepYou} />
+          <Route exact path="/YvYv" component={YvYv} />
+          <Route exact path="/RepProfile" component={RepProfile} />
+          {/* <Route exact path="/Profile" component={Profile} /> */}
+          <Route exact path="/Map" component={MapContainer} />
+          <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
+          <Route exact path="/findmyreps" component={FindMyRep} />
+          <Route exact path="/your-reps" component={YourReps} />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </AppContextProvider>
   );
 };
 

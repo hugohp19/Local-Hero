@@ -2,6 +2,7 @@
   background-color: red;
   margin: 20px 10px;
   border-radius: 10px;
+  height: 150px;
 }
 
 .repName-container {
@@ -11,16 +12,33 @@
 }
 
 .repName-container h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: white;
 }
 
 .repInfo-conatiner {
-  display: flex;
+  /* margin: auto 10px; */
+  /* display: grid;
+  grid-template-columns: 2fr 4fr 1fr; */
 }
 
+.repInfo-conatiner h3 {
+  font-size: 0.8rem;
+}
 .repInfo-conatiner img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  /* flex-basis: */
+}
+.arrow img {
+  width: 20px;
+  align-content: flex-end;
+  vertical-align: bottom;
 }
