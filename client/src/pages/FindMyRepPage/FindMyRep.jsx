@@ -54,7 +54,7 @@ const FindMyRep = ({ history }) => {
             className="searchbar"
             onChange={handleSearch}
           />
-          <img src={locationImage} alt="Location" />
+          <img className="img" src={locationImage} alt="Location" />
         </div>
         <input type="submit" value="FIND MY REP" clasName="searchButton" />
       </form>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import Cards from './Card';
 
@@ -9,7 +9,7 @@ const LocalIssues = () => {
     fetch(`/localissuespage`)
       .then((res) => res.json())
       .then((data) => {
-        setApiData(data);
+        setApiData(data.slice(1));
         console.log(data);
       });
   }, []);
@@ -20,7 +20,7 @@ const LocalIssues = () => {
         (item) =>
           Object.keys(item).length && (
             <Cards
-              city={item.city}
+              city={item.city.replaceAll('_', ' ')}
               issueType={item.issue_type}
               streetAddress={item.street_address}
               zipCode={item.zip_code}
