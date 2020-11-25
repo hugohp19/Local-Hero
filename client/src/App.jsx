@@ -33,7 +33,8 @@ const App = () => {
           <Route exact path="/Profile" component={Profile} />
           <Route exact path="/Map" component={MapContainer} />
           <Route exact path="/LocalIssuesPage" component={LocalIssuesPage} />
-          route
+          <Route exact path="/findmyreps" component={FindMyRep} />
+          <Route exact path="/your-reps" component={YourReps} />
         </Switch>
         <Footer />
       </BrowserRouter>

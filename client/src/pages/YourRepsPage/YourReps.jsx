@@ -7,7 +7,6 @@ import RepsCard from '../../components/RepsCard/RepsCard';
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
-  console.log(repData);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -17,7 +16,7 @@ const YourReps = ({ history }) => {
 
   const handleAddress = async (e) => {
     e.preventDefault();
-    console.log('click', address);
+    //console.log('click', address);
     if (!address) return;
 
     try {
