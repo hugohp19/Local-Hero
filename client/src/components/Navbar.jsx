@@ -16,7 +16,7 @@ import {
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
+    <Navbar bg="primary" variant="dark" expand="lg" sticky="top">
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">
@@ -43,54 +43,18 @@ const Navigation = () => {
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Item>
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav"> */}
-      <Nav className="mr-auto"></Nav>
       <Nav>
         <Nav.Item>
-          <Dropdown drop="down" className="mr-1">
-            <Dropdown.Toggle variant="">
-              <Image
-                src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
-                height={50}
-                width={50}
-                roundedCircle
-              />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item as={Link} to="/profile">
-                Profile
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Item>
-            <Accordion>
-              <Card>
-                <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                    <i class="fas fa-search" id="search"></i>
-                  </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body>
-                    <Form inline>
-                      <FormControl
-                        type="text"
-                        placeholder="Search"
-                        className="mr-sm-2"
-                      />
-                      <Button variant="outline-success">Search</Button>
-                    </Form>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-            </Accordion>
-          </Nav.Item>
+          <Button variant="link" as={Link} to="/Profile">
+            <Image
+              src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+              height={50}
+              width={50}
+              roundedCircle
+            />
+          </Button>
         </Nav.Item>
       </Nav>
-      {/* </Navbar.Collapse> */}
     </Navbar>
   );
 };

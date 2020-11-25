@@ -6,6 +6,7 @@ export const AppContextProvider = ({ children }) => {
   const [contextMessage, setContextMessage] = useState('');
   const [repData, setRepData] = useState(null);
   const [address, setAddress] = useState(null);
+  const [apiData, setApiData] = useState([]);
 
   const contextMethod = () => {
     setContextMessage('Hello from client/src/context/AppContext.jsx');
@@ -19,7 +20,9 @@ export const AppContextProvider = ({ children }) => {
         repData,
         setRepData,
         address,
-        setAddress
+        setAddress,
+        apiData,
+        setApiData
       }}
     >
       {children}

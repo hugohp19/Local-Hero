@@ -6,17 +6,6 @@
   display: flex;
   position: relative;
   top: 0.5rem;
-}
-.send {
-  display: flex;
-  margin-top: 1rem;
-  min-width: 20rem;
-  justify-content: center;
-  background-color: rgb(226, 79, 79);
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 1ch;
   font-weight: bold;
 }
 .recipient {
@@ -42,6 +31,8 @@
   background-color: navy;
   color: white;
   border: none;
+  margin-top: 1.25rem;
+  margin-left: 0.5rem;
 }
 .form {
   padding: 2vw;
@@ -49,6 +40,6 @@
   margin-left: 5vw;
 }
 #text {
-  width: 20rem;
+  width: 20.5rem;
   position: relative;
 }

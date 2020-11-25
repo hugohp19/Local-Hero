@@ -30,8 +30,8 @@ const FindMyRep = ({ history }) => {
         }
       });
       await setRepData(response.data);
-      //console.log(repData);
-      //console.log(response.data);
+      console.log(repData);
+      console.log(response.data);
       history.push('/your-reps');
     } catch (error) {
       console.log(error);
@@ -54,23 +54,10 @@ const FindMyRep = ({ history }) => {
             className="searchbar"
             onChange={handleSearch}
           />
-          <img src={locationImage} alt="Location" />
+          <img className="img" src={locationImage} alt="Location" />
         </div>
-        <input type="submit" value="FIND MY REP" clasName="searchButton" />
+        <input type="submit" value="FIND MY REP" className="searchButton" />
       </form>
-
-      {/* <form >
-      <InputGroup className="mb-3"  onChange={handleSearch}>
-        <p>Enter your address to find your local representatives</p>
-      
-        <FormControl />
-        <InputGroup.Append>
-        <InputGroup.Text id='searchbar-img'></InputGroup.Text>
-        </InputGroup.Append>
-      </InputGroup>
-
-      <Button id='findmyrep-button' onSubmit={handleAddress}>FIND MY REP</Button>
-      </form> */}
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
+import './ThankYou.css';
 
 function ThankYou() {
   const [show, setShow] = useState(false);
@@ -9,8 +11,8 @@ function ThankYou() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+      <Button id="sendbtn" variant="primary" onClick={handleShow}>
+        SEND
       </Button>
 
       <Modal
@@ -20,17 +22,22 @@ function ThankYou() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Your Message Has Been Sent!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
+          A response to your message will be sent to the email address your
+          provided.
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          <Link to="./">
+            <Button variant="primary">Back to Search</Button>
+          </Link>
+          <Link to="./">
+            <Button variant="primary">Home</Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>

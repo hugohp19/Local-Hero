@@ -15,25 +15,25 @@ const LocalVoice = () => {
         <h5>broken...</h5>
       </div>
       <div className="buttons">
-        <button className="findrepbutton">
+        <button id="lvtitles">
           <h5 id="title">Find My Representatives</h5>
           <p>Make some noise and let the</p>
           <p>people who represent you hear it!</p>
         </button>
-        <button className="submitreqbutton">
+        <button id="lvtitles">
           <h5 id="title">Submit Request</h5>
           <p>Pothole? Graffiti? Let the</p>
           <p>city know what needs attention.</p>
         </button>
         <Link to="./YvYv">
-          <button className="essentialsbutton">
+          <button id="lvtitles">
             <h5 id="title">The Voter Essentials</h5>
             <p>Ballots, poll sites, dates?</p>
             <p>Everything you need to know in</p>
             <p>one place.</p>
           </button>
         </Link>
-        <button className="calendarbutton">
+        <button id="lvtitles">
           <h5 id="title">City Calendar</h5>
           <p>Upcoming elections, city</p>
           <p>meetings, town halls...You</p>
