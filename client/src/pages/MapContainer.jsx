@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Map from '../components/Map/Map';
 import { mockRequest } from '../utils';
+import { AppContext } from '../context/AppContext';
 
 export const MOCK_MARKERS = [
   {
@@ -30,12 +31,14 @@ export const MOCK_MARKERS = [
 ];
 
 const MapContainer = () => {
+  const { apiData, setApiData } = useContext(AppContext);
+
   const [mapMarkers, setMapMarkers] = useState([]);
   const [mapCenter, setMapCenter] = useState([-80.2044, 25.8028]);
 
   const fetchMarkers = async () => {
     const res = await mockRequest(MOCK_MARKERS);
-    setMapMarkers(res);
+    setMapMarkers(apiData);
     setMapCenter([-80.33618, 25.58416]);
   };
 
