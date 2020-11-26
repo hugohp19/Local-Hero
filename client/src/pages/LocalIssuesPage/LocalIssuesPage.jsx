@@ -2,28 +2,25 @@ import React, { useState } from 'react';
 import LocalIssues from '../../components/LocalIssues';
 import MapContainer from '../MapContainer';
 import './localIssues.css';
-import {
-  Form,
-  Container,
-  Tabs,
-  Tab,
-  ToggleButtonGroup,
-  ToggleButton,
-  Accordion,
-  Card,
-  Button,
-  Row
-} from 'react-bootstrap';
+import { Form, Container, Tabs, Tab } from 'react-bootstrap';
 
 const LocalIssuesPage = () => {
   const [value, setValue] = useState([1, 3]);
-  const handleChange = (val) => setValue(val);
+  const [zipCode, setZipcode] = useState('');
+  const handleChange = (e) => setZipcode(e.target.value);
+
   return (
     <div>
       <Container>
         <Form.Group>
           <br />
-          <Form.Control size="lg" type="text" placeholder="Enter ZipCode" />
+          <Form.Control
+            value={zipCode}
+            onChange={handleChange}
+            size="lg"
+            type="text"
+            placeholder="Enter ZipCode"
+          />
           <br />
         </Form.Group>
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
@@ -31,7 +28,7 @@ const LocalIssuesPage = () => {
             <LocalIssues />
           </Tab>
           <Tab eventKey="profile" title="Map">
-            <MapContainer />
+            <MapContainer zipCode={zipCode} />
           </Tab>
         </Tabs>
       </Container>

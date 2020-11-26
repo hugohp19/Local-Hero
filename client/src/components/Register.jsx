@@ -25,7 +25,7 @@ const Register = () => {
       // setCurrentUser(response.data.user);
       // history.push('/');
     } catch (error) {
-      console.log('SignUp Error: ', error.toString());
+      alert('SignUp Error: ', error.toString());
     }
   };
   return (
@@ -33,7 +33,6 @@ const Register = () => {
       <Dropdown.Item variant="primary" onClick={handleShow}>
         Register
       </Dropdown.Item>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Local Hero registration</Modal.Title>
@@ -55,7 +54,6 @@ const Register = () => {
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
-
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
@@ -84,6 +82,7 @@ const Register = () => {
             <Form.Group controlId="formGridAddress1">
               <Form.Label>Address</Form.Label>
               <Form.Control
+                type="text"
                 placeholder="1234 Main St"
                 name="address"
                 onChange={handleChange}
@@ -111,7 +110,11 @@ const Register = () => {
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Zip</Form.Label>
-                <Form.Control />
+                <Form.Control
+                  placeholder="33125"
+                  name="zipcode"
+                  onChange={handleChange}
+                />
               </Form.Group>
             </Form.Row>
 

@@ -2,19 +2,12 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
-import {
-  Navbar,
-  Nav,
-  Dropdown,
-  Image,
-  Form,
-  FormControl,
-  Button,
-  Accordion,
-  Card
-} from 'react-bootstrap';
+import { AppContext } from '../context/AppContext';
+import { Navbar, Nav, Dropdown, Image, Button } from 'react-bootstrap';
 
 const Navigation = () => {
+  const { loginData } = useContext(AppContext);
+
   return (
     <Navbar bg="primary" variant="dark" expand="lg" sticky="top">
       <Nav.Item>
@@ -47,7 +40,11 @@ const Navigation = () => {
         <Nav.Item>
           <Button variant="link" as={Link} to="/Profile">
             <Image
-              src={'https://files.willkennedy.dev/wyncode/wyncode.png'}
+              src={
+                loginData?.avatar
+                  ? loginData.avatar
+                  : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+              }
               height={50}
               width={50}
               roundedCircle
