@@ -41,15 +41,17 @@ const userSchema = new mongoose.Schema(
       default: false
     },
     address: {
-      city: {
-        type: String,
-        trim: true
-      },
-      zipcode: {
-        type: Number,
-        require: true,
-        trim: true
-      }
+      type: String,
+      trim: true
+    },
+    city: {
+      type: String,
+      trim: true
+    },
+    zipcode: {
+      type: Number,
+      require: true,
+      trim: true
     },
     favRep: {
       type: mongoose.Schema.Types.ObjectId,

@@ -52,15 +52,13 @@ const Profile = () => {
           <Col xs={6} md={4}>
             <Image
               src={
-                // loginData.avatar
-                //   ? preview
-                //   : 'https://files.willkennedy.dev/wyncode/wyncode.png'
                 preview
                   ? preview
                   : loginData?.avatar
                   ? loginData?.avatar
                   : 'https://files.willkennedy.dev/wyncode/wyncode.png'
               }
+              alt="profile-pictures"
               roundedCircle
               fluid
             />
@@ -80,6 +78,7 @@ const Profile = () => {
             </form>
             <Card.Title>{loginData?.name}</Card.Title>
             <Card.Text>{loginData?.email}</Card.Text>
+            <Card.Text>{loginData?.address}</Card.Text>
             <Button variant="primary">change password</Button>
           </Card.Body>
         </Card>
