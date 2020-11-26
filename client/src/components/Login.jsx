@@ -4,8 +4,7 @@ import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
 const Login = () => {
-  //const setCurrentUser = useContext(AppContext);
-  const { loginData, setLoginData } = useContext(AppContext);
+  const { setLoginData } = useContext(AppContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,7 +14,6 @@ const Login = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   const handleLogin = async (e) => {
@@ -26,7 +24,6 @@ const Login = () => {
       // sessionStorage.setItem('user', response.data);
       // setCurrentUser(response.data.user);
       // history.push('/');
-      console.log(sessionStorage);
     } catch (error) {
       console.log('SignUp Error: ', error.toString());
     }
