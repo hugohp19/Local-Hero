@@ -1,0 +1,43 @@
+.form-container {
+  margin-top: 0;
+}
+
+.TopBar {
+  padding: 20px 10px;
+  background-color: #22409a;
+  background-image: url('../../assets/images/dotsBackground.svg');
+  background-size: cover;
+}
+
+.TopBar h2 {
+  color: white;
+  font-weight: 300;
+}
+
+.TopBar span {
+  color: #fec107;
+  font-weight: 600;
+}
+
+.search-container {
+  display: flex;
+  margin: 0 10px;
+}
+
+.search-container input {
+  width: 90%;
+  line-height: 2rem;
+}
+
+.right-image-container {
+  background-color: #788ac1;
+  width: 10%;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-container img {
+  width: 70%;
+  margin: auto;
+}

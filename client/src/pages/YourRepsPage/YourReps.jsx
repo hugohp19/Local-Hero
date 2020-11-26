@@ -3,6 +3,7 @@ import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
 import RepsCard from '../../components/RepsCard/RepsCard';
+import './YourReps.css';
 
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
@@ -39,22 +40,27 @@ const YourReps = ({ history }) => {
   return (
     <div>
       <div>
-        <h2>
-          Your <span>REPS</span>
-        </h2>
         <form className="form-container" name="city" onSubmit={handleAddress}>
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Input Address"
-              className="searchbar"
-              onChange={handleSearch}
-            />
-            <img src={locationImage} alt="Location" />
+          <div className="TopBar">
+            <h2>
+              Your <span>REPS</span>
+            </h2>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Enter Zip Code"
+                className="searchbar"
+                id="zipcode"
+                onChange={handleSearch}
+              />
+              <div className="right-image-container">
+                <img src={locationImage} alt="Location" />
+              </div>
+            </div>
           </div>
         </form>
       </div>
-      <div>filters</div>
+      <div></div>
       <div>
         {repData &&
           repData.map((rep, i) => {
