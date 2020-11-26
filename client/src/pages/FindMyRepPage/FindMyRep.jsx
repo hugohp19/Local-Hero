@@ -31,7 +31,7 @@ const FindMyRep = ({ history }) => {
       });
       await setRepData(response.data);
       // console.log(repData);
-      // console.log(response.data);
+      console.log(response.data);
       history.push('/your-reps');
     } catch (error) {
       console.log(error);

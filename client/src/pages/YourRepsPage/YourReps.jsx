@@ -30,10 +30,24 @@ const YourReps = ({ history }) => {
       });
       await setRepData(response.data);
       // console.log(repData);
-      // console.log(response.data);
+      console.log(response.data);
       history.push('/your-reps');
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const ShowCard = (render, rep, i) => {
+    if (render !== 'VACANT') {
+      return (
+        <RepsCard
+          key={i}
+          name={rep.name}
+          photo={rep.photo}
+          party={rep.party}
+          position={rep.position}
+        />
+      );
     }
   };
 
@@ -64,15 +78,16 @@ const YourReps = ({ history }) => {
       <div>
         {repData &&
           repData.map((rep, i) => {
-            return (
-              <RepsCard
-                key={i}
-                name={rep.name}
-                photo={rep.photo}
-                party={rep.party}
-                position={rep.position}
-              />
-            );
+            return ShowCard(rep.name, rep, i);
+            // return (
+            //   <RepsCard
+            //     key={i}
+            //     name={rep.name}
+            //     photo={rep.photo}
+            //     party={rep.party}
+            //     position={rep.position}
+            //   />
+            // );
           })}
       </div>
     </div>

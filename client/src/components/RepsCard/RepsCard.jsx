@@ -1,5 +1,6 @@
 import React from 'react';
 import arrow from '../../assets/images/right-arrow.svg';
+import NoImage from '../../assets/images/NoProfileImage.png';
 import './RepsCard.css';
 
 const RepsCard = ({ name, photo, party, position }) => {
@@ -10,7 +11,7 @@ const RepsCard = ({ name, photo, party, position }) => {
       </div>
       <div className="repInfo-container">
         <div className="profile-photo">
-          <img src={photo} alt="Profile" />
+          <img src={photo ? photo : NoImage} alt="Profile" />
         </div>
         <div className="right-container">
           <h3 className="title-name">{position}</h3>
