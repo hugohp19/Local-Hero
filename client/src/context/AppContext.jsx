@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const AppContext = createContext();
 
@@ -7,7 +8,24 @@ export const AppContextProvider = ({ children }) => {
   const [repData, setRepData] = useState(null);
   const [address, setAddress] = useState(null);
   const [apiData, setApiData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState(null);
+  const user = sessionStorage.getItem('user');
+
+  useEffect(() => {
+    if (user && !loginData) {
+      axios
+        .get(`/api/users/me`, {
+          withCredentials: true
+        })
+        .then(({ data }) => {
+          setLoginData(data);
+        })
+        .catch((error) => {
+          alert(`Oops!`, error.toString());
+        });
+    }
+  }, [loginData, user, loading]);
 
   const contextMethod = () => {
     setContextMessage('Hello from client/src/context/AppContext.jsx');
@@ -25,7 +43,9 @@ export const AppContextProvider = ({ children }) => {
         apiData,
         setApiData,
         loginData,
-        setLoginData
+        setLoginData,
+        loading,
+        setLoading
       }}
     >
       {children}

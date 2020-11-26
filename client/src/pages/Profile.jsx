@@ -6,7 +6,9 @@ import { set } from 'mongoose';
 import axios from 'axios';
 
 const Profile = () => {
-  const { loginData, setLoginData } = useContext(AppContext);
+  const { loginData, setLoginData, setLoading } = useContext(AppContext);
+
+  console.log('login data object', loginData);
 
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -20,6 +22,7 @@ const Profile = () => {
     e.preventDefault();
     const avatar = new FormData();
     avatar.append('avatar', image, image.name);
+    setLoading(true);
     try {
       const updatedUser = await axios({
         method: 'POST',
@@ -29,19 +32,19 @@ const Profile = () => {
           'Content-Type': 'multipart/form-data'
         }
       });
-      setLoginData({ ...setLoginData, avatar: updatedUser.data.secure_url });
+      setLoginData(updatedUser.data);
       // setLoginData((loginData) => [
       //   ...loginData,
       //   {avatar: updatedUser.data.secure_url}
       // ]);
+      console.log('after submit: ', updatedUser.data);
       console.log('Sweet!', 'Your image has been updated!', 'success');
-      console.log('this is avatar', avatar);
     } catch (error) {
       console.log('Errsor', 'Oops, something went wrong.');
     }
+    setLoading(false);
   };
 
-  console.log(loginData);
   return (
     <>
       <div className="profile">
@@ -63,7 +66,7 @@ const Profile = () => {
             />
           </Col>
         </Row>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} key="1">
           <Card.Body align="center">
             <form className="d-flex flex-column" onSubmit={handleSubmit}>
               <input

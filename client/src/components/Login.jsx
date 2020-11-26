@@ -2,8 +2,10 @@ import React, { useState, useContext } from 'react';
 import { Form, Button, Modal, Dropdown } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+  const { history } = useHistory();
   const { setLoginData } = useContext(AppContext);
   const [show, setShow] = useState(false);
 
@@ -20,9 +22,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', formData);
+      // setLoginData(response.data);
+      console.log('login response', response);
+      sessionStorage.setItem('user', response.data);
       setLoginData(response.data);
-      // sessionStorage.setItem('user', response.data);
-      // setCurrentUser(response.data.user);
       // history.push('/');
     } catch (error) {
       console.log('SignUp Error: ', error.toString());
