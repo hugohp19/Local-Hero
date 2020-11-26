@@ -146,7 +146,7 @@ exports.uploadAvatar = async (req, res) => {
     );
     req.user.avatar = response.secure_url;
     await req.user.save();
-    res.json(response);
+    res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

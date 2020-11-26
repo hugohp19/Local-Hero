@@ -2,9 +2,11 @@ import React, { useState, useContext } from 'react';
 import { Form, Button, Modal, Dropdown } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
-  const setCurrentUser = useContext(AppContext);
+  const { history } = useHistory();
+  const { setLoginData } = useContext(AppContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -14,16 +16,16 @@ const Login = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', formData);
-      setCurrentUser(response.data);
-      // sessionStorage.setItem('user', response.data);
-      // setCurrentUser(response.data.user);
+      // setLoginData(response.data);
+      console.log('login response', response);
+      sessionStorage.setItem('user', response.data);
+      setLoginData(response.data);
       // history.push('/');
     } catch (error) {
       console.log('SignUp Error: ', error.toString());
