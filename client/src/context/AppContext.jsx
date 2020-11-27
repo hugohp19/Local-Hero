@@ -10,6 +10,7 @@ export const AppContextProvider = ({ children }) => {
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState(null);
+  const [individualRep, setIndividualRep] = useState(null);
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -45,7 +46,9 @@ export const AppContextProvider = ({ children }) => {
         loginData,
         setLoginData,
         loading,
-        setLoading
+        setLoading,
+        individualRep,
+        setIndividualRep
       }}
     >
       {children}

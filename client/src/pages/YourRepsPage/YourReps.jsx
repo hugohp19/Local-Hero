@@ -12,14 +12,12 @@ const YourReps = ({ history }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     setAddress(e.target.value);
-    //console.log(e.target.value);
   };
 
   const handleAddress = async (e) => {
     e.preventDefault();
-    //console.log('click', address);
-    if (!address) return;
 
+    if (!address) return;
     try {
       const response = await axios({
         method: 'GET',
@@ -30,24 +28,9 @@ const YourReps = ({ history }) => {
       });
       await setRepData(response.data);
       // console.log(repData);
-      console.log(response.data);
-      history.push('/your-reps');
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
-    }
-  };
-
-  const ShowCard = (render, rep, i) => {
-    if (render !== 'VACANT') {
-      return (
-        <RepsCard
-          key={i}
-          name={rep.name}
-          photo={rep.photo}
-          party={rep.party}
-          position={rep.position}
-        />
-      );
     }
   };
 
@@ -77,17 +60,19 @@ const YourReps = ({ history }) => {
       <div></div>
       <div>
         {repData &&
-          repData.map((rep, i) => {
-            return ShowCard(rep.name, rep, i);
-            // return (
-            //   <RepsCard
-            //     key={i}
-            //     name={rep.name}
-            //     photo={rep.photo}
-            //     party={rep.party}
-            //     position={rep.position}
-            //   />
-            // );
+          repData.officials.map((rep, i) => {
+            return (
+              <RepsCard
+                key={i}
+                first_name={rep.first_name}
+                last_name={rep.last_name}
+                photo={rep.photo_origin_url}
+                party={rep.party}
+                position={rep.office.title}
+                level={rep.office.chamber.government.type}
+                rep={rep}
+              />
+            );
           })}
       </div>
     </div>

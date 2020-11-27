@@ -6,7 +6,7 @@ import './FindMyRep.css';
 
 const FindMyRep = ({ history }) => {
   const { address, setAddress } = useContext(AppContext);
-  const { setRepData } = useContext(AppContext);
+  const { repData, setRepData } = useContext(AppContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const FindMyRep = ({ history }) => {
         }
       });
       await setRepData(response.data);
-      // console.log(repData);
+      console.log(repData);
       console.log(response.data);
       history.push('/your-reps');
     } catch (error) {

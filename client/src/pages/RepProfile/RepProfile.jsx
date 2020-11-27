@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 import { Link } from 'react-router-dom';
 import './RepProfile.css';
 
-const RepProfile = () => {
+const RepProfile = (props) => {
+  const { individualRep, setIndividualRep } = useContext(AppContext);
+  setIndividualRep(props.location.state.pass);
+  console.log(props.location.state.pass);
+
   return (
     <div className="body">
       <div className="repcard">
