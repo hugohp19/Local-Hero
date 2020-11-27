@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import Map from '../components/Map/Map';
 import { mockRequest } from '../utils';
 import { AppContext } from '../context/AppContext';
+import { Button } from 'react-bootstrap';
 
 export const MOCK_MARKERS = [
   {
@@ -45,8 +46,10 @@ const MapContainer = ({ zipCode }) => {
   };
 
   return (
-    <div className="body">
-      <button onClick={fetchMarkers}>Confirm</button>
+    <div className="mapBody">
+      <Button className="mapSubmit" onClick={fetchMarkers}>
+        Confirm
+      </Button>
       <Map mapCenter={mapCenter} markers={mapMarkers} />
     </div>
   );
