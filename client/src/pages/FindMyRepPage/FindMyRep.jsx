@@ -14,6 +14,7 @@ const FindMyRep = ({ history }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
     //console.log(e.target.value);
   };
