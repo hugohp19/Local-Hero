@@ -41,3 +41,29 @@
   width: 70%;
   margin: auto;
 }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.filters input {
+  background-color: #788ac1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+#yr-active {
+  background-color: #22409a;
+}
+
+.responselevel h3 {
+  margin: 10px 20px;
+  color: #22409a;
+  font-size: 1rem;
+  font-weight: 800;
+}

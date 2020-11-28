@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
@@ -8,16 +8,25 @@ import './YourReps.css';
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
+  const [filter, setFilter] = useState('Local');
+  const [filteredRep, setFilteredRep] = useState(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
     setAddress(e.target.value);
   };
 
+  const handleFilter = (e) => {
+    e.preventDefault();
+    setFilter(e.target.value);
+    console.log(e.target.value);
+    filterRepFunc(e.target.value);
+  };
+
   const handleAddress = async (e) => {
     e.preventDefault();
-
     if (!address) return;
+
     try {
       const response = await axios({
         method: 'GET',
@@ -27,10 +36,26 @@ const YourReps = ({ history }) => {
         }
       });
       await setRepData(response.data);
+      await setFilteredRep(response.data.officials);
       // console.log(repData);
       // console.log(response.data);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const filterRepFunc = async (data) => {
+    if (data === 'All') {
+      setFilteredRep(repData.officials);
+    } else {
+      const filteredByTitle = await repData.officials.filter((rep) => {
+        console.log(rep.office.chamber.government.type);
+        return (
+          rep.office.chamber.government.type.toLowerCase() ===
+          data.toLowerCase()
+        );
+      });
+      setFilteredRep(filteredByTitle);
     }
   };
 
@@ -57,10 +82,44 @@ const YourReps = ({ history }) => {
           </div>
         </form>
       </div>
-      <div></div>
+      <div className="filters">
+        <input
+          type="button"
+          id={filter === 'Local' ? 'yr-active' : ''}
+          value="All"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          id={filter === 'Senates' ? 'yr-active' : ''}
+          value="Local"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          className="yr-active"
+          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          value="State"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          className="yr-active"
+          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          value="National"
+          onClick={handleFilter}
+        />
+      </div>
+      <div className="responselevel">
+        <h3>
+          {repData
+            ? 'Local (' + repData.officials[0].office.district.state + ')'
+            : ''}
+        </h3>
+      </div>
       <div>
-        {repData &&
-          repData.officials.map((rep, i) => {
+        {filteredRep &&
+          filteredRep.map((rep, i) => {
             return (
               <RepsCard
                 key={i}
