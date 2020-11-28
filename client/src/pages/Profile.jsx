@@ -51,6 +51,7 @@ const Profile = () => {
         <Row className="profilePic">
           <Col xs={6} md={4}>
             <Image
+              className="profilePicture"
               src={
                 preview
                   ? preview
@@ -60,7 +61,6 @@ const Profile = () => {
               }
               alt="profile-pictures"
               roundedCircle
-              fluid
             />
           </Col>
         </Row>
