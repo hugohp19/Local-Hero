@@ -1,9 +1,15 @@
+/*******************************************
+                Container
+*******************************************/
+
 .whoRepresentsMe-container {
-  padding: 60px 20px;
+  padding: 60px 10px;
   background-color: #22409a;
-  height: 100vh;
+  height: 78vh;
   font-family: Gibson, Arial, Helvetica, sans-serif;
   color: #f9f1da;
+  background-image: url('../../assets/images/dotsBackground.svg');
+  background-size: cover;
 }
 
 .whoRepresentsMe-container h2 {
@@ -14,29 +20,69 @@ span {
   color: #fec107;
 }
 
-.form-container {
+/*******************************************
+              Form Container
+*******************************************/
+
+.wrm-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
   margin-top: 30px;
 }
 
-.whoRepresentsMe-container p {
-  font-size: 0.9rem;
+/*******************************************
+               Search Container
+*******************************************/
+.wrm-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-#searchbar {
-  margin-top: 10;
+.wrm-search p {
+  font-size: 0.7rem;
+  width: 95%;
+  letter-spacing: 1px;
 }
 
-#searchbar-img {
+.wrm-search-container {
+  display: flex;
+  margin: -15px 10px 0 10px;
+}
+
+.wrm-search-container input {
+  width: 90%;
+  line-height: 2rem;
+}
+
+.wrm-right-image-container {
   background-color: #788ac1;
+  width: 10%;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img {
-  width: 1.5rem;
+.wrm-search-container img {
+  width: 70%;
+  margin: auto;
 }
 
-#findmyrep-button {
+/*******************************************
+               Search Button
+*******************************************/
+
+.wrm-searchButton {
+  margin-top: 10px;
   background-color: #ff6b6b;
   color: #f9f1da;
   border: none;
-  width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  width: 95%;
 }
