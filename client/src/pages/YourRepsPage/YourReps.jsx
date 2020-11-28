@@ -9,10 +9,14 @@ const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
   const [filter, setFilter] = useState('Local');
+  const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
+    'Enter Zip Code'
+  );
   const { filteredRep, setFilteredRep } = useContext(AppContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
   };
 
@@ -35,6 +39,12 @@ const YourReps = ({ history }) => {
           'Content-Type': 'application/json'
         }
       });
+      if (!response.data) {
+        setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
+        setAddress('');
+        return;
+      }
+
       await setRepData(response.data);
       await setFilteredRep(response.data.officials);
       // console.log(repData);
@@ -70,9 +80,10 @@ const YourReps = ({ history }) => {
             <div className="search-container">
               <input
                 type="text"
-                placeholder="Enter Zip Code"
+                placeholder={zipcodePlaceholder}
                 className="searchbar"
                 id="zipcode"
+                value={address}
                 onChange={handleSearch}
               />
               <div className="right-image-container">

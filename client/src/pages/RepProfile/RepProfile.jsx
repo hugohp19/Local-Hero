@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import backArrow from '../../assets/images/backArrow.svg';
 import email from '../../assets/images/email.svg';
 import phone from '../../assets/images/phone.svg';
@@ -8,7 +8,8 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 import './RepProfile.css';
 
-const RepProfile = (props, { history }) => {
+const RepProfile = (props) => {
+  const history = useHistory();
   const { individualRep, setIndividualRep } = useContext(AppContext);
   const [twitter, setTwitter] = useState('USAGov');
   const representative = props.location.state.pass;
@@ -28,7 +29,7 @@ const RepProfile = (props, { history }) => {
   console.log(twitterUsername[0].identifier_value);
 
   const goBack = () => {
-    history.push('/');
+    history.goBack();
   };
 
   return (
