@@ -30,23 +30,9 @@ export const MOCK_MARKERS = [
   }
 ];
 
-const MapContainer = ({ zipCode }) => {
-  const { apiData, setApiData } = useContext(AppContext);
-
-  const [mapMarkers, setMapMarkers] = useState([]);
-  const [mapCenter, setMapCenter] = useState([-80.2044, 25.8028]);
-
-  const fetchMarkers = async () => {
-    let data = apiData.filter((item) => item.zip_code === zipCode);
-    setMapMarkers(data);
-    // setMapMarkers(apiData.slice(0, 100));
-    // setMapCenter([-80.33618, 25.58416]);
-    setMapCenter([data[0].longitude, data[0].latitude]);
-  };
-
+const MapContainer = ({ zipCode, mapMarkers, mapCenter }) => {
   return (
-    <div className="body">
-      <button onClick={fetchMarkers}>Confirm</button>
+    <div className="mapBody">
       <Map mapCenter={mapCenter} markers={mapMarkers} />
     </div>
   );

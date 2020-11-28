@@ -12,6 +12,7 @@ export const AppContextProvider = ({ children }) => {
   const [loginData, setLoginData] = useState(null);
   const [individualRep, setIndividualRep] = useState(null);
   const user = sessionStorage.getItem('user');
+  const [filterData, setFilterData] = useState(null);
 
   useEffect(() => {
     if (user && !loginData) {
@@ -35,6 +36,8 @@ export const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        filterData,
+        setFilterData,
         contextMessage,
         contextMethod,
         repData,
