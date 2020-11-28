@@ -12,11 +12,18 @@
   color: white;
   padding: 30px;
   display: flex;
+  background-image: url('../../assets/images/dotsBackground.svg');
+  background-size: cover;
 }
 .title2 {
   padding: 2rem;
   line-height: 0.5rem;
   color: navy;
+  background-image: url('../../assets/images/groupchat.jpg');
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
 }
 .buttons {
   display: flex-wrap;
@@ -35,4 +42,5 @@
   color: white;
   line-height: 0.5rem;
   margin-top: 1rem;
+  background-image: url('../../assets/images/submitBkgdImage.svg');
 }

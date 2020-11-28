@@ -20,10 +20,12 @@ const Homepage = () => {
         <h3 id="boldtitle">Get involved, get results.</h3>
       </div>
       <div className="buttons">
-        <button id="buttons" className="connect">
-          <h4 id="bttntitle">CONNECT</h4>
-          <h5>With Representatives</h5>
-        </button>
+        <Link to="/findmyreps">
+          <button id="buttons" className="connect">
+            <h4 id="bttntitle">CONNECT</h4>
+            <h5>With Representatives</h5>
+          </button>
+        </Link>
         <Link to="/localissuespage">
           <button id="buttons" className="submit">
             <h4 id="bttntitle">SUBMIT</h4>

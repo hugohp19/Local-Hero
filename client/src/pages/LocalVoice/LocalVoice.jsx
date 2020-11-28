@@ -14,7 +14,7 @@ const LocalVoice = () => {
         <h5>it doesn't know is</h5>
         <h5>broken...</h5>
       </div>
-      <div className="buttons">
+      <div className="buttons" id="findMyRepNtn">
         <Link to="/findmyreps">
           <button id="lvtitles">
             <h5 id="title">Find My Representatives</h5>
