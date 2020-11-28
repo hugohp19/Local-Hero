@@ -6,19 +6,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px red solid;
 }
 
 .profilePic {
-  /* display: flex;
-  justify-content: center; */
-  border: 1px red solid;
+  margin-top: 10rem;
 }
 
 .profilePicture {
   width: 250px;
   height: 250px;
-  border: 1px red solid;
 }
 
 .repFav {
@@ -39,4 +35,13 @@
 .mapBody {
   display: flex;
   flex-direction: column;
+}
+
+.userInfoCard {
+  margin-bottom: 10rem;
+}
+
+.navBarTitle {
+  /* background-image: url('./assets/images/localHero.svg');
+  background-size: ; */
 }

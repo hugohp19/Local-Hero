@@ -4,6 +4,7 @@ import Login from './Login';
 import Register from './Register';
 import { AppContext } from '../context/AppContext';
 import { Navbar, Nav, Dropdown, Image, Button } from 'react-bootstrap';
+import localHero from '../assets/images/localHero.svg';
 
 const Navigation = () => {
   const { loginData } = useContext(AppContext);
@@ -36,6 +37,8 @@ const Navigation = () => {
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Item>
+      <img src={localHero} alt="localHero"></img>
+
       <Nav>
         <Nav.Item>
           <Button variant="link" as={Link} to="/Profile">
@@ -43,7 +46,7 @@ const Navigation = () => {
               src={
                 loginData?.avatar
                   ? loginData.avatar
-                  : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+                  : 'https://www.flaticon.com/svg/static/icons/svg/1946/1946429.svg'
               }
               height={50}
               width={50}
