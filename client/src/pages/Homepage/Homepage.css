@@ -7,7 +7,7 @@
   color: white;
   padding: 15px;
   height: 18rem;
-  background-image: url('../../assets/images/homepageheader.svg');
+  background-image: url('../../assets/images/homefullcolor.jpg');
   background-size: cover;
 }
 
@@ -23,7 +23,8 @@
 
 .lhdiv {
   position: relative;
-  background-image: url('../../assets/images/dotsBackground.svg');
+  background-image: url('../../assets/images/CreamRectangle.jpg');
+  background-size: cover;
   /* background-color: white; */
   color: navy;
   max-width: 350px;
@@ -44,7 +45,6 @@
   /* position: relative; */
   /* justify-content: flex-end; */
   /* background-color: white; */
-  background-image: url('../../assets/images/dotsBackground.svg');
   color: navy;
   height: 11rem;
   min-width: 10rem;
@@ -54,6 +54,8 @@
   padding: 10px;
   margin-top: 15px;
   margin-left: auto;
+  background-image: url('../../assets/images/CreamRectangle.jpg');
+  background-size: cover;
 }
 .quizbutton {
   height: 30px;
@@ -70,6 +72,7 @@
   padding: 10px;
   margin-top: 2rem;
   background-color: rgb(37, 108, 167);
+  background-image: url('../../assets/images/localherobottom.jpg');
 }
 #bttntitle {
   font-weight: bold;
@@ -88,13 +91,16 @@
 }
 
 .connect {
-  background-image: url('../../assets/images/connectImage.svg');
+  background-image: url('../../assets/images/colorIMAGECONNECT.jpg');
+  background-size: cover;
 }
 .submit {
-  background-image: url('../../assets/images/submitBkgdImage.svg');
+  background-image: url('../../assets/images/colorIMAGESUBMIT.jpg');
+  background-size: cover;
 }
 .voter {
-  background-image: url('../../assets/images/voterImage.svg');
+  background-image: url('../../assets/images/colorImageVoter.jpg');
+  background-size: cover;
 }
 
 #boldtitle {

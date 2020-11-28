@@ -11,7 +11,7 @@ const Homepage = () => {
         <p>
           Engaging with your local government can do more for you than you think
         </p>
-        <Link to="./LocalVoice">
+        <Link to="/LocalVoice">
           <button className="actionbutton">TAKE ACTION</button>
         </Link>
       </div>
@@ -41,7 +41,7 @@ const Homepage = () => {
           <h5>Calendar</h5>
         </button> */}
       </div>
-      <div className="quiz">
+      <div className="quiz" id="quizBox">
         <h3 id="boldtitle">How much do you know about local politics?</h3>
         <p>(Don't worry we won't judge)</p>
 
