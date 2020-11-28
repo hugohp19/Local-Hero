@@ -2,7 +2,15 @@ import React, { useState, useContext } from 'react';
 import LocalIssues from '../../components/LocalIssues';
 import MapContainer from '../MapContainer';
 import './localIssues.css';
-import { Form, Container, Tabs, Tab, Button } from 'react-bootstrap';
+import {
+  Form,
+  Container,
+  Tabs,
+  Tab,
+  Button,
+  InputGroup,
+  FormControl
+} from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 
 const LocalIssuesPage = () => {
@@ -31,16 +39,20 @@ const LocalIssuesPage = () => {
       <Container>
         <Form.Group>
           <br />
-          <Form.Control
-            value={zipCode}
-            onChange={handleChange}
-            size="lg"
-            type="text"
-            placeholder="Enter ZipCode"
-          />
-          <Button className="mapSubmit" onClick={fetchMarkers}>
-            Confirm
-          </Button>
+          <InputGroup className="mb-3">
+            <FormControl
+              value={zipCode}
+              onChange={handleChange}
+              size="lg"
+              type="text"
+              placeholder="Enter ZipCode"
+            />
+            <InputGroup.Append>
+              <Button className="mapSubmit" onClick={fetchMarkers}>
+                Confirm
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
           <br />
         </Form.Group>
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">

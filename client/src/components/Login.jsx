@@ -22,13 +22,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/login', formData);
-      // setLoginData(response.data);
+
       console.log('login response', response);
       sessionStorage.setItem('user', response.data);
       setLoginData(response.data);
-      // history.push('/');
     } catch (error) {
-      console.log('SignUp Error: ', error.toString());
+      alert('SignUp Error: ', error.toString());
     }
   };
 
