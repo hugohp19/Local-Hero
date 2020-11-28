@@ -9,7 +9,7 @@ const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
   const [filter, setFilter] = useState('Local');
-  const [filteredRep, setFilteredRep] = useState(null);
+  const { filteredRep, setFilteredRep } = useContext(AppContext);
 
   const handleSearch = (e) => {
     e.preventDefault();

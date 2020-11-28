@@ -7,6 +7,7 @@ import './FindMyRep.css';
 const FindMyRep = ({ history }) => {
   const { address, setAddress } = useContext(AppContext);
   const { repData, setRepData } = useContext(AppContext);
+  const { setFilteredRep } = useContext(AppContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -29,6 +30,7 @@ const FindMyRep = ({ history }) => {
           'Content-Type': 'application/json'
         }
       });
+      await setFilteredRep(response.data.officials);
       await setRepData(response.data);
       console.log(repData);
       console.log(response.data);

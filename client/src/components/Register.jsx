@@ -25,7 +25,8 @@ const Register = () => {
       // setCurrentUser(response.data.user);
       // history.push('/');
     } catch (error) {
-      alert('SignUp Error: ', error.toString());
+      console.log(error);
+      //alert('SignUp Error: ', error.toString());
     }
   };
   return (

@@ -13,7 +13,7 @@ const Navigation = () => {
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">
-            <i class="fas fa-bars" id="burgermenu"></i>
+            <i className="fas fa-bars" id="burgermenu"></i>
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to="/">

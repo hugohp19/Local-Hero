@@ -11,6 +11,7 @@ export const AppContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState(null);
   const [individualRep, setIndividualRep] = useState(null);
+  const [filteredRep, setFilteredRep] = useState(null);
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -23,7 +24,8 @@ export const AppContextProvider = ({ children }) => {
           setLoginData(data);
         })
         .catch((error) => {
-          alert(`Oops!`, error.toString());
+          console.log(error);
+          //alert(`Oops!`, error.toString());
         });
     }
   }, [loginData, user, loading]);
@@ -48,7 +50,9 @@ export const AppContextProvider = ({ children }) => {
         loading,
         setLoading,
         individualRep,
-        setIndividualRep
+        setIndividualRep,
+        filteredRep,
+        setFilteredRep
       }}
     >
       {children}
