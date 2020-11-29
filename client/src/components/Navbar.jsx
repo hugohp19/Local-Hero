@@ -5,6 +5,7 @@ import Register from './Register';
 import { AppContext } from '../context/AppContext';
 import { Navbar, Nav, Dropdown, Image, Button } from 'react-bootstrap';
 import localHero from '../assets/images/localHero.svg';
+import UpdateUser from './UpdateUser';
 
 const Navigation = () => {
   const { loginData } = useContext(AppContext);

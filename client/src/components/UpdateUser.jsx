@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { Form, Button, Modal, Dropdown, Col } from 'react-bootstrap';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { AppContext } from '../context/AppContext';
+import { Form, Button, Modal, Dropdown, Col } from 'react-bootstrap';
 
-const Register = () => {
+const UpdateUser = () => {
   const [show, setShow] = useState(false);
+  const { setLoginData } = useContext(AppContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
 
   const handleChange = (event) => {
@@ -19,11 +20,8 @@ const Register = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/signup', formData);
-      console.log(response.data);
-      // sessionStorage.setItem('user', response.data);
-      // setCurrentUser(response.data.user);
-      // history.push('/');
+      const response = await axios.patch('/api/users/me', formData);
+      setLoginData(response.data);
     } catch (error) {
       console.log(error);
       //alert('SignUp Error: ', error.toString());
@@ -32,7 +30,7 @@ const Register = () => {
   return (
     <>
       <Dropdown.Item variant="primary" onClick={handleShow}>
-        Register
+        Update Profile
       </Dropdown.Item>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -118,4 +116,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default UpdateUser;

@@ -12,13 +12,15 @@ const User = require('../db/models/user'),
 // ***********************************************//
 
 exports.createUser = async (req, res) => {
-  const { name, email, password, address } = req.body;
+  const { name, email, password, address, zipcode, city } = req.body;
   try {
     const user = new User({
       name,
       email,
       password,
-      address
+      address,
+      zipcode,
+      city
     });
     sendWelcomeEmail(user.email, user.name);
     const token = await user.generateAuthToken();
@@ -171,7 +173,14 @@ exports.updatePassword = async (req, res) => {
 // ***********************************************//
 exports.updateCurrentUser = async (req, res) => {
   const updates = Object.keys(req.body); // => ['email', 'name', 'password']
-  const allowedUpdates = ['name', 'email', 'password', 'avatar'];
+  const allowedUpdates = [
+    'name',
+    'email',
+    'password',
+    'address',
+    'zipcode',
+    'avatar'
+  ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );

@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Image, Row, Col, Card, Button } from 'react-bootstrap';
-import Favorites from '../components/Favorites';
-import { set } from 'mongoose';
 import axios from 'axios';
+import swal from 'sweetalert';
+import UpdateUser from '../components/UpdateUser';
+import Logout from '../components/Logout';
 
 const Profile = () => {
   const { loginData, setLoginData, setLoading } = useContext(AppContext);
@@ -33,14 +34,10 @@ const Profile = () => {
         }
       });
       setLoginData(updatedUser.data);
-      // setLoginData((loginData) => [
-      //   ...loginData,
-      //   {avatar: updatedUser.data.secure_url}
-      // ]);
       console.log('after submit: ', updatedUser.data);
-      console.log('Sweet!', 'Your image has been updated!', 'success');
+      swal('Your image has been updated!', 'success');
     } catch (error) {
-      console.log('Errsor', 'Oops, something went wrong.');
+      swal('Error', 'Oops, something went wrong.');
     }
     setLoading(false);
   };
@@ -78,11 +75,19 @@ const Profile = () => {
             </form>
             <Card.Title>{loginData?.name}</Card.Title>
             <Card.Text>{loginData?.email}</Card.Text>
-            <Card.Text>{loginData?.address}</Card.Text>
-            <Button variant="primary">change password</Button>
+            <Card.Text>
+              {loginData?.address}
+              {loginData?.zipcode}
+            </Card.Text>
+            <Card.Text>{loginData?.city}</Card.Text>
+            <Button type="submit" size="sm" className="mt-1">
+              <UpdateUser />
+            </Button>
+            <Button type="submit" size="sm" className="mt-1">
+              <Logout />
+            </Button>
           </Card.Body>
         </Card>
-        {/* <Favorites /> */}
       </div>
     </>
   );
