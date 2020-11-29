@@ -21,14 +21,14 @@ const Navigation = () => {
             <Dropdown.Item as={Link} to="/">
               Home
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/">
+            <Dropdown.Item as={Link} to="/LocalVoice">
               Your local voice
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/">
-              Event
+            <Dropdown.Item as={Link} to="/localissuespage">
+              Local Issues
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/">
-              About us
+            <Dropdown.Item as={Link} to="/yvyv">
+              Voter Resources
             </Dropdown.Item>
             <Dropdown.Divider />
             <div className="d-flex">
