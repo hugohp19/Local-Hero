@@ -6,7 +6,7 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const [contextMessage, setContextMessage] = useState('');
   const [repData, setRepData] = useState(null);
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState('');
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState(null);

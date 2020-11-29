@@ -68,3 +68,7 @@
   resize: none;
   overflow-y: scroll;
 }
+
+.lrgtxt textarea:target {
+  border: 2px solid red;
+}

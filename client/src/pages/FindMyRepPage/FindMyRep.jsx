@@ -11,11 +11,20 @@ const FindMyRep = ({ history }) => {
   const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
     'Enter Zip Code'
   );
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const handleSearch = (e) => {
     e.preventDefault();
     setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
+    console.log(address.length);
+    if (address.length < 3) {
+      setBtnDisabled(true);
+      console.log('less');
+    } else {
+      setBtnDisabled(false);
+      console.log('more');
+    }
     //console.log(e.target.value);
   };
 
@@ -73,7 +82,12 @@ const FindMyRep = ({ history }) => {
             </div>
           </div>
         </div>
-        <input type="submit" value="FIND MY REP" className="wrm-searchButton" />
+        <input
+          type="submit"
+          value="FIND MY REP"
+          className="wrm-searchButton"
+          disabled={btnDisabled}
+        />
       </form>
     </div>
   );

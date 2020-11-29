@@ -8,14 +8,26 @@ import backArrow from '../../assets/images/backArrow.svg';
 const MessageYourRep = (props) => {
   const [formData, setFormData] = useState({});
   const [btnDisabled, setBtnDisabled] = useState(true);
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
   const history = useHistory();
-  console.log(props.location.state.pass);
+  //console.log(props.location.state.pass);
   const Rep_name = props.location.state.pass;
+  const email_value = '';
 
   const handleChange = async (event) => {
-    await setFormData({ ...formData, [event.target.name]: event.target.value });
+    // await setFormData({ ...formData, [event.target.name]: event.target.value });
 
-    if (formData.email && formData.subject && formData.message) {
+    if (event.target.name === 'email') setEmail(event.target.value);
+    if (event.target.name === 'subject') setSubject(event.target.value);
+    if (event.target.name === 'message') setMessage(event.target.value);
+
+    console.log(email);
+    console.log(subject);
+    console.log(message);
+
+    if (email && subject && message) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
@@ -24,8 +36,29 @@ const MessageYourRep = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //const { email, subject, message } = formData;
+
+    if (!email) {
+      console.log('no email');
+      return;
+      //counter++;
+    } else if (!validateEmail(email)) {
+      console.log('Invalid Email');
+      return;
+      //counter++;x
+    }
+
+    if (!subject) {
+      console.log('Subject is Required');
+      return;
+    }
+
+    if (!message) {
+      console.log('Message is Required');
+      return;
+    }
+
     try {
-      const { email, subject, message } = formData;
       console.log(email, subject, message);
       let templateParams = {
         from_name: email,
@@ -51,6 +84,12 @@ const MessageYourRep = (props) => {
       subject: '',
       message: ''
     });
+    email = '';
+  }
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
   }
 
   const goBack = () => {
@@ -73,6 +112,7 @@ const MessageYourRep = (props) => {
           type="email"
           name="email"
           placeholder="Youremail@email.com"
+          value={email}
           onChange={handleChange}
         ></input>
         <label id="label">Message recipient</label>
@@ -82,6 +122,7 @@ const MessageYourRep = (props) => {
           name="subject"
           value={Rep_name}
           onChange={handleChange}
+          disabled
         ></input>
         {/* <p id="text" className="recipient">
           The Duke of Naboo
@@ -104,7 +145,8 @@ const MessageYourRep = (props) => {
             onChange={handleChange}
           ></textarea>
         </div>
-        <ThankYou type="submit" disabled={btnDisabled} />
+        <input value="Submit" type="submit" />
+        <ThankYou type="submit" disabled={btnDisabled} onClick={handleSubmit} />
       </form>
     </div>
   );

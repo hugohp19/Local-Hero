@@ -12,13 +12,14 @@ const RepProfile = (props) => {
   const history = useHistory();
   const { individualRep, setIndividualRep } = useContext(AppContext);
   const [twitter, setTwitter] = useState('USAGov');
+  //console.log(props.location.state.pass);
   const representative = props.location.state.pass;
   //setIndividualRep(representative);
   //console.log(props.location.state.pass);
-  console.log(representative);
+  //console.log(representative);
 
   useEffect(() => {
-    if (props.location.state.pass) {
+    if (!props.location.state.pass) {
       history.push('./');
     }
   });
