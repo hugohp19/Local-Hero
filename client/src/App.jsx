@@ -1,5 +1,4 @@
 import React from 'react';
-// import { AppContextProvider } from './context/AppContext';
 import Homepage from './pages/Homepage/Homepage';
 import LocalVoice from './pages/LocalVoice/LocalVoice';
 import MsgRep from './pages/MsgRep/MsgRep';

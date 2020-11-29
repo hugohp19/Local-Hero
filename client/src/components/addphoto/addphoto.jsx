@@ -21,9 +21,6 @@ const Addphoto = () => {
       <Button variant="primary" onClick={handleShow}>
         Add an Image
       </Button>
-      {/* <div className="register_user_image">
-                 <input id="usePic" type="file" onChange={onChangePicture}/>
-              </div> */}
       <div className="userPic">
         <img className="user_pic" src={picture}></img>
       </div>

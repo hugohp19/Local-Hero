@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 export const AppContext = createContext();
 
@@ -25,8 +26,7 @@ export const AppContextProvider = ({ children }) => {
           setLoginData(data);
         })
         .catch((error) => {
-          console.log(error);
-          //alert(`Oops!`, error.toString());
+          swal(error);
         });
     }
   }, [loginData, user, loading]);

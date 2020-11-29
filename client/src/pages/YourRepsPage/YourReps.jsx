@@ -44,7 +44,6 @@ const YourReps = ({ history }) => {
       if (!response.data) {
         swal({ text: 'Invalid Zip Code', icon: warning });
         setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
-        // setAddress('');
         return;
       }
 
@@ -60,7 +59,6 @@ const YourReps = ({ history }) => {
       setFilteredRep(repData.officials);
     } else {
       const filteredByTitle = await repData.officials.filter((rep) => {
-        console.log(rep.office.chamber.government.type);
         return (
           rep.office.chamber.government.type.toLowerCase() ===
           data.toLowerCase()

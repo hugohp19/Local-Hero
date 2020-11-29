@@ -37,9 +37,7 @@ const repSchema = new mongoose.Schema({
         trim: true
       }
     ],
-    channels: [
-      // media: { type: String, trim: true }
-    ],
+
     address: {}
   },
   urls: [
