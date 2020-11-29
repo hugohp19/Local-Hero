@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import locationImage from '../../assets/images/location.svg';
 import { AppContext } from '../../context/AppContext';
@@ -7,10 +7,24 @@ import './FindMyRep.css';
 const FindMyRep = ({ history }) => {
   const { address, setAddress } = useContext(AppContext);
   const { repData, setRepData } = useContext(AppContext);
+  const { setFilteredRep } = useContext(AppContext);
+  const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
+    'Enter Zip Code'
+  );
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
+    console.log(address.length);
+    if (address.length < 3) {
+      setBtnDisabled(true);
+      console.log('less');
+    } else {
+      setBtnDisabled(false);
+      console.log('more');
+    }
     //console.log(e.target.value);
   };
 
@@ -29,9 +43,15 @@ const FindMyRep = ({ history }) => {
           'Content-Type': 'application/json'
         }
       });
+      await setFilteredRep(response.data.officials);
       await setRepData(response.data);
       console.log(repData);
       console.log(response.data);
+      if (!response.data) {
+        setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
+        setAddress('');
+        return;
+      }
       history.push('/your-reps');
     } catch (error) {
       console.log(error);
@@ -52,8 +72,9 @@ const FindMyRep = ({ history }) => {
           <div className="wrm-search-container">
             <input
               type="number"
-              placeholder="Enter Zip Code"
+              placeholder={zipcodePlaceholder}
               className="wrm-searchbar"
+              value={address}
               onChange={handleSearch}
             />
             <div className="wrm-right-image-container">
@@ -61,7 +82,12 @@ const FindMyRep = ({ history }) => {
             </div>
           </div>
         </div>
-        <input type="submit" value="FIND MY REP" className="wrm-searchButton" />
+        <input
+          type="submit"
+          value="FIND MY REP"
+          className="wrm-searchButton"
+          disabled={btnDisabled}
+        />
       </form>
     </div>
   );

@@ -6,11 +6,12 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const [contextMessage, setContextMessage] = useState('');
   const [repData, setRepData] = useState(null);
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState('');
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState(null);
   const [individualRep, setIndividualRep] = useState(null);
+  const [filteredRep, setFilteredRep] = useState(null);
   const user = sessionStorage.getItem('user');
   const [filterData, setFilterData] = useState(null);
 
@@ -24,7 +25,8 @@ export const AppContextProvider = ({ children }) => {
           setLoginData(data);
         })
         .catch((error) => {
-          alert(`Oops!`, error.toString());
+          console.log(error);
+          //alert(`Oops!`, error.toString());
         });
     }
   }, [loginData, user, loading]);
@@ -51,7 +53,9 @@ export const AppContextProvider = ({ children }) => {
         loading,
         setLoading,
         individualRep,
-        setIndividualRep
+        setIndividualRep,
+        filteredRep,
+        setFilteredRep
       }}
     >
       {children}

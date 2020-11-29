@@ -21,7 +21,11 @@ const Map = ({ mapCenter, markers }) => {
     >
       {markers.map((marker) => (
         <Marker coordinates={[marker.longitude, marker.latitude]}>
-          <img style={{ height: '20px', width: '20px' }} src={MARKER_IMG_URL} />
+          <img
+            style={{ height: '20px', width: '20px' }}
+            src={MARKER_IMG_URL}
+            alt=""
+          />
         </Marker>
       ))}
     </MapContainer>

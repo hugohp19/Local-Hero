@@ -7,6 +7,8 @@
   border: 1px solid black;
   padding-top: 20px;
   width: 100%;
+  background-image: url('../../assets//images/dotsBackground.svg');
+  background-size: cover;
 }
 
 .backArrow {
@@ -118,4 +120,30 @@
 .rp-icons {
   margin-right: 0.3rem;
   width: 1.2rem;
+}
+
+/*************************************
+          Bio and Twitter
+*************************************/
+.rp-subtitles {
+  background-color: #22409a;
+  width: fit-content;
+  font-size: 1rem;
+  padding: 5px;
+  padding-left: 15px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.rp-Bio {
+  text-align: justify;
+  padding: 20px;
+}
+
+.twitterfeed {
+  margin: 10px 20px;
+  border: 1px solid #788ac1;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import './ThankYou.css';
 
-function ThankYou() {
+function ThankYou({ disabled }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,7 +11,12 @@ function ThankYou() {
 
   return (
     <>
-      <Button id="sendbtn" variant="primary" onClick={handleShow}>
+      <Button
+        id="sendbtn"
+        variant="primary"
+        onClick={handleShow}
+        disabled={disabled}
+      >
         SEND
       </Button>
 
