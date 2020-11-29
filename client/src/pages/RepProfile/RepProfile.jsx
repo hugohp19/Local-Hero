@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import backArrow from '../../assets/images/backArrow.svg';
 import email from '../../assets/images/email.svg';
@@ -10,14 +9,10 @@ import './RepProfile.css';
 
 const RepProfile = (props) => {
   const history = useHistory();
-  const { individualRep, setIndividualRep } = useContext(AppContext);
-  const [twitter, setTwitter] = useState('USAGov');
   const representative = props.location.state.pass;
 
   const twitterUsername = representative.identifiers.filter((rep) => {
-    if (rep.identifier_type.toLowerCase() === 'twitter') {
-      return rep.identifier_value;
-    }
+    return rep.identifier_type.toLowerCase() === 'twitter';
   });
 
   const goBack = () => {
@@ -27,7 +22,12 @@ const RepProfile = (props) => {
   return (
     <div className="rp-body">
       <div className="rp-repcard">
-        <img src={backArrow} className="backArrow" onClick={goBack} />
+        <img
+          src={backArrow}
+          className="backArrow"
+          onClick={goBack}
+          alt="backArrow"
+        />
         <p className="rp-party">
           {representative.party
             ? representative.party.toUpperCase()
@@ -35,7 +35,7 @@ const RepProfile = (props) => {
         </p>
         <div className="rp-profileinfo-container">
           <div className="rp-profilePhoto">
-            <img src={representative.photo_origin_url} />
+            <img src={representative.photo_origin_url} alt="Profile" />
           </div>
           <div className="rp-namestack">
             <div className="rp-profileinfo">
@@ -65,7 +65,7 @@ const RepProfile = (props) => {
         </div>
         <div className="rp-footerinfo">
           <div>
-            <img src={email} className="rp-icons" />
+            <img src={email} className="rp-icons" alt="email" />
             <p className="rp-emailinfo">
               {representative.email_addresses[0]
                 ? representative.email_addresses[0]
@@ -73,7 +73,7 @@ const RepProfile = (props) => {
             </p>
           </div>
           <div>
-            <img src={phone} className="rp-icons" />
+            <img src={phone} className="rp-icons" alt="phone" />
             <p className="rp-phoneinfo">
               {representative.addresses[0].phone_1
                 ? representative.addresses[0].phone_1

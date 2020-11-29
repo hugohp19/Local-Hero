@@ -9,7 +9,7 @@ import './FindMyRep.css';
 
 const FindMyRep = ({ history }) => {
   const { address, setAddress } = useContext(AppContext);
-  const { repData, setRepData } = useContext(AppContext);
+  const { setRepData } = useContext(AppContext);
   const { setFilteredRep } = useContext(AppContext);
   const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
     'Enter Zip Code'
