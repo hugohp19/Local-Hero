@@ -1,24 +1,56 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './YvYv.css';
 
 const YvYv = () => {
   return (
-    <div>
-      <div className="title">
-        <h1>Your Vote</h1>
-        <h1>Your Voice</h1>
+    <div id="yvfullpage">
+      <div id="yvtitle">
+        <h3 className="yvpagetitle">Your</h3>
+        <h3 className="yvpagetitle2">Vote</h3>
+        <h3 className="yvpagetitle">, Your</h3>
+        <h3 className="yvpagetitle2">Voice</h3>
       </div>
-      <div className="register">
-        <h4 id="text">First stop, are you registered? Find out!</h4>
-        <button className="regbutton">REGISTER</button>
-      </div>
-      <div className="ballot">
-        <h4 id="text">What is on my ballot?</h4>
-        <button className="ballotbutton">MY BALLOT</button>
-      </div>
-      <div className="resources">
-        <h4>Voting</h4>
-        <h4>Everything You Need To Know</h4>
+      <div id="yvboxes">
+        <div className="yvbox">
+          <h5 className="yvtext">First stop, are you registered?</h5>
+          <button
+            className="yvbutton"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'https://www.usa.gov/register-to-vote';
+            }}
+          >
+            Find out!
+          </button>
+        </div>
+        <div className="yvbox">
+          <h5 className="yvtext">What is on my ballot?</h5>
+          <button
+            className="yvbutton"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'https://www.vote.org/ballot-information/';
+            }}
+          >
+            My Ballot
+          </button>
+        </div>
+        <div className="yvbox">
+          <h5 className="yvtitle2">Want to learn more about voting?</h5>
+          <button
+            className="yvbutton"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = 'https://www.usa.gov/voting';
+            }}
+          >
+            Voting Info
+          </button>
+        </div>
       </div>
     </div>
   );
