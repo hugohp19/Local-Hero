@@ -30,7 +30,7 @@ const UpdateUser = () => {
   return (
     <>
       <Dropdown.Item variant="primary" onClick={handleShow}>
-        Register
+        Update Profile
       </Dropdown.Item>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

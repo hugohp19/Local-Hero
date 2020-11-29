@@ -8,14 +8,14 @@
   color: gold;
 }
 .lvtitle {
-  background-color: navy;
+  background-color: blue;
   color: white;
   padding: 30px;
   display: flex;
   background-image: url('../../assets/images/dotsBackground.svg');
   background-size: cover;
 }
-.title2 {
+.titleCity {
   padding: 2rem;
   line-height: 0.5rem;
   color: navy;
@@ -38,9 +38,8 @@
   min-width: 350px;
   max-width: 350px;
   border-radius: 1ch;
-  background-color: navy;
+  background-color: blue;
   color: white;
   line-height: 0.5rem;
   margin-top: 1rem;
-  /* background-image: url('../../assets/images/submitBkgdImage.svg'); */
 }

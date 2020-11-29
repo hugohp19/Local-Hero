@@ -76,13 +76,14 @@ const Profile = () => {
             <Card.Title>{loginData?.name}</Card.Title>
             <Card.Text>{loginData?.email}</Card.Text>
             <Card.Text>
-              {loginData?.address}, {loginData?.zipcode}
+              {loginData?.address}
+              {loginData?.zipcode}
             </Card.Text>
             <Card.Text>{loginData?.city}</Card.Text>
-            <Button variant="primary">
+            <Button type="submit" size="sm" className="mt-1">
               <UpdateUser />
             </Button>
-            <Button>
+            <Button type="submit" size="sm" className="mt-1">
               <Logout />
             </Button>
           </Card.Body>
