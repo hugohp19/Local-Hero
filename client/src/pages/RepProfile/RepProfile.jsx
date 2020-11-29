@@ -17,7 +17,11 @@ const RepProfile = (props) => {
   //console.log(props.location.state.pass);
   console.log(representative);
 
-  //console.log(representative.identifiers)
+  useEffect(() => {
+    if (props.location.state.pass) {
+      history.push('./');
+    }
+  });
 
   const twitterUsername = representative.identifiers.filter((rep) => {
     if (rep.identifier_type.toLowerCase() === 'twitter') {
@@ -35,9 +39,7 @@ const RepProfile = (props) => {
   return (
     <div className="rp-body">
       <div className="rp-repcard">
-        {/* <Link to="/your-reps"> */}
         <img src={backArrow} className="backArrow" onClick={goBack} />
-        {/* </Link> */}
         <p className="rp-party">
           {representative.party
             ? representative.party.toUpperCase()
@@ -60,7 +62,15 @@ const RepProfile = (props) => {
                     : representative.office.representing_state)}
               </h6>
             </div>
-            <Link to="/MsgRep">
+            <Link
+              to={{
+                pathname: '/MsgRep',
+                state: {
+                  pass:
+                    representative.first_name + ' ' + representative.last_name
+                }
+              }}
+            >
               <button className="rp-sendbutton">SEND MESSAGE</button>
             </Link>
           </div>

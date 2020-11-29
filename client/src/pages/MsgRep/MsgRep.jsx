@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as emailjs from 'emailjs-com';
 import './MsgRep.css';
 import ThankYou from '../../components/MsgSentConf/ThankYou';
+import backArrow from '../../assets/images/backArrow.svg';
 
-const MessageYourRep = () => {
-  const [formData, setFormData] = useState(null);
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+const MessageYourRep = (props) => {
+  const [formData, setFormData] = useState({});
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  const history = useHistory();
+  console.log(props.location.state.pass);
+  const Rep_name = props.location.state.pass;
+
+  const handleChange = async (event) => {
+    await setFormData({ ...formData, [event.target.name]: event.target.value });
+
+    if (formData.email && formData.subject && formData.message) {
+      setBtnDisabled(false);
+    } else {
+      setBtnDisabled(true);
+    }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
@@ -39,16 +52,19 @@ const MessageYourRep = () => {
       message: ''
     });
   }
+
+  const goBack = () => {
+    history.goBack();
+  };
+
   return (
     <div className="msgrep">
       <div className="reptitle">
-        <Link to="./repprofile">
-          <button className="back">
-            <h1>&lt;</h1>
-          </button>
-        </Link>
-        <h3 className="title"> Messaging Your </h3>
-        <h3 className="rep"> REP </h3>
+        <img src={backArrow} className="backArrow" onClick={goBack} />
+        <h3 className="mr-title">
+          {' '}
+          Messaging Your <span>REP</span>
+        </h3>
       </div>
       <form className="form" onSubmit={handleSubmit}>
         <label id="label">Your email address</label>
@@ -56,29 +72,39 @@ const MessageYourRep = () => {
           id="text"
           type="email"
           name="email"
+          placeholder="Youremail@email.com"
           onChange={handleChange}
         ></input>
         <label id="label">Message recipient</label>
-        <p id="text" className="recipient">
+        <input
+          id="text"
+          type="text"
+          name="subject"
+          value={Rep_name}
+          onChange={handleChange}
+        ></input>
+        {/* <p id="text" className="recipient">
           The Duke of Naboo
-        </p>
+        </p> */}
         <label id="label">Subject</label>
         <input
           id="text"
           type="text"
           name="subject"
+          placeholder="Give them a little peak into your message"
           onChange={handleChange}
         ></input>
         <div className="lrgtxt">
           <label id="label">Insert message</label>
           <textarea
-            rows="10"
+            rows="9"
             cols="34"
             name="message"
+            placeholder="Let them know what is on your mind"
             onChange={handleChange}
           ></textarea>
         </div>
-        <ThankYou type="submit" />
+        <ThankYou type="submit" disabled={btnDisabled} />
       </form>
     </div>
   );
