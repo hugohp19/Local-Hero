@@ -3,15 +3,14 @@ import { Form, Button, Modal, Dropdown } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const Login = () => {
   const { history } = useHistory();
   const { setLoginData } = useContext(AppContext);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const [formData, setFormData] = useState(null);
 
   const handleChange = (event) => {
@@ -20,16 +19,34 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!formData) return;
+    if (!formData.email) {
+      swal('no email');
+      return;
+    } else if (!validateEmail(formData.email)) {
+      console.log('Invalid Email');
+      return;
+    }
+
+    if (!formData.password) {
+      swal('Password is Required');
+      return;
+    }
+
     try {
       const response = await axios.post('/api/login', formData);
-
       console.log('login response', response);
       sessionStorage.setItem('user', response.data);
       setLoginData(response.data);
     } catch (error) {
-      alert('SignUp Error: ', error.toString());
+      swal('Invalid Credentials');
     }
   };
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
 
   return (
     <>
