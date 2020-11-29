@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import locationImage from '../../assets/images/location.svg';
 import { AppContext } from '../../context/AppContext';
+import swal from 'sweetalert';
+import warning from '../../assets/images/warning.svg';
+import wrong from '../../assets/images/wrong.svg';
 import './FindMyRep.css';
 
 const FindMyRep = ({ history }) => {
@@ -17,25 +20,19 @@ const FindMyRep = ({ history }) => {
     e.preventDefault();
     setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
-    console.log(address.length);
+
     if (address.length < 3) {
       setBtnDisabled(true);
-      console.log('less');
     } else {
       setBtnDisabled(false);
-      console.log('more');
     }
-    //console.log(e.target.value);
   };
 
   const handleAddress = async (e) => {
     e.preventDefault();
-    //console.log('click', address)
     if (!address) return;
 
     try {
-      // const representatives = await axios.get('/rep/representatives/', {address});
-
       const response = await axios({
         method: 'GET',
         url: `/rep/representatives?address=${address}`,
@@ -45,16 +42,14 @@ const FindMyRep = ({ history }) => {
       });
       await setFilteredRep(response.data.officials);
       await setRepData(response.data);
-      console.log(repData);
-      console.log(response.data);
+
       if (!response.data) {
-        setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
-        setAddress('');
+        swal({ text: 'Invalid Zip Code', icon: warning });
         return;
       }
       history.push('/your-reps');
     } catch (error) {
-      console.log(error);
+      swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
   //wrm = Who Represents Me

@@ -16,7 +16,6 @@ const RepsCard = ({
 }) => {
   const name = `${first_name} ${last_name}`;
   const { repData } = useContext(AppContext);
-  console.log(rep);
   let ind_level;
 
   switch (level) {

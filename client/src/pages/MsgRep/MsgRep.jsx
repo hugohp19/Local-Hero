@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import * as emailjs from 'emailjs-com';
 import './MsgRep.css';
 import ThankYou from '../../components/MsgSentConf/ThankYou';
 import backArrow from '../../assets/images/backArrow.svg';
+import swal from 'sweetalert';
+import noEmail from '../../assets/images/noEmail.svg';
+import warning from '../../assets/images/warning.svg';
+import wrong from '../../assets/images/wrong.svg';
 
 const MessageYourRep = (props) => {
-  const [formData, setFormData] = useState({});
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const history = useHistory();
+  const [show, setShow] = useState(false);
   //console.log(props.location.state.pass);
   const Rep_name = props.location.state.pass;
-  const email_value = '';
 
   const handleChange = async (event) => {
-    // await setFormData({ ...formData, [event.target.name]: event.target.value });
-
     if (event.target.name === 'email') setEmail(event.target.value);
     if (event.target.name === 'subject') setSubject(event.target.value);
     if (event.target.name === 'message') setMessage(event.target.value);
-
-    console.log(email);
-    console.log(subject);
-    console.log(message);
 
     if (email && subject && message) {
       setBtnDisabled(false);
@@ -36,25 +33,22 @@ const MessageYourRep = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //const { email, subject, message } = formData;
 
     if (!email) {
-      console.log('no email');
+      swal({ text: 'Enter an Email', icon: noEmail });
       return;
-      //counter++;
     } else if (!validateEmail(email)) {
-      console.log('Invalid Email');
+      swal({ text: 'Enter a valid Email', icon: noEmail });
       return;
-      //counter++;x
     }
 
     if (!subject) {
-      console.log('Subject is Required');
+      swal({ text: 'Subject is Required', icon: warning });
       return;
     }
 
     if (!message) {
-      console.log('Message is Required');
+      swal({ text: 'A Message is Required', icon: warning });
       return;
     }
 
@@ -72,19 +66,16 @@ const MessageYourRep = (props) => {
         templateParams,
         'user_XPfMxtvcHQbduQlG6X9HQ'
       );
+      setShow(true);
       resetForm();
     } catch (error) {
-      console.log(error);
+      swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
   function resetForm() {
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    email = '';
+    setEmail('');
+    setSubject('');
+    setMessage('');
   }
 
   function validateEmail(email) {
@@ -99,7 +90,12 @@ const MessageYourRep = (props) => {
   return (
     <div className="msgrep">
       <div className="reptitle">
-        <img src={backArrow} className="backArrow" onClick={goBack} />
+        <img
+          src={backArrow}
+          className="backArrow"
+          onClick={goBack}
+          alt="backArrow"
+        />
         <h3 className="mr-title">
           {' '}
           Messaging Your <span>REP</span>
@@ -132,6 +128,7 @@ const MessageYourRep = (props) => {
           id="text"
           type="text"
           name="subject"
+          value={subject}
           placeholder="Give them a little peak into your message"
           onChange={handleChange}
         ></input>
@@ -141,12 +138,19 @@ const MessageYourRep = (props) => {
             rows="9"
             cols="34"
             name="message"
+            value={message}
             placeholder="Let them know what is on your mind"
             onChange={handleChange}
           ></textarea>
         </div>
-        <input value="Submit" type="submit" />
-        <ThankYou type="submit" disabled={btnDisabled} onClick={handleSubmit} />
+        {/* <input value="Submit" type="submit" /> */}
+        <ThankYou
+          type="submit"
+          disabled={btnDisabled}
+          show={show}
+          setShow={setShow}
+          handleSubmit={handleSubmit}
+        />
       </form>
     </div>
   );

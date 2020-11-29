@@ -3,6 +3,9 @@ import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
 import RepsCard from '../../components/RepsCard/RepsCard';
+import swal from 'sweetalert';
+import warning from '../../assets/images/warning.svg';
+import wrong from '../../assets/images/wrong.svg';
 import './YourReps.css';
 
 const YourReps = ({ history }) => {
@@ -23,7 +26,6 @@ const YourReps = ({ history }) => {
   const handleFilter = (e) => {
     e.preventDefault();
     setFilter(e.target.value);
-    console.log(e.target.value);
     filterRepFunc(e.target.value);
   };
 
@@ -40,17 +42,16 @@ const YourReps = ({ history }) => {
         }
       });
       if (!response.data) {
+        swal({ text: 'Invalid Zip Code', icon: warning });
         setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
-        setAddress('');
+        // setAddress('');
         return;
       }
 
       await setRepData(response.data);
       await setFilteredRep(response.data.officials);
-      // console.log(repData);
-      // console.log(response.data);
     } catch (error) {
-      console.log(error);
+      swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
 
@@ -87,7 +88,11 @@ const YourReps = ({ history }) => {
                 onChange={handleSearch}
               />
               <div className="right-image-container">
-                <img src={locationImage} alt="Location" />
+                <img
+                  src={locationImage}
+                  alt="Location"
+                  onClick={handleAddress}
+                />
               </div>
             </div>
           </div>
