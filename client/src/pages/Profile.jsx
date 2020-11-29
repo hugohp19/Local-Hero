@@ -57,14 +57,14 @@ const Profile = () => {
                   ? preview
                   : loginData?.avatar
                   ? loginData?.avatar
-                  : 'https://files.willkennedy.dev/wyncode/wyncode.png'
+                  : 'https://www.flaticon.com/svg/static/icons/svg/1946/1946429.svg'
               }
               alt="profile-pictures"
               roundedCircle
             />
           </Col>
         </Row>
-        <Card style={{ width: '18rem' }} key="1">
+        <Card className="userInfoCard" style={{ width: '18rem' }} key="1">
           <Card.Body align="center">
             <form className="d-flex flex-column" onSubmit={handleSubmit}>
               <input
@@ -82,7 +82,7 @@ const Profile = () => {
             <Button variant="primary">change password</Button>
           </Card.Body>
         </Card>
-        <Favorites />
+        {/* <Favorites /> */}
       </div>
     </>
   );

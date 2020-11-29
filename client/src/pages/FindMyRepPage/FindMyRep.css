@@ -86,3 +86,7 @@ span {
   height: 40px;
   width: 95%;
 }
+
+.wrm-searchButton:disabled {
+  background-color: #788ac1;
+}

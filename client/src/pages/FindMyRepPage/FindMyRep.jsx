@@ -1,27 +1,38 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import locationImage from '../../assets/images/location.svg';
 import { AppContext } from '../../context/AppContext';
+import swal from 'sweetalert';
+import warning from '../../assets/images/warning.svg';
+import wrong from '../../assets/images/wrong.svg';
 import './FindMyRep.css';
 
 const FindMyRep = ({ history }) => {
   const { address, setAddress } = useContext(AppContext);
-  const { repData, setRepData } = useContext(AppContext);
+  const { setRepData } = useContext(AppContext);
+  const { setFilteredRep } = useContext(AppContext);
+  const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
+    'Enter Zip Code'
+  );
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
-    //console.log(e.target.value);
+
+    if (address.length < 3) {
+      setBtnDisabled(true);
+    } else {
+      setBtnDisabled(false);
+    }
   };
 
   const handleAddress = async (e) => {
     e.preventDefault();
-    //console.log('click', address)
     if (!address) return;
 
     try {
-      // const representatives = await axios.get('/rep/representatives/', {address});
-
       const response = await axios({
         method: 'GET',
         url: `/rep/representatives?address=${address}`,
@@ -29,12 +40,16 @@ const FindMyRep = ({ history }) => {
           'Content-Type': 'application/json'
         }
       });
+      await setFilteredRep(response.data.officials);
       await setRepData(response.data);
-      console.log(repData);
-      console.log(response.data);
+
+      if (!response.data) {
+        swal({ text: 'Invalid Zip Code', icon: warning });
+        return;
+      }
       history.push('/your-reps');
     } catch (error) {
-      console.log(error);
+      swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
   //wrm = Who Represents Me
@@ -52,8 +67,9 @@ const FindMyRep = ({ history }) => {
           <div className="wrm-search-container">
             <input
               type="number"
-              placeholder="Enter Zip Code"
+              placeholder={zipcodePlaceholder}
               className="wrm-searchbar"
+              value={address}
               onChange={handleSearch}
             />
             <div className="wrm-right-image-container">
@@ -61,7 +77,12 @@ const FindMyRep = ({ history }) => {
             </div>
           </div>
         </div>
-        <input type="submit" value="FIND MY REP" className="wrm-searchButton" />
+        <input
+          type="submit"
+          value="FIND MY REP"
+          className="wrm-searchButton"
+          disabled={btnDisabled}
+        />
       </form>
     </div>
   );

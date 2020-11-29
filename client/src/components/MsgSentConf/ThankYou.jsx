@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import './ThankYou.css';
 
-function ThankYou() {
-  const [show, setShow] = useState(false);
+function ThankYou({ disabled, handleSubmit, show, setShow }) {
+  //const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button id="sendbtn" variant="primary" onClick={handleShow}>
+      <Button
+        id="sendbtn"
+        variant="primary"
+        onClick={handleSubmit}
+        disabled={disabled}
+      >
         SEND
       </Button>
 
@@ -32,8 +37,8 @@ function ThankYou() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Link to="./">
-            <Button variant="primary">Back to Search</Button>
+          <Link to="./your-reps">
+            <Button variant="primary">Back to Profile</Button>
           </Link>
           <Link to="./">
             <Button variant="primary">Home</Button>

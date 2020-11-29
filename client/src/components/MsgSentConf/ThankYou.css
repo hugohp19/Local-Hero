@@ -1,5 +1,7 @@
 #sendbtn {
   background-color: rgb(226, 79, 79);
-  width: 20.5rem;
+  width: 95%;
   border: none;
+  margin-top: 10px;
+  height: 3rem;
 }

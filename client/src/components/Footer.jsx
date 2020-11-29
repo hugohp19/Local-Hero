@@ -6,18 +6,13 @@ const Footer = () => {
     <Container fixed="bottom">
       <Nav className="justify-content-center" activeKey="/home">
         <Nav.Item>
-          <Nav.Link href="/home">Active</Nav.Link>
+          <Nav.Link href="/">home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
+          <Nav.Link href="/localvoice">Local Voice</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link>
+          <Nav.Link href="/localissuespage">Submit an issue</Nav.Link>
         </Nav.Item>
       </Nav>
       <Nav className="justify-content-center">

@@ -6,7 +6,7 @@ const MapContainer = ReactMapboxGL({
 });
 
 const MARKER_IMG_URL =
-  'https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697';
+  'https://www.flaticon.com/svg/static/icons/svg/1483/1483336.svg';
 
 const Map = ({ mapCenter, markers }) => {
   return (
@@ -21,7 +21,11 @@ const Map = ({ mapCenter, markers }) => {
     >
       {markers.map((marker) => (
         <Marker coordinates={[marker.longitude, marker.latitude]}>
-          <img style={{ height: '20px', width: '20px' }} src={MARKER_IMG_URL} />
+          <img
+            style={{ height: '20px', width: '20px' }}
+            src={MARKER_IMG_URL}
+            alt=""
+          />
         </Marker>
       ))}
     </MapContainer>

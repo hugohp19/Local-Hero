@@ -3,23 +3,29 @@ import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
 import RepsCard from '../../components/RepsCard/RepsCard';
+import swal from 'sweetalert';
+import warning from '../../assets/images/warning.svg';
+import wrong from '../../assets/images/wrong.svg';
 import './YourReps.css';
 
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
   const [filter, setFilter] = useState('Local');
-  const [filteredRep, setFilteredRep] = useState(null);
+  const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
+    'Enter Zip Code'
+  );
+  const { filteredRep, setFilteredRep } = useContext(AppContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setZipcodeplaceholder('Enter Zip Code');
     setAddress(e.target.value);
   };
 
   const handleFilter = (e) => {
     e.preventDefault();
     setFilter(e.target.value);
-    console.log(e.target.value);
     filterRepFunc(e.target.value);
   };
 
@@ -35,12 +41,17 @@ const YourReps = ({ history }) => {
           'Content-Type': 'application/json'
         }
       });
+      if (!response.data) {
+        swal({ text: 'Invalid Zip Code', icon: warning });
+        setZipcodeplaceholder('Invalid Zip Code, Please Try Again!');
+        // setAddress('');
+        return;
+      }
+
       await setRepData(response.data);
       await setFilteredRep(response.data.officials);
-      // console.log(repData);
-      // console.log(response.data);
     } catch (error) {
-      console.log(error);
+      swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
 
@@ -70,13 +81,18 @@ const YourReps = ({ history }) => {
             <div className="search-container">
               <input
                 type="text"
-                placeholder="Enter Zip Code"
+                placeholder={zipcodePlaceholder}
                 className="searchbar"
                 id="zipcode"
+                value={address}
                 onChange={handleSearch}
               />
               <div className="right-image-container">
-                <img src={locationImage} alt="Location" />
+                <img
+                  src={locationImage}
+                  alt="Location"
+                  onClick={handleAddress}
+                />
               </div>
             </div>
           </div>
