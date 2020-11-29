@@ -53,7 +53,6 @@ const Login = () => {
       <Dropdown.Item variant="primary" onClick={handleShow}>
         Login
       </Dropdown.Item>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Local Hero Login</Modal.Title>

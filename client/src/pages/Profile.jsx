@@ -3,6 +3,8 @@ import { AppContext } from '../context/AppContext';
 import { Image, Row, Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
+import UpdateUser from '../components/UpdateUser';
+import Logout from '../components/Logout';
 
 const Profile = () => {
   const { loginData, setLoginData, setLoading } = useContext(AppContext);
@@ -77,7 +79,12 @@ const Profile = () => {
               {loginData?.address}, {loginData?.zipcode}
             </Card.Text>
             <Card.Text>{loginData?.city}</Card.Text>
-            <Button variant="primary">change password</Button>
+            <Button variant="primary">
+              <UpdateUser />
+            </Button>
+            <Button>
+              <Logout />
+            </Button>
           </Card.Body>
         </Card>
       </div>
