@@ -1,48 +1,68 @@
-.title {
+#yvtitle {
+  display: flex;
+  position: relative;
   line-height: 0.75em;
-  background-color: navy;
-  height: 80px;
+  background-color: #22409a;
+  height: 6rem;
   color: white;
   padding: 20px;
 }
-.register {
+
+.yvbox {
   display: flex;
-  margin-top: 100px;
-  background-color: lightblue;
-  padding: 15px;
-  max-width: 400px;
-  border-radius: 2%;
+  position: relative;
+  width: 20rem;
+  height: 8rem;
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  border-radius: 1ch;
+  color: navy;
+  margin-top: 2rem;
+  background-image: url('../../assets/images/Dots\ bkgd.svg');
 }
-.regbutton {
+
+.yvbutton {
   position: relative;
   max-height: 50px;
-  min-width: 150px;
-  max-width: 150px;
-  border-radius: 8%;
-  background-color: lightblue;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-.ballot {
-  display: flex;
-  margin-top: 100px;
-  background-color: lightblue;
-  padding: 15px;
-  max-width: 400px;
-  border-radius: 2%;
-}
-.ballotbutton {
-  position: relative;
-  max-height: 50px;
-  min-width: 150px;
-  max-width: 150px;
-  border-radius: 8%;
-  background-color: lightblue;
+  min-width: 130px;
+  max-width: 130px;
+  border-radius: 1ch;
+  border: none;
+  background-color: #ff6b6b;
   margin-left: 30px;
+  color: white;
+  font-weight: bold;
 }
-.resources {
-  background-color: navy;
+
+#yvresources {
+  background-color: #22409a;
   color: white;
   line-height: 0.5em;
   padding: 10px;
+  margin-top: 2rem;
+}
+
+.yvtext {
+  font-weight: bold;
+}
+
+.yvpagetitle {
+  font-weight: bold;
+  position: relative;
+}
+.yvpagetitle2 {
+  font-weight: bold;
+  color: gold;
+  margin-left: 0.5rem;
+  position: relative;
+}
+.yvtitle2 {
+  font-weight: bold;
+}
+
+#yvboxes {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
