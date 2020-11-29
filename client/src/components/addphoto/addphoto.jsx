@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 
 const Addphoto = () => {
   const [show, setShow] = useState(false);
+  const [picture, setPicture] = useState('');
+
+  const onChangePicture = (e) => {
+    setPicture(URL.createObjectURL(e.target.files[0]));
+  };
+
+  useEffect(() => {
+    console.log('picture: ', picture);
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,6 +21,12 @@ const Addphoto = () => {
       <Button variant="primary" onClick={handleShow}>
         Add an Image
       </Button>
+      {/* <div className="register_user_image">
+                 <input id="usePic" type="file" onChange={onChangePicture}/>
+              </div> */}
+      <div className="userPic">
+        <img className="user_pic" src={picture}></img>
+      </div>
 
       <Modal
         show={show}
@@ -25,14 +40,14 @@ const Addphoto = () => {
         <Modal.Body>
           <Button variant="light">Take Photo</Button>
           <Form>
-            <Form.File id="custom-file" label="Select a photo" custom />
+            <Form.File id="usePic" type="file" onChange={onChangePicture} m />
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Cancel
           </Button>
-          <Button variant="primary">Accept</Button>
+          <Button variant="primary">Submit</Button>
         </Modal.Footer>
       </Modal>
     </>
