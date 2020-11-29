@@ -25,6 +25,8 @@
     "passport-jwt": "^4.0.0",
     "react-bootstrap": "^1.4.0",
     "react-twitter-embed": "^3.0.3",
+    "react-modal": "^3.12.1",
+    "sweetalert": "^2.1.2",
     "validator": "^13.1.17"
   },
   "devDependencies": {
