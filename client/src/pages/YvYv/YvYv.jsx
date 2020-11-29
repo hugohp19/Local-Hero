@@ -19,7 +19,7 @@ const YvYv = () => {
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = 'https://www.usa.gov/register-to-vote';
+              window.open('https://www.usa.gov/register-to-vote');
             }}
           >
             Find out!
@@ -32,7 +32,7 @@ const YvYv = () => {
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = 'https://www.vote.org/ballot-information/';
+              window.open('https://www.vote.org/ballot-information/');
             }}
           >
             My Ballot
@@ -45,7 +45,7 @@ const YvYv = () => {
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = 'https://www.usa.gov/voting';
+              window.open('https://www.usa.gov/voting');
             }}
           >
             Voting Info
