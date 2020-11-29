@@ -50,16 +50,7 @@ const Register = () => {
                 />
               </Form.Group>
             </Form.Row>
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-            </Form.Row>
+            <Form.Row>Credentials</Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridConfirmEmail">
                 <Form.Control
@@ -98,20 +89,18 @@ const Register = () => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridState">
-                <Form.Label>State</Form.Label>
-                <Form.Control as="select" defaultValue="Choose...">
-                  <option>Choose...</option>
-                  <option>...</option>
-                </Form.Control>
+                <Form.Control
+                  type="text"
+                  placeholder="Miami"
+                  name="city"
+                  onChange={handleChange}
+                />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Zip</Form.Label>
                 <Form.Control
+                  type="number"
                   placeholder="33125"
                   name="zipcode"
                   onChange={handleChange}

@@ -18,17 +18,17 @@ const Footer = () => {
       <Nav className="justify-content-center">
         <Nav.Item>
           <Nav.Link href="/home">
-            <i class="fab fa-facebook"></i>
+            <i className="fab fa-facebook"></i>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-1">
-            <i class="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2">
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-instagram"></i>
           </Nav.Link>
         </Nav.Item>
       </Nav>

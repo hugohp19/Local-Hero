@@ -19,9 +19,10 @@ const LocalIssues = () => {
     <div className="test">
       {filterData &&
         filterData.map(
-          (item) =>
+          (item, i) =>
             Object.keys(item).length && (
               <Cards
+                key={i}
                 city={item.city.replaceAll('_', ' ')}
                 issueType={item.issue_type}
                 streetAddress={item.street_address}
