@@ -1,0 +1,22 @@
+#confbutton {
+  background-color: rgb(248, 85, 85);
+  color: white;
+  border: none;
+  border-radius: 0.5ch;
+  padding: 5px;
+  width: 14rem;
+}
+
+.text {
+  color: navy;
+}
+
+.group {
+  color: navy;
+}
+
+.page {
+  position: relative;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
