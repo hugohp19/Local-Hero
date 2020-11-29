@@ -1,27 +1,25 @@
-# Final Project
+# Statewatch
 
-## Setup
+Statewatch is a response web app that provides users with a one stop shop to find unbias information on government officials and local representatives and provide a means to submit municipal problems all through an easy to use interface. At Statewatch we believe that by making it easier to stay informed on the decisions of our chosen officials and progress on reported issues it will not only lead to having a government that best fits it's citizens needs and views but also help hold those elected officials accountable.
 
-- `git clone` this repo
-- `cd` into it.
-- `yarn install`
-- `cd client && yarn install`
-- `cp .env.sample .env`
+## Installation
 
-## Available build commands
+Statewatch is a responsive web based application and will be accessed using a specified URL in any browser including mobile. Stayed tuned for official URL upon deployment.
 
-- `yarn dev`: Runs BOTH your Express.JS and React developer environment locally at the same time. Any logs coming from Express will be prefaced with `[0]`, any logs from `create-react-app` will be prefaced with `[1]`.
-- `yarn server`: Runs JUST your Express.JS server.
-- `yarn client`: Runs JUST your front-end React app.
+## Usage
 
-Open [http://localhost:3000](http://localhost:3000) to view your local React app in the browser. The page will reload if you make edits.
+The site has two main workflows, one for searching government officials which provides unbiased data including voting and endorsement records, and providing several means for getting in contact with said representative including a built in email form, and the other is for looking up locally reported municipal issues based on provided zip code and being able to submit your own.
 
-## To deploy
+## Contributing
 
-NOTE: Heroku specifically runs `npm start`, so don't remove that from your package.json file.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-- `heroku create your-app-name`
-- `heroku config:set MONGODB_URL=<insertYourAtlasDbUri>`
-- `git push heroku master`
+Please make sure to update tests as appropriate.
 
+## Authors and Acknowledgement
 
+The dev team was made up by 4 aspiring full stack devs, Ulises Rivelo, Hugo Perez, Eugene Washington, and Gabriel Zevallos. Special thanks to all instructors that assisted in the completion of this project and to the the friends and family that supported us throughout the development of Statewatch.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
