@@ -1,22 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
 import RepsCard from '../../components/RepsCard/RepsCard';
+import './YourReps.css';
 
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
+  const [filter, setFilter] = useState('Local');
+  const [filteredRep, setFilteredRep] = useState(null);
 
   const handleSearch = (e) => {
     e.preventDefault();
     setAddress(e.target.value);
-    //console.log(e.target.value);
+  };
+
+  const handleFilter = (e) => {
+    e.preventDefault();
+    setFilter(e.target.value);
+    console.log(e.target.value);
+    filterRepFunc(e.target.value);
   };
 
   const handleAddress = async (e) => {
     e.preventDefault();
-    //console.log('click', address);
     if (!address) return;
 
     try {
@@ -28,43 +36,100 @@ const YourReps = ({ history }) => {
         }
       });
       await setRepData(response.data);
+      await setFilteredRep(response.data.officials);
       // console.log(repData);
       // console.log(response.data);
-      history.push('/your-reps');
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const filterRepFunc = async (data) => {
+    if (data === 'All') {
+      setFilteredRep(repData.officials);
+    } else {
+      const filteredByTitle = await repData.officials.filter((rep) => {
+        console.log(rep.office.chamber.government.type);
+        return (
+          rep.office.chamber.government.type.toLowerCase() ===
+          data.toLowerCase()
+        );
+      });
+      setFilteredRep(filteredByTitle);
     }
   };
 
   return (
     <div>
       <div>
-        <h2>
-          Your <span>REPS</span>
-        </h2>
         <form className="form-container" name="city" onSubmit={handleAddress}>
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Input Address"
-              className="searchbar"
-              onChange={handleSearch}
-            />
-            <img src={locationImage} alt="Location" />
+          <div className="TopBar">
+            <h2>
+              Your <span>REPS</span>
+            </h2>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Enter Zip Code"
+                className="searchbar"
+                id="zipcode"
+                onChange={handleSearch}
+              />
+              <div className="right-image-container">
+                <img src={locationImage} alt="Location" />
+              </div>
+            </div>
           </div>
         </form>
       </div>
-      <div>filters</div>
+      <div className="filters">
+        <input
+          type="button"
+          id={filter === 'Local' ? 'yr-active' : ''}
+          value="All"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          id={filter === 'Senates' ? 'yr-active' : ''}
+          value="Local"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          className="yr-active"
+          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          value="State"
+          onClick={handleFilter}
+        />
+        <input
+          type="button"
+          className="yr-active"
+          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          value="National"
+          onClick={handleFilter}
+        />
+      </div>
+      <div className="responselevel">
+        <h3>
+          {repData
+            ? 'Local (' + repData.officials[0].office.district.state + ')'
+            : ''}
+        </h3>
+      </div>
       <div>
-        {repData &&
-          repData.map((rep, i) => {
+        {filteredRep &&
+          filteredRep.map((rep, i) => {
             return (
               <RepsCard
                 key={i}
-                name={rep.name}
-                photo={rep.photo}
+                first_name={rep.first_name}
+                last_name={rep.last_name}
+                photo={rep.photo_origin_url}
                 party={rep.party}
-                position={rep.position}
+                position={rep.office.title}
+                level={rep.office.chamber.government.type}
+                rep={rep}
               />
             );
           })}

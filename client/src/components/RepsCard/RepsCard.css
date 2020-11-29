@@ -1,13 +1,20 @@
+/*******************************************
+                  Card
+*******************************************/
 .repCard-container {
-  background-color: red;
-  margin: 20px 10px;
-  border-radius: 10px;
+  margin: 20px;
+  border-radius: 5px;
   height: 150px;
+  border: 0.5 solid gray;
+  box-shadow: 0px 4px 7px 1px rgba(102, 102, 102, 1);
 }
 
+/*******************************************
+                Rep Name
+*******************************************/
 .repName-container {
   background-color: #22409a;
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
   padding: 5px 0 1px 10px;
 }
 
@@ -16,29 +23,68 @@
   color: white;
 }
 
-.repInfo-conatiner {
-  /* margin: auto 10px; */
-  /* display: grid;
-  grid-template-columns: 2fr 4fr 1fr; */
+/*******************************************
+              Profile Container
+*******************************************/
+.repInfo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 115px;
 }
 
-.repInfo-conatiner h3 {
-  font-size: 0.8rem;
+/*******************************************
+                Profile Picture
+*******************************************/
+.profile-photo {
+  flex-basis: 20%;
+  margin: 0 auto;
 }
-.repInfo-conatiner img {
+
+.profile-photo img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
 
-.arrow {
+/*******************************************
+         Info and Button Container
+*******************************************/
+.right-container {
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: green;
-  /* flex-basis: */
+  flex-basis: 60%;
 }
+
+.right-container h3 {
+  font-size: 0.8rem;
+}
+
+.title-name {
+  font-weight: 800;
+}
+
+.county-name {
+  font-weight: 300;
+}
+
+.party-name {
+  margin-top: 10px;
+  color: gray;
+}
+
+/*******************************************
+                  Button
+*******************************************/
+.arrow {
+  height: 100%;
+  flex-basis: 10%;
+}
+
 .arrow img {
   width: 20px;
-  align-content: flex-end;
-  vertical-align: bottom;
+  position: relative;
+  top: 60%;
 }

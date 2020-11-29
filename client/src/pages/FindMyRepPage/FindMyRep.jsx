@@ -37,7 +37,7 @@ const FindMyRep = ({ history }) => {
       console.log(error);
     }
   };
-
+  //wrm = Who Represents Me
   return (
     <div className="whoRepresentsMe-container">
       <h2>
@@ -46,17 +46,22 @@ const FindMyRep = ({ history }) => {
         <br /> You?
       </h2>
 
-      <form className="form-container" name="city" onSubmit={handleAddress}>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Input Address"
-            className="searchbar"
-            onChange={handleSearch}
-          />
-          <img className="img" src={locationImage} alt="Location" />
+      <form className="wrm-form-container" name="city" onSubmit={handleAddress}>
+        <div className="wrm-search">
+          <p>Enter your Zip Code to find your local representatives</p>
+          <div className="wrm-search-container">
+            <input
+              type="number"
+              placeholder="Enter Zip Code"
+              className="wrm-searchbar"
+              onChange={handleSearch}
+            />
+            <div className="wrm-right-image-container">
+              <img className="img" src={locationImage} alt="Location" />
+            </div>
+          </div>
         </div>
-        <input type="submit" value="FIND MY REP" className="searchButton" />
+        <input type="submit" value="FIND MY REP" className="wrm-searchButton" />
       </form>
     </div>
   );

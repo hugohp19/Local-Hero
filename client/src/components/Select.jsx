@@ -116,7 +116,7 @@ const Select = () => {
             Confirm Details
           </button>
 
-          <confirm open={isOpen} onClose={() => setIsopen(false)}></confirm>
+          <confirm open={isOpen} onClose={() => setIsopen(false)} />
         </div>
       </div>
 

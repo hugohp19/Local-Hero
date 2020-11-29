@@ -7,7 +7,10 @@
   color: white;
   padding: 15px;
   height: 18rem;
+  background-image: url('../../assets/images/homefullcolor.jpg');
+  background-size: cover;
 }
+
 .actionbutton {
   background-color: rgb(226, 79, 79);
   box-shadow: 5px 8px black;
@@ -17,15 +20,20 @@
   padding: 15px;
   font-weight: bold;
 }
+
 .lhdiv {
   position: relative;
-  background-color: white;
+  background-image: url('../../assets/images/CreamRectangle.jpg');
+  background-size: cover;
+  /* background-color: white; */
   color: navy;
   max-width: 350px;
   border-radius: 1ch;
   box-shadow: 8px 10px rgb(226, 79, 79);
+
   padding: 10px;
 }
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -34,17 +42,20 @@
 }
 
 .quiz {
-  position: relative;
-  justify-content: flex-end;
-  background-color: white;
+  /* position: relative; */
+  /* justify-content: flex-end; */
+  /* background-color: white; */
   color: navy;
-  height: 15rem;
+  height: 11rem;
   min-width: 10rem;
   max-width: 22rem;
-  box-shadow: 8px 10px rgb(226, 79, 79);
+  box-shadow: -8px 10px rgb(226, 79, 79);
   border-radius: 1ch;
   padding: 10px;
   margin-top: 15px;
+  margin-left: auto;
+  background-image: url('../../assets/images/CreamRectangle.jpg');
+  background-size: cover;
 }
 .quizbutton {
   height: 30px;
@@ -60,7 +71,8 @@
   color: gold;
   padding: 10px;
   margin-top: 2rem;
-  background-color: navy;
+  background-color: rgb(37, 108, 167);
+  background-image: url('../../assets/images/localherobottom.jpg');
 }
 #bttntitle {
   font-weight: bold;
@@ -69,13 +81,28 @@
 #buttons {
   position: relative;
   color: white;
-  background-color: navy;
+  background-color: rgb(37, 108, 167);
   height: 160px;
   width: 180px;
   padding: 10px;
   border-radius: 1ch;
   margin-top: 15px;
+  border: red 1px solid;
 }
+
+.connect {
+  background-image: url('../../assets/images/colorIMAGECONNECT.jpg');
+  background-size: cover;
+}
+.submit {
+  background-image: url('../../assets/images/colorIMAGESUBMIT.jpg');
+  background-size: cover;
+}
+.voter {
+  background-image: url('../../assets/images/colorImageVoter.jpg');
+  background-size: cover;
+}
+
 #boldtitle {
   font-weight: bold;
 }
