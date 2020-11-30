@@ -29,8 +29,8 @@
   color: navy;
   max-width: 350px;
   border-radius: 1ch;
+  margin-top: 1rem;
   box-shadow: 8px 10px rgb(226, 79, 79);
-
   padding: 10px;
 }
 
@@ -42,9 +42,6 @@
 }
 
 .quiz {
-  /* position: relative; */
-  /* justify-content: flex-end; */
-  /* background-color: white; */
   color: navy;
   height: 11rem;
   min-width: 10rem;
@@ -52,7 +49,7 @@
   box-shadow: -8px 10px rgb(226, 79, 79);
   border-radius: 1ch;
   padding: 10px;
-  margin-top: 15px;
+  margin-top: 1vh;
   margin-left: auto;
   background-image: url('../../assets/images/CreamRectangle.jpg');
   background-size: cover;
@@ -87,7 +84,7 @@
   padding: 10px;
   border-radius: 1ch;
   margin-top: 15px;
-  border: red 1px solid;
+  border: white 1px solid;
 }
 
 .connect {
@@ -97,6 +94,7 @@
 .submit {
   background-image: url('../../assets/images/colorIMAGESUBMIT.jpg');
   background-size: cover;
+  background-position-y: -5px;
 }
 .voter {
   background-image: url('../../assets/images/colorImageVoter.jpg');
