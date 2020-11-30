@@ -5,7 +5,6 @@ import Register from './Register';
 import { AppContext } from '../context/AppContext';
 import { Navbar, Nav, Dropdown, Image, Button } from 'react-bootstrap';
 import localHero from '../assets/images/localHero.svg';
-import UpdateUser from './UpdateUser';
 
 const Navigation = () => {
   const { loginData } = useContext(AppContext);
@@ -15,7 +14,11 @@ const Navigation = () => {
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">
-            <i className="fas fa-bars" id="burgermenu"></i>
+            <i
+              className="fas fa-bars"
+              id="burgermenu"
+              style={{ fontSize: '2rem' }}
+            ></i>
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to="/">

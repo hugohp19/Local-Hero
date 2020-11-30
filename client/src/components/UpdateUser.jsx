@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import { Form, Button, Modal, Dropdown, Col } from 'react-bootstrap';
 import swal from 'sweetalert';
+import '../App.css';
 
 const UpdateUser = () => {
   const [show, setShow] = useState(false);
@@ -28,7 +29,7 @@ const UpdateUser = () => {
   };
   return (
     <>
-      <Dropdown.Item variant="primary" onClick={handleShow}>
+      <Dropdown.Item variant="primary" id="logoutB" onClick={handleShow}>
         Update Profile
       </Dropdown.Item>
       <Modal show={show} onHide={handleClose}>

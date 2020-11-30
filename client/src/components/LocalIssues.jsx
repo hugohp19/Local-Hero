@@ -3,16 +3,16 @@ import { AppContext } from '../context/AppContext';
 import Cards from './Card';
 
 const LocalIssues = () => {
-  const { apiData, setApiData, filterData } = useContext(AppContext);
+  const { setApiData, filterData } = useContext(AppContext);
 
   useEffect(() => {
     fetch(`/localissuespage`)
       .then((res) => res.json())
       .then((data) => {
-        let mapData = data.slice(1);
         setApiData(data.slice(1));
-      });
-  }, []);
+      })
+      .catch((e) => console.log(e));
+  });
 
   return (
     <div className="test">

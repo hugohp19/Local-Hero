@@ -1,7 +1,3 @@
-#burgermenu {
-  font-size: 2rem;
-}
-
 .profile {
   display: flex;
   flex-direction: column;
@@ -9,7 +5,7 @@
 }
 
 .profilePic {
-  margin-top: 10rem;
+  margin: 3rem 0;
 }
 
 .profilePicture {
@@ -39,4 +35,15 @@
 
 .userInfoCard {
   margin-bottom: 10rem;
+}
+
+/****************************
+  LogOut component - Button
+****************************/
+#logoutB {
+  color: white;
+}
+
+#logoutB:focus {
+  color: black;
 }

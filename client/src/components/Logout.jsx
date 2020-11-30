@@ -24,7 +24,11 @@ const Logout = () => {
       swal(error);
     }
   };
-  return <Dropdown.Item onClick={handleSignOut}>Logout</Dropdown.Item>;
+  return (
+    <Dropdown.Item id="logoutB" onClick={handleSignOut}>
+      Logout
+    </Dropdown.Item>
+  );
 };
 
 export default Logout;

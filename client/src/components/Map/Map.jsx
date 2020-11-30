@@ -15,7 +15,7 @@ const Map = ({ mapCenter, markers }) => {
       containerStyle={{
         height: '50vh',
         width: '100%',
-        border: 'red 1px solid'
+        border: 'blue 1px solid'
       }}
       center={mapCenter}
     >

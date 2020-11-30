@@ -1,17 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-// import Modal from 'react-modal';
-
-// const MODAL_STYLES = {
-//     position: 'fixed',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%, -50%)',
-//     backgroundColor: '#FFF',
-//     padding: '50px',
-//     zIndex: 1000
-
-// }
 
 const OVERLAY_STYLES = {
   position: 'fixed',
