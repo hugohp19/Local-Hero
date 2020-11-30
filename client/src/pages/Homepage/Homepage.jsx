@@ -38,10 +38,6 @@ const Homepage = () => {
             <h5>Resources</h5>
           </button>
         </Link>
-        {/* <button id="buttons">
-          <h4 id="bttntitle">CITY</h4>
-          <h5>Calendar</h5>
-        </button> */}
       </div>
       <div className="quiz" id="quizBox">
         <h3 id="boldtitle">How much do you know about local politics?</h3>

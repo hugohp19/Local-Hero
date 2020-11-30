@@ -6,6 +6,8 @@
   height: 6rem;
   color: white;
   padding: 20px;
+  background-image: url('../../assets/images/dotsBackground.svg');
+  background-size: cover;
 }
 
 .yvbox {
@@ -18,7 +20,10 @@
   border-radius: 1ch;
   color: navy;
   margin-top: 2rem;
-  background-image: url('../../assets/images/Dots\ bkgd.svg');
+  background-image: url('../../assets/images/CreamRectangle.jpg');
+  background-size: cover;
+  box-shadow: 8px 10px rgb(226, 79, 79);
+  padding: 10px;
 }
 
 .yvbutton {

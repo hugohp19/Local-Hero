@@ -1,5 +1,7 @@
 .body {
   display: flex-column;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .actiondiv {
@@ -25,7 +27,7 @@
   position: relative;
   background-image: url('../../assets/images/CreamRectangle.jpg');
   background-size: cover;
-  /* background-color: white; */
+  background-color: white;
   color: navy;
   max-width: 350px;
   border-radius: 1ch;
@@ -73,6 +75,8 @@
 }
 #bttntitle {
   font-weight: bold;
+  font-style: normal;
+  font-weight: normal;
 }
 
 #buttons {
