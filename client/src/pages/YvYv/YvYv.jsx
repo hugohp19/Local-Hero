@@ -25,7 +25,7 @@ const YvYv = () => {
             Find out!
           </button>
         </div>
-        <div className="yvbox">
+        <div className="yvbox" id="ballot">
           <h5 className="yvtext">What is on my ballot?</h5>
           <button
             className="yvbutton"
