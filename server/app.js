@@ -22,6 +22,20 @@ app.use(express.json());
 app.use(openRoutes);
 app.use('/rep', openRoutesRep);
 
+// // this is the api for city of miami
+app.get('/localissuespage', async (req, res) => {
+  const apiURL = `https://data.miamigov.com/resource/6q9s-asrs.json?`;
+
+  const { data } = await axios.get(apiURL, {
+    headers: {
+      'X-App-Token': process.env.APP_TOKEN
+    }
+  });
+
+  // });
+  res.send(data);
+});
+
 //Middleware to parse through incoming cookies in the requests.
 app.use(cookieParser());
 
@@ -50,16 +64,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 module.exports = app;
 
-// // this is the api for city of miami
-app.get('/localissuespage', async (req, res) => {
-  const apiURL = `https://data.miamigov.com/resource/6q9s-asrs.json?`;
 
-  const { data } = await axios.get(apiURL, {
-    headers: {
-      'X-App-Token': process.env.APP_TOKEN
-    }
-  });
-
-  // });
-  res.send(data);
-});
