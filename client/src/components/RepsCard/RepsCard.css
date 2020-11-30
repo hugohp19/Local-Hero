@@ -88,3 +88,32 @@
   position: relative;
   top: 60%;
 }
+
+@media screen and (min-width: 450px) {
+  .repCard-container {
+    width: 24rem;
+    height: 12rem;
+    margin-bottom: 2rem;
+  }
+
+  .repInfo-container {
+    height: 80%;
+  }
+
+  .right-container {
+    flex-basis: 45%;
+  }
+
+  .right-container h3 {
+    font-size: 1rem;
+  }
+
+  .profile-photo img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .arrow img {
+    width: 1.5rem;
+  }
+}

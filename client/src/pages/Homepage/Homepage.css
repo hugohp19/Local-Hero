@@ -108,3 +108,44 @@
 #boldtitle {
   font-weight: bold;
 }
+
+@media screen and (min-width: 450px) {
+  .actiondiv {
+    height: 90vh;
+  }
+
+  .actiondiv h1:nth-child(1) {
+    margin-top: 4rem;
+    margin-left: 5rem;
+  }
+
+  .actiondiv h1,
+  .actiondiv p {
+    margin-left: 5rem;
+  }
+
+  .actiondiv h1 {
+    font-size: 5rem;
+  }
+  .actiondiv p {
+    font-size: 1.6rem;
+  }
+
+  .actiondiv button {
+    margin-top: 3rem;
+    margin-left: 70%;
+    width: 15rem;
+    height: 5rem;
+    font-size: 1.5rem;
+  }
+
+  .lhdiv {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .quiz {
+    margin-right: 2rem;
+    margin-bottom: 5rem;
+  }
+}

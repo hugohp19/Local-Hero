@@ -90,3 +90,32 @@ span {
 .wrm-searchButton:disabled {
   background-color: #788ac1;
 }
+
+@media screen and (min-width: 450px) {
+  .whoRepresentsMe-container {
+    height: 90vh;
+    padding: 3rem 2rem;
+  }
+
+  .whoRepresentsMe-container h2 {
+    font-size: 3rem;
+  }
+
+  .wrm-search {
+    text-align: center;
+  }
+
+  .wrm-search p {
+    font-size: 1.3rem;
+  }
+
+  .wrm-search-container {
+    width: 50%;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .wrm-searchButton {
+    width: 50%;
+  }
+}

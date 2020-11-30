@@ -99,27 +99,27 @@ const YourReps = ({ history }) => {
       <div className="filters">
         <input
           type="button"
-          id={filter === 'Local' ? 'yr-active' : ''}
+          id={filter === 'All' ? 'yr-active' : ''}
           value="All"
           onClick={handleFilter}
         />
         <input
           type="button"
-          id={filter === 'Senates' ? 'yr-active' : ''}
+          id={filter === 'Local' ? 'yr-active' : ''}
           value="Local"
           onClick={handleFilter}
         />
         <input
           type="button"
           className="yr-active"
-          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          id={filter === 'State' ? 'yr-active' : ''}
           value="State"
           onClick={handleFilter}
         />
         <input
           type="button"
           className="yr-active"
-          id={filter === 'House Rep.' ? 'yr-active' : ''}
+          id={filter === 'National' ? 'yr-active' : ''}
           value="National"
           onClick={handleFilter}
         />
@@ -131,7 +131,7 @@ const YourReps = ({ history }) => {
             : ''}
         </h3>
       </div>
-      <div>
+      <div className="yr-cards">
         {filteredRep &&
           filteredRep.map((rep, i) => {
             return (

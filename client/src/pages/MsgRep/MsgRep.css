@@ -72,3 +72,11 @@
 .lrgtxt textarea:target {
   border: 2px solid red;
 }
+
+@media screen and (min-width: 450px) {
+  .form {
+    margin: auto;
+    padding: 0;
+    width: 50%;
+  }
+}
