@@ -86,14 +86,6 @@ https://statewatch.herokuapp.com/
 <img align="left" width="400" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
 
 
-<img align="right" width="400" src="https://imagizer.imageshack.com/img922/5462/zijymX.png">
-
-<img align="left" width="400" src="https://imagizer.imageshack.com/img922/8096/eakFD5.jpg">
-
-<img align="right" width="400" src="https://imagizer.imageshack.com/img924/9855/vovXjq.png">
-
-
-
 
 
 # Statewatch
