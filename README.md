@@ -18,7 +18,7 @@
 - [ ] `cd client && yarn install`
 
 :rocket: 
-
+<br />
 ### Step 2: Main Dependencies
 
 **Server Side.**
@@ -48,14 +48,14 @@
 - [ ] `emailjs-com` run command `$ yarn add emailjs-com`
 - [ ] `sweetalert` run command `$ yarn add sweetalert`
 
-
+<br />
 ### Step 3: Available build commands
 
 - `yarn dev`: Runs BOTH your Express.JS and React developer environment locally at the same time. Any logs coming from Express will be prefaced with `[0]`, any logs from `create-react-app` will be prefaced with `[1]`.
 - `yarn server`: Runs JUST your Express.JS server.
 - `yarn client`: Runs JUST your front-end React app.
 
-
+<br />
 ### Step 4: API Keys (.env)
 
 | Key Name                    |  Source                  | Side|
@@ -84,7 +84,7 @@
 [React mapbox gl]: https://www.npmjs.com/package/react-mapbox-gl
 
 
-
+<br /><br />
 ## Runs on Herkoku
 https://statewatch.herokuapp.com/
 
