@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import LocalIssues from '../../components/LocalIssues';
 import MapContainer from '../MapContainer';
 import './localIssues.css';
@@ -9,17 +10,17 @@ import {
   Tab,
   Button,
   InputGroup,
-  FormControl
+  FormControl,
+  FormGroup
 } from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 
 const LocalIssuesPage = () => {
-  const { apiData, setApiData, setFilterData } = useContext(AppContext);
+  const { apiData, setFilterData } = useContext(AppContext);
 
   const [mapMarkers, setMapMarkers] = useState([]);
   const [mapCenter, setMapCenter] = useState([-80.2044, 25.8028]);
 
-  const [value, setValue] = useState([1, 3]);
   const [zipCode, setZipcode] = useState('');
   const handleChange = (e) => setZipcode(e.target.value);
 
@@ -54,6 +55,11 @@ const LocalIssuesPage = () => {
             </InputGroup.Append>
           </InputGroup>
           <br />
+          <FormGroup className="d-flex justify-content-center">
+            <Link Link to="/select">
+              <Button variant="danger">submit an Issue</Button>
+            </Link>
+          </FormGroup>
         </Form.Group>
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
           <Tab className="tab" eventKey="list" title="List View">

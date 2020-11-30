@@ -44,6 +44,7 @@ const Homepage = () => {
         <p>(Don't worry we won't judge)</p>
 
         <a
+          rel="noopener noreferrer"
           target="_blank"
           href="https://www.benjerry.com/whats-new/2018/09/local-government-quiz"
         >

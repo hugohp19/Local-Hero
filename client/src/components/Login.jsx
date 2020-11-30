@@ -2,11 +2,9 @@ import React, { useState, useContext } from 'react';
 import { Form, Button, Modal, Dropdown } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 
 const Login = () => {
-  const { history } = useHistory();
   const { setLoginData } = useContext(AppContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

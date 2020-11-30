@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Row, Col, Container, Image } from 'react-bootstrap';
-import axios from 'axios';
-import swal from 'sweetalert';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Form, Row, Col } from 'react-bootstrap';
 import Addphoto from '../components/addphoto/addphoto';
+import swal from 'sweetalert';
 import './Select.css';
-import confirm from '../components/confirm/confirm';
 
 const Select = () => {
+  const history = useHistory();
   const [required, setRequired] = useState();
   const [isOpen, setIsopen] = useState(false);
 
-  const handleSubmit = async () => {
-    // setRequired(true);
-    // try {
-    //     await axios ({
-    //         method: 'POST',
-    //         url:
-    //     })
-    // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    swal({ text: 'Issue Submited', icon: 'success' }).then(() =>
+      history.push('/')
+    );
   };
 
   return (
-    <Form className="page">
+    <Form className="page" onSubmit={handleSubmit}>
       <fieldset>
         <div className="text">
           <h6>Step 1</h6>
@@ -68,23 +65,13 @@ const Select = () => {
           </Col>
         </Form.Group>
       </fieldset>
-      <div class="text">
+      <div className="text">
         <h6>Step 2</h6>
         <h3>Add Photo</h3>
         <p>Please add a photo to help us better identify your request</p>
-        {/* <Container>
-            <Row>
-            <Col xs={6} md={4}>
-                <Image src="holder.js/100px250" fluid  />
-                <input id="profilePic" type="file" onChange={onChangePicture}/>
-
-            </Col>
-            </Row>
-        </Container> */}
-
         <Addphoto type="submit" />
       </div>
-      <div class="text">
+      <div className="text">
         <svg
           width="5em"
           height="3em"
@@ -119,8 +106,6 @@ const Select = () => {
           <confirm open={isOpen} onClose={() => setIsopen(false)} />
         </div>
       </div>
-
-      {/* onSubmit={handleSubmit}  */}
     </Form>
   );
 };

@@ -53,6 +53,7 @@ module.exports = app;
 // // this is the api for city of miami
 app.get('/localissuespage', async (req, res) => {
   const apiURL = `https://data.miamigov.com/resource/6q9s-asrs.json?`;
+
   const { data } = await axios.get(apiURL, {
     headers: {
       'X-App-Token': process.env.APP_TOKEN

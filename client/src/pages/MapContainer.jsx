@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import Map from '../components/Map/Map';
 
 const MapContainer = ({ zipCode, mapMarkers, mapCenter }) => {

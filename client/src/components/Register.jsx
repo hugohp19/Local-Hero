@@ -18,7 +18,7 @@ const Register = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/signup', formData);
+      await axios.post('/api/signup', formData);
     } catch (error) {
       swal(error);
     }

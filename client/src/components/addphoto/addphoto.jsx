@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
+import noPicture from '../../assets/images/NoProfileImage.png';
+import './addphoto.css';
 
 const Addphoto = () => {
   const [show, setShow] = useState(false);
@@ -22,7 +24,11 @@ const Addphoto = () => {
         Add an Image
       </Button>
       <div className="userPic">
-        <img className="user_pic" src={picture}></img>
+        <img
+          className="user_pic"
+          src={picture ? picture : noPicture}
+          alt="Profile"
+        ></img>
       </div>
 
       <Modal
