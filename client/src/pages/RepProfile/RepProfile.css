@@ -147,3 +147,47 @@
   margin: 10px 20px;
   border: 1px solid #788ac1;
 }
+
+@media screen and (min-width: 450px) {
+  .rp-profileinfo-container {
+    margin-top: 2rem;
+    padding-left: 20%;
+    height: 12rem;
+  }
+
+  .rp-profilePhoto img {
+    width: 12rem;
+    height: 11rem;
+    /* margin-left: 5rem; */
+  }
+
+  .rp-name {
+    font-size: 2.5rem;
+  }
+
+  .rp-jobtitle {
+    font-size: 1.5rem;
+  }
+
+  .rp-sendbutton {
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+
+  .rp-emailinfo,
+  .rp-phoneinfo {
+    font-size: 1.2rem;
+  }
+
+  .rp-twitter {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .twitterfeed {
+    width: 40%;
+    margin-bottom: 2rem;
+    margin-right: 20%;
+  }
+}
