@@ -83,19 +83,14 @@
 ## Runs on Herkoku
 https://statewatch.herokuapp.com/
 
-<img align="right" width="400" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
-
-![Home](https://imagizer.imageshack.com/img922/5683/ogTsSI.png =400x)
-![Home](https://imagizer.imageshack.com/img922/5462/zijymX.png  =400x)
-![Home](https://imagizer.imageshack.com/img922/8096/eakFD5.jpg =400x)
-![Home](https://imagizer.imageshack.com/img924/9855/vovXjq.png =400x)
+<img align="left" width="400" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
 
 
-<img align="left" width="400" src="https://imagizer.imageshack.com/img922/5462/zijymX.png">
+<img align="right" width="400" src="https://imagizer.imageshack.com/img922/5462/zijymX.png">
 
-<img align="right" width="400" src="https://imagizer.imageshack.com/img922/8096/eakFD5.jpg">
+<img align="left" width="400" src="https://imagizer.imageshack.com/img922/8096/eakFD5.jpg">
 
-<img align="center" width="400" src="https://imagizer.imageshack.com/img924/9855/vovXjq.png">
+<img align="right" width="400" src="https://imagizer.imageshack.com/img924/9855/vovXjq.png">
 
 
 
