@@ -89,20 +89,9 @@
 https://statewatch.herokuapp.com/
 
 
-
-
-
-# Statewatch
-
-Statewatch is a response web app that provides users with a one stop shop to find unbias information on government officials and local representatives and provide a means to submit municipal problems all through an easy to use interface. At Statewatch we believe that by making it easier to stay informed on the decisions of our chosen officials and progress on reported issues it will not only lead to having a government that best fits it's citizens needs and views but also help hold those elected officials accountable.
-
-## Installation
-
-Statewatch is a responsive web based application and will be accessed using a specified URL in any browser including mobile. Stayed tuned for official URL upon deployment.
-
 ## Usage
 
-The site has two main workflows, one for searching government officials which provides unbiased data including voting and endorsement records, and providing several means for getting in contact with said representative including a built in email form, and the other is for looking up locally reported municipal issues based on provided zip code and being able to submit your own.
+The site has two main workflows, one for searching government officials by zipcode which provides data and several means for getting in contact with said representative, including a built in email form. The other workflow is for looking up locally reported municipal issues based on provided zip code and being able to submit your own.
 
 ## Contributing
 
