@@ -4,7 +4,9 @@
 
 
 <img align="left" width="250" height="250" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
-> Local Hero is a responsive web app that provides users with a one stop shop to find information on government officials and local representatives and provide a means to submit municipal problems all through an easy to use interface. At Local Hero we believe that by making it easier to stay informed on the decisions of our chosen officials and progress on reported issues it will not only lead to having a government that best fits it's citizens needs and views but also helps hold those elected officials accountable.:us:> <br /><br /><br /><br /><br /><br /><br />
+> Local Hero is a responsive web app that provides users with a one stop shop to find information on government officials and local representatives and provide a means to submit municipal problems all through an easy to use interface. At Local Hero we believe that by making it easier to stay informed on the decisions of our chosen officials and progress on reported issues it will not only lead to having a government that best fits it's citizens needs and views but also helps hold those elected officials accountable.:us:
+> 
+<br /><br /><br /><br /><br /><br /><br />
 
 
 ## :memo: Where do I start?
