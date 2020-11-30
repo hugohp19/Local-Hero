@@ -9,16 +9,18 @@ const express = require('express'),
   openRoutes = require('./routes/open/users'),
   openRoutesRep = require('./routes/open/representatives'),
   userRouter = require('./routes/secure/users'),
-  passport = require('./middleware/authentication/index'),
-  fileUpload = require('express-fileupload'),
-  cookieParser = require('cookie-parser'),
-  path = require('path');
+  operRoutesIssues = require('./routes/open/issues');
+(passport = require('./middleware/authentication/index')),
+  (fileUpload = require('express-fileupload')),
+  (cookieParser = require('cookie-parser')),
+  (path = require('path'));
 axios = require('axios');
 
 //Middleware
 app.use(express.json());
 
 // Unauthenticated routes
+app.use(operRoutesIssues);
 app.use(openRoutes);
 app.use('/rep', openRoutesRep);
 

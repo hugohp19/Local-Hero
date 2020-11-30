@@ -9,9 +9,9 @@ const Addphoto = () => {
     setPicture(URL.createObjectURL(e.target.files[0]));
   };
 
-  useEffect(() => {
-    console.log('picture: ', picture);
-  });
+  // useEffect(() => {
+  //   console.log('picture: ', picture);
+  // });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

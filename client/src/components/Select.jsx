@@ -7,17 +7,34 @@ import './Select.css';
 import confirm from '../components/confirm/confirm';
 
 const Select = () => {
-  const [required, setRequired] = useState();
   const [isOpen, setIsopen] = useState(false);
+  const [radio, setRadio] = useState(false);
+  const [bttDisabled, setBttDisabled] = useState(true);
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async () => {
-    // setRequired(true);
-    // try {
-    //     await axios ({
-    //         method: 'POST',
-    //         url:
-    //     })
-    // }
+  const handleChange = (event) => {
+    if (event.target.name === 'radio') setRadio(event.target.value);
+    if (event.target.name === 'message') setMessage(event.target.value);
+
+    console.log(message);
+
+    if (radio && message) {
+      setBttDisabled(false);
+    } else {
+      setBttDisabled(true);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.prevent.default();
+
+    if (!radio) {
+      console.log('');
+      return;
+    } else if (!message) {
+      console.log('Message is Required');
+      return;
+    }
   };
 
   return (
@@ -27,43 +44,43 @@ const Select = () => {
           <h6>Step 1</h6>
           <h3>Select a Request Category</h3>
         </div>
-        <Form.Group
-          as={Row}
-          name="required"
-          value={required}
-          onChange={(e) => setRequired(e.target.value)}
-        >
+        <Form.Group as={Row}>
           <Form.Label as="legend"></Form.Label>
           <Col sm={10} className="group">
             <Form.Check
               type="radio"
               label="Code Enforcement"
-              name="formHorizontalRadios"
+              name="radio"
               id="formHorizontalRadios1"
+              onChange="{handleChange}"
             />
             <Form.Check
               type="radio"
               label="Parking Division"
-              name="formHorizontalRadios"
+              name="radio"
               id="formHorizontalRadios2"
+              onChange="{handleChange}"
             />
             <Form.Check
               type="radio"
               label="Parks & Recreation"
-              name="formHorizontalRadios"
+              name="radio"
               id="formHorizontalRadios3"
+              onChange="{handleChange}"
             />
             <Form.Check
               type="radio"
               label="Public Works"
-              name="formHorizontalRadios"
+              name="radio"
               id="formHorizontalRadios3"
+              onChange="{handleChange}"
             />
             <Form.Check
               type="radio"
               label="Other"
-              name="formHorizontalRadios"
+              name="radio"
               id="formHorizontalRadios3"
+              onChange="{handleChange}"
             />
           </Col>
         </Form.Group>
@@ -105,13 +122,19 @@ const Select = () => {
           <h6>Step 3</h6>
           <h3>Add Description</h3>
           <p>Use no more 160 words to decsribe to us this request and submit</p>
-          <textarea rows="5" cols="25" name="message"></textarea>
+          <textarea
+            rows="5"
+            cols="25"
+            name="message"
+            onChange="{handleChange}"
+          ></textarea>
         </div>
         <div>
           <button
             id="confbutton"
             name="required"
-            onClick={() => setIsopen(true)}
+            disabled={!bttDisabled}
+            onClick={handleSubmit}
           >
             Confirm Details
           </button>
@@ -124,4 +147,5 @@ const Select = () => {
     </Form>
   );
 };
+
 export default Select;
