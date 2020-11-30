@@ -51,6 +51,48 @@
 - `yarn client`: Runs JUST your front-end React app.
 
 
+### Step 4: API Keys (.env)
+
+| Key Name                    |  Source                  | Side|
+| ----------------------------|:-----------------------  |-----|
+| MONGODB_URL=                | [:link:][MongoDB Atlas]  | S   |
+| SENDGRID_API_KEY=           | [:link:][SendGrip]       | S   |
+| FROM_EMAIL=                 | [:link:][SendGrip]       | S   |
+| JWT_SECRET=                 | [:link:][JWT]            | S   |
+| CLOUDINARY_URL=             | [:link:][Cloudinary]     | S   |
+| APP_TOKEN=                  | [:link:][API_KEY]        | S   |
+| API_KEY=                    | [:link:][API_KEY]        | S   |
+| CICERO_API_KEY=             | [:link:][Cicero]         | S   |
+| REACT_APP_MAPBOX_API_KEY=   | [:link:][React mapbox gl]| C   |
+| REACT_APP_GOOGLEMAP_API_KEY=| [:link:][Google Maps]    | C   |
+
+> S = Server ; C = Client
+
+[MongoDB Atlas]: https://www.mongodb.com/cloud/atlas
+[SendGrip]: https://sendgrid.com/
+[JWT]: https://jwt.io/
+[Cloudinary]: https://cloudinary.com/
+[Cicero]: https://www.cicerodata.com/
+[Share-Publish]: https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-publish-note
+[API_KEY]: https://dev.socrata.com/foundry/data.miamigov.com/6q9s-asrs
+[Google Maps]: https://developers.google.com/maps/documentation/javascript/get-api-key?utm_source=google&utm_medium=cpc&utm_campaign=FY20-Q3-global-demandgen-displayonnetworkhouseads-cs-GMP_maps_contactsal_saf_v2&utm_content=text-ad-none-none-DEV_c-CRE_460848633595-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20Google%20Maps%20API-KWID_43700033921822111-kwd-299558370606-userloc_9011930&utm_term=KW_%2Bgoogle%20%2Bmaps%20%2Bapi-ST_%2Bgoogle%20%2Bmaps%20%2Bapi&gclid=Cj0KCQiAzZL-BRDnARIsAPCJs70O44cQUz41Lk2W_sgkd7rEbtzsYybl6d5trhB-NOAOOmAyOoNq988aAqQMEALw_wcB 
+[React mapbox gl]: https://www.npmjs.com/package/react-mapbox-gl
+
+
+
+## Runs on Herkoku
+https://statewatch.herokuapp.com/
+
+<img align="right" width="400" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
+
+![Home](https://imagizer.imageshack.com/img922/5683/ogTsSI.png =400x)
+![Home](https://imagizer.imageshack.com/img922/5462/zijymX.png  =400x)
+![Home](https://imagizer.imageshack.com/img922/8096/eakFD5.jpg =400x)
+![Home](https://imagizer.imageshack.com/img924/9855/vovXjq.png =400x)
+
+
+
+
 
 
 # Statewatch
