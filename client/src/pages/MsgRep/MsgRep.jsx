@@ -16,7 +16,6 @@ const MessageYourRep = (props) => {
   const [message, setMessage] = useState('');
   const history = useHistory();
   const [show, setShow] = useState(false);
-  //console.log(props.location.state.pass);
   const Rep_name = props.location.state.pass;
 
   const handleChange = async (event) => {
@@ -53,7 +52,6 @@ const MessageYourRep = (props) => {
     }
 
     try {
-      console.log(email, subject, message);
       let templateParams = {
         from_name: email,
         to_name: 'gazeva@gmail.com',

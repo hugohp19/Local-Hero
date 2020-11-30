@@ -11,7 +11,6 @@ const LocalIssues = () => {
       .then((data) => {
         let mapData = data.slice(1);
         setApiData(data.slice(1));
-        console.log(data);
       });
   }, []);
 

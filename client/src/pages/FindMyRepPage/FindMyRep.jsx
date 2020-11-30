@@ -52,7 +52,7 @@ const FindMyRep = ({ history }) => {
       swal({ text: 'Something Went Wrong', icon: wrong });
     }
   };
-  //wrm = Who Represents Me
+
   return (
     <div className="whoRepresentsMe-container">
       <h2>

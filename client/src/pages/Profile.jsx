@@ -9,8 +9,6 @@ import Logout from '../components/Logout';
 const Profile = () => {
   const { loginData, setLoginData, setLoading } = useContext(AppContext);
 
-  console.log('login data object', loginData);
-
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
@@ -34,7 +32,6 @@ const Profile = () => {
         }
       });
       setLoginData(updatedUser.data);
-      console.log('after submit: ', updatedUser.data);
       swal('Your image has been updated!', 'success');
     } catch (error) {
       swal('Error', 'Oops, something went wrong.');

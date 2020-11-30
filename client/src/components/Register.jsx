@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Modal, Dropdown, Col } from 'react-bootstrap';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const Register = () => {
   const [show, setShow] = useState(false);
@@ -8,25 +9,18 @@ const Register = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/signup', formData);
-      console.log(response.data);
-      // sessionStorage.setItem('user', response.data);
-      // setCurrentUser(response.data.user);
-      // history.push('/');
     } catch (error) {
-      console.log(error);
-      //alert('SignUp Error: ', error.toString());
+      swal(error);
     }
   };
   return (

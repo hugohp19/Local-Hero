@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { Dropdown } from 'react-bootstrap';
-
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -22,7 +21,7 @@ const Logout = () => {
         history.push('/')
       );
     } catch (error) {
-      console.log(error);
+      swal(error);
     }
   };
   return <Dropdown.Item onClick={handleSignOut}>Logout</Dropdown.Item>;

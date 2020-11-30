@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import { Form, Button, Modal, Dropdown, Col } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 const UpdateUser = () => {
   const [show, setShow] = useState(false);
@@ -14,7 +15,6 @@ const UpdateUser = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   const handleSignUp = async (e) => {
@@ -23,8 +23,7 @@ const UpdateUser = () => {
       const response = await axios.patch('/api/users/me', formData);
       setLoginData(response.data);
     } catch (error) {
-      console.log(error);
-      //alert('SignUp Error: ', error.toString());
+      swal(error);
     }
   };
   return (

@@ -11,10 +11,4 @@ router.post('/api/signup', createUser);
 router.get('/password', requestPasswordReset);
 router.get('/password/:token', passwordRedirect);
 
-// router.get('/api/', (request, response) => {
-//   response.json({
-//     message: 'home'
-//   });
-// });
-
 module.exports = router;

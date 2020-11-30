@@ -24,7 +24,7 @@ const Login = () => {
       swal('no email');
       return;
     } else if (!validateEmail(formData.email)) {
-      console.log('Invalid Email');
+      swal('Invalid Email');
       return;
     }
 
@@ -35,7 +35,6 @@ const Login = () => {
 
     try {
       const response = await axios.post('/api/login', formData);
-      console.log('login response', response);
       sessionStorage.setItem('user', response.data);
       setLoginData(response.data);
     } catch (error) {
