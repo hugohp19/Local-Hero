@@ -23,29 +23,32 @@
 - [ ] `@sendgrid/mail` run command `$ yarn add @sendgrid/mail`
 - [ ] `cloudinary` run command `$ yarn add cloudinary`
 - [ ] `concurrently` run command `$ yarn add concurrently`
-- [ ] `cookie-parser` run command `$ yarn add axios`
-- [ ] `express` run command `$ yarn add axios`
-- [ ] `express-fileupload` run command `$ yarn add axios`
-- [ ] `jsonwebtoken` run command `$ yarn add axios`
-- [ ] `mongodb` run command `$ yarn add axios`
-- [ ] `passport` run command `$ yarn add axios`
-- [ ] `passport-jwt` run command `$ yarn add axios`
-- [ ] `mongodb` run command `$ yarn add axios`
-- [ ] `validator` run command `$ yarn add axios`
+- [ ] `cookie-parser` run command `$ yarn add cookie-parser`
+- [ ] `express` run command `$ yarn add express`
+- [ ] `express-fileupload` run command `$ yarn add express-fileupload`
+- [ ] `jsonwebtoken` run command `$ yarn add jsonwebtoken`
+- [ ] `mongodb` run command `$ yarn add mongodb`
+- [ ] `passport` run command `$ yarn add passport`
+- [ ] `passport-jwt` run command `$ yarn add passport-jwt`
+- [ ] `validator` run command `$ yarn add validator`
 
 
 **Client Side.**
 
-- [ ] `react-bootstrap` run command `$ yarn add axios`
-- [ ] `react-dom` run command `$ yarn add axios`
-- [ ] `react-router-dom` run command `$ yarn add axios`
-- [ ] `react-mapbox-gl` run command `$ yarn add axios`
-- [ ] `react-twitter-embed` run command `$ yarn add axios`
-- [ ] `emailjs-com` run command `$ yarn add axios`
-- [ ] `sweetalert` run command `$ yarn add axios`
+- [ ] `react-bootstrap` run command `$ yarn add react-bootstrap`
+- [ ] `react-dom` run command `$ yarn add react-dom`
+- [ ] `react-router-dom` run command `$ yarn add react-router-dom`
+- [ ] `react-mapbox-gl` run command `$ yarn add react-mapbox-gl`
+- [ ] `react-twitter-embed` run command `$ yarn add react-twitter-embed`
+- [ ] `emailjs-com` run command `$ yarn add emailjs-com`
+- [ ] `sweetalert` run command `$ yarn add sweetalert`
 
 
+### Step 3: Available build commands
 
+- `yarn dev`: Runs BOTH your Express.JS and React developer environment locally at the same time. Any logs coming from Express will be prefaced with `[0]`, any logs from `create-react-app` will be prefaced with `[1]`.
+- `yarn server`: Runs JUST your Express.JS server.
+- `yarn client`: Runs JUST your front-end React app.
 
 
 
