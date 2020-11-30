@@ -1,6 +1,9 @@
 #title {
   font-weight: bold;
-  color: rgb(223, 75, 75);
+  color: #fec107;
+  font-family: Gibson;
+  font-style: normal;
+  font-weight: normal;
 }
 .voice {
   margin-left: 8px;
@@ -24,11 +27,20 @@
   background-repeat: no-repeat;
   background-position-x: 95%;
   background-position-y: center;
+  font-family: Gibson;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: #22409a;
 }
 .buttons {
   display: flex-wrap;
   justify-content: space-evenly;
   padding: 10px;
+  font-family: Gibson;
+  font-style: normal;
+  font-weight: normal;
 }
 
 #lvtitles {
@@ -42,4 +54,5 @@
   color: white;
   line-height: 0.5rem;
   margin-top: 1rem;
+  border: white solid 1px;
 }
