@@ -104,6 +104,8 @@ top right corner: click on "Toggle device toolbar"
 top center: choose a device
 ```
 
+<img align="right" width="500" src="https://imagizer.imageshack.com/img922/9113/MDScSh.png">
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
