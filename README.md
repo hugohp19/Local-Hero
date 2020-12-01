@@ -1,6 +1,6 @@
 # :round_pushpin: Local Hero
 
-### :us: What is Local Hero? 
+### What is Local Hero? 
 
 
 <img align="left" width="250" height="250" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
@@ -57,7 +57,7 @@
 - `yarn client`: Runs JUST your front-end React app.
 
 
-### :key: Step 4: API Keys (.env)
+### Step 4: API Keys (.env) :key:
 
 | Key Name                    |  Source                  | Side|
 | ----------------------------|:-----------------------  |-----|
