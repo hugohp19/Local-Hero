@@ -92,19 +92,20 @@ https://statewatch.herokuapp.com/
 
 ## Usage
 
+<img align="right" width="500" src="https://imagizer.imageshack.com/img922/9113/MDScSh.png">
 The site has two main workflows, one for searching government officials by zipcode which provides data and several means for getting in contact with said representative, including a built in email form. The other workflow is for looking up locally reported municipal issues based on provided zip code and being able to submit your own.
 
 :iphone: Although Local Hero can be access through any screen size, its main focus was mobile. :iphone:
 
 To view Local Hero in a mobile version: :iphone: 
-```
-right click on the page
-select inspect
-top right corner: click on "Toggle device toolbar"
-top center: choose a device
-```
 
-<img align="right" width="500" src="https://imagizer.imageshack.com/img922/9113/MDScSh.png">
+1- right click on the page
+2- select inspect
+3- click on "Toggle device toolbar" (usually top right corner)
+4- choose a device (top center)
+
+
+
 
 ## Contributing
 
