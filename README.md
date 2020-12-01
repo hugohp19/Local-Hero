@@ -1,6 +1,6 @@
 # Local Hero
 
-###### :us: What is Local Hero? 
+### :us: What is Local Hero? 
 
 
 <img align="left" width="250" height="250" src="https://imagizer.imageshack.com/img922/5683/ogTsSI.png">
@@ -85,7 +85,8 @@
 [React mapbox gl]: https://www.npmjs.com/package/react-mapbox-gl
 
 <br />
-## :memo: Deploying to heroku?
+
+### :memo: Deploying to heroku?
 
 1. `heroku create <app_name>`
 2. `git remote -v` -> make sure to have heroku as one of the remotes
