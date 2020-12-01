@@ -1,4 +1,4 @@
-# Local Hero
+# :round_pushpin: Local Hero
 
 ### :us: What is Local Hero? 
 
@@ -57,7 +57,7 @@
 - `yarn client`: Runs JUST your front-end React app.
 
 
-### Step 4: API Keys (.env)
+### :key: Step 4: API Keys (.env)
 
 | Key Name                    |  Source                  | Side|
 | ----------------------------|:-----------------------  |-----|
@@ -96,7 +96,7 @@ Other helpfull commands after deployment:
 1. `git push heroku master` to redeploy after new changes
 2. `heroku logs --tail` to see logs (good for troubleshooting)
 
-
+<br /><br />
 ## :computer: Runs on Herkoku
 https://statewatch.herokuapp.com/
 
