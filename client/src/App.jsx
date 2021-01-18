@@ -3,8 +3,7 @@ import Homepage from './pages/Homepage/Homepage';
 import LocalVoice from './pages/LocalVoice/LocalVoice';
 import MsgRep from './pages/MsgRep/MsgRep';
 import Navbar from './components/Navbar';
-import WhoRepYou from './pages/WhoRepYou/WhoRepYou';
-import YvYv from './pages/YvYv/YvYv';
+import YourVoteYourVoice from './pages/YourVoteYourVoice/YourVoteYourVoice';
 import RepProfile from './pages/RepProfile/RepProfile';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -27,8 +26,11 @@ const App = () => {
           <Route exact path="/LocalVoice" component={LocalVoice} />
           <Route exact path="/MsgRep" component={MsgRep} />
           {/* <Route exact path="/ThankYou" component={ThankYou} /> */}
-          <Route exact path="/WhoRepYou" component={WhoRepYou} />
-          <Route exact path="/YvYv" component={YvYv} />
+          <Route
+            exact
+            path="/YourVoteYourVoice"
+            component={YourVoteYourVoice}
+          />
           <Route exact path="/RepProfile" component={RepProfile} />
           <Route exact path="/Profile" component={Profile} />
           <Route exact path="/Map" component={MapContainer} />

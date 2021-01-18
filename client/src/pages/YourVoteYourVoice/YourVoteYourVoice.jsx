@@ -1,20 +1,20 @@
 import React from 'react';
-import './YvYv.css';
+import './YourVoteYourVoice.css';
 
-const YvYv = () => {
+const YourVoteYourVoice = () => {
   return (
-    <div id="yvfullpage">
-      <div id="yvtitle">
-        <h3 className="yvpagetitle">Your</h3>
-        <h3 className="yvpagetitle2">Vote</h3>
-        <h3 className="yvpagetitle">, Your</h3>
-        <h3 className="yvpagetitle2">Voice</h3>
+    <div id="yvyv-fullpage">
+      <div id="yvyv-title">
+        <h3 className="yvyv-pagetitle">Your</h3>
+        <h3 className="yvyv-pagetitle2">Vote</h3>
+        <h3 className="yvyv-pagetitle">, Your</h3>
+        <h3 className="yvyv-pagetitle2">Voice</h3>
       </div>
-      <div id="yvboxes">
-        <div className="yvbox">
-          <h5 className="yvtext">First stop, are you registered?</h5>
+      <div id="yvyv-boxes">
+        <div className="yvyv-box">
+          <h5 className="yvyv-text">First stop, are you registered?</h5>
           <button
-            className="yvbutton"
+            className="yvyv-button"
             type="button"
             onClick={(e) => {
               e.preventDefault();
@@ -24,10 +24,10 @@ const YvYv = () => {
             Find out!
           </button>
         </div>
-        <div className="yvbox" id="ballot">
-          <h5 className="yvtext">What is on my ballot?</h5>
+        <div className="yvyv-box" id="ballot">
+          <h5 className="yvyv-text">What is on my ballot?</h5>
           <button
-            className="yvbutton"
+            className="yvyv-button"
             type="button"
             onClick={(e) => {
               e.preventDefault();
@@ -37,10 +37,10 @@ const YvYv = () => {
             My Ballot
           </button>
         </div>
-        <div className="yvbox">
-          <h5 className="yvtitle2">Want to learn more about voting?</h5>
+        <div className="yvyv-box">
+          <h5 className="yvyv-title2">Want to learn more about voting?</h5>
           <button
-            className="yvbutton"
+            className="yvyv-button"
             type="button"
             onClick={(e) => {
               e.preventDefault();
@@ -55,4 +55,4 @@ const YvYv = () => {
   );
 };
 
-export default YvYv;
+export default YourVoteYourVoice;

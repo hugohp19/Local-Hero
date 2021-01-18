@@ -11,7 +11,7 @@ import './YourReps.css';
 const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
-  const [filter, setFilter] = useState('Local');
+  const [filter, setFilter] = useState('All');
   const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
     'Enter Zip Code'
   );

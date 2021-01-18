@@ -1,4 +1,4 @@
-#yvtitle {
+#yvyv-title {
   display: flex;
   position: relative;
   line-height: 0.75em;
@@ -10,7 +10,7 @@
   background-size: cover;
 }
 
-.yvbox {
+.yvyv-box {
   display: flex;
   position: relative;
   width: 20rem;
@@ -26,7 +26,7 @@
   padding: 10px;
 }
 
-.yvbutton {
+.yvyv-button {
   position: relative;
   max-height: 50px;
   min-width: 130px;
@@ -39,7 +39,7 @@
   font-weight: bold;
 }
 
-#yvresources {
+#yvyv-resources {
   background-color: #22409a;
   color: white;
   line-height: 0.5em;
@@ -47,25 +47,25 @@
   margin-top: 2rem;
 }
 
-.yvtext {
+.yvyv-text {
   font-weight: bold;
 }
 
-.yvpagetitle {
+.yvyv-pagetitle {
   font-weight: bold;
   position: relative;
 }
-.yvpagetitle2 {
+.yvyv-pagetitle2 {
   font-weight: bold;
   color: gold;
   margin-left: 0.5rem;
   position: relative;
 }
-.yvtitle2 {
+.yvyv-title2 {
   font-weight: bold;
 }
 
-#yvboxes {
+#yvyv-boxes {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
