@@ -30,7 +30,7 @@ const Navigation = () => {
             <Dropdown.Item as={Link} to="/localissuespage">
               Local Issues
             </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/yvyv">
+            <Dropdown.Item as={Link} to="/YourVoteYourVoice">
               Voter Resources
             </Dropdown.Item>
             <Dropdown.Divider />

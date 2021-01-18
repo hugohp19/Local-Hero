@@ -30,7 +30,7 @@ const LocalVoice = () => {
           </button>
         </Link>
 
-        <Link to="./YvYv">
+        <Link to="./YourVoteYourVoice">
           <button id="lvtitles">
             <h5 id="title">The Voter Essentials</h5>
             <p>Ballots, poll sites, dates?</p>

@@ -49,7 +49,7 @@ const Register = () => {
               <Form.Group as={Col} controlId="formGridConfirmEmail">
                 <Form.Control
                   type="email"
-                  placeholder="Confirm email"
+                  placeholder="Email"
                   name="email"
                   onChange={handleChange}
                 />
@@ -58,7 +58,7 @@ const Register = () => {
               <Form.Group as={Col} controlId="formGridConfirmPassword">
                 <Form.Control
                   type="password"
-                  placeholder="Confirm Password"
+                  placeholder="Password"
                   name="password"
                   onChange={handleChange}
                 />

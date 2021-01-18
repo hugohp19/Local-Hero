@@ -32,7 +32,7 @@ const Homepage = () => {
             <h5>Requests</h5>
           </button>
         </Link>
-        <Link to="/YvYv">
+        <Link to="/YourVoteYourVoice">
           <button id="buttons" className="voter">
             <h4 id="bttntitle">VOTER</h4>
             <h5>Resources</h5>
