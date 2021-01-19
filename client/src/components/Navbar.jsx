@@ -10,7 +10,7 @@ const Navigation = () => {
   const { loginData } = useContext(AppContext);
 
   return (
-    <Navbar bg="light" variant="light" expand="lg" sticky="top">
+    <Navbar bg="light" variant="light" expand="xl" sticky="top">
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">
@@ -52,8 +52,8 @@ const Navigation = () => {
                   ? loginData.avatar
                   : 'https://www.flaticon.com/svg/static/icons/svg/1946/1946429.svg'
               }
-              height={50}
-              width={50}
+              height={40}
+              width={45}
               roundedCircle
             />
           </Button>

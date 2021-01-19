@@ -1,16 +1,32 @@
 .body {
-  display: flex-column;
-  font-style: normal;
-  font-weight: normal;
+  padding: 0;
+  margin: 0;
 }
 
 .actiondiv {
-  background-color: navy;
   color: white;
-  padding: 15px;
-  height: 18rem;
-  background-image: url('../../assets/images/homefullcolor.jpg');
+  padding-top: 20px;
+  height: 90vh;
+  background-image: url('../../assets/images/homefullcolorflipped.jpg');
   background-size: cover;
+  background-position: top;
+}
+
+.landing-page-container {
+  padding: 20px;
+}
+
+.landing-page-container #boldtitle {
+  color: #fec107;
+}
+
+.landing-page-container h1 {
+  font-size: 3.5rem;
+}
+
+.landing-page-container p {
+  margin-top: 30px;
+  font-size: 1.2rem;
 }
 
 .actionbutton {
@@ -19,15 +35,28 @@
   color: white;
   border: none;
   border-radius: 1ch;
-  padding: 15px;
+  padding: 20px 30px;
+  font-size: 1.5rem;
   font-weight: bold;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+/********************************
+
+*********************************/
+.links-container {
+  padding: 10px 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .lhdiv {
-  position: relative;
   background-image: url('../../assets/images/CreamRectangle.jpg');
   background-size: cover;
-  background-color: white;
+  background-color: rgb(226, 79, 79);
   color: navy;
   max-width: 350px;
   border-radius: 1ch;
@@ -66,13 +95,13 @@
   font-weight: bold;
 }
 .lhtitle {
-  position: relative;
   color: gold;
   padding: 10px;
-  margin-top: 2rem;
-  background-color: rgb(37, 108, 167);
+  padding-bottom: 20px;
   background-image: url('../../assets/images/localherobottom.jpg');
+  background-repeat: no-repeat;
 }
+
 #bttntitle {
   font-weight: bold;
   font-style: normal;
@@ -109,7 +138,7 @@
   font-weight: bold;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 700px) {
   .actiondiv {
     height: 90vh;
   }
