@@ -10,7 +10,7 @@ const Navigation = () => {
   const { loginData } = useContext(AppContext);
 
   return (
-    <Navbar bg="light" variant="light" expand="xl" sticky="top">
+    <Navbar bg="light" variant="light" expand="xxl" sticky="top">
       <Nav.Item>
         <Dropdown drop="down" className="mr-1">
           <Dropdown.Toggle variant="">

@@ -68,8 +68,7 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
-  align-content: space-around;
+  justify-content: space-around;
 }
 
 .quiz {

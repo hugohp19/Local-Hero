@@ -4,38 +4,35 @@ import './LocalVoice.css';
 
 const LocalVoice = () => {
   return (
-    <div className="main">
-      <div className="lvtitle">
-        <h3>Your Local</h3>
-        <h3 className="voice">VOICE</h3>
+    <div className="localVoice-main">
+      <div className="localVoice-title">
+        <h3>
+          Your Local <span className="localVoice-voice">VOICE</span>
+        </h3>
       </div>
-      <div className="title2">
-        <h5>The city can't fix what</h5>
-        <h5>it doesn't know is</h5>
-        <h5>broken...</h5>
+      <div className="localVoice-title2">
+        <h5>The city can't fix what it doesn't know is broken...</h5>
       </div>
-      <div className="buttons" id="findMyRepNtn">
+      <div className="localVoice-buttons-container">
         <Link to="/findmyreps">
-          <button id="lvtitles">
-            <h5 id="title">Find My Representatives</h5>
-            <p>Make some noise and let the</p>
-            <p>people who represent you hear it!</p>
+          <button id="localVoice-buttons">
+            <h5 id="localVoice-title">Find My Representatives</h5>
+            <p>Make some noise and let the people who represent you hear it!</p>
           </button>
         </Link>
         <Link to="localissuespage">
-          <button id="lvtitles">
-            <h5 id="title">Submit Request</h5>
-            <p>Pothole? Graffiti? Let the</p>
-            <p>city know what needs attention.</p>
+          <button id="localVoice-buttons">
+            <h5 id="localVoice-title">Submit Request</h5>
+            <p>Pothole? Graffiti?</p>
+            <p>Let the city know what needs attention.</p>
           </button>
         </Link>
 
         <Link to="./YourVoteYourVoice">
-          <button id="lvtitles">
-            <h5 id="title">The Voter Essentials</h5>
+          <button id="localVoice-buttons">
+            <h5 id="localVoice-title">The Voter Essentials</h5>
             <p>Ballots, poll sites, dates?</p>
-            <p>Everything you need to know in</p>
-            <p>one place.</p>
+            <p>Everything you need to know in one place.</p>
           </button>
         </Link>
         {/* <button id="lvtitles">
