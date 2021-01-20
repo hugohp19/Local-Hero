@@ -53,11 +53,18 @@
   color: white;
   margin-top: 1rem;
   border: white solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 #localVoice-buttons p {
-  padding: 0 10px;
   margin: 0;
+}
+
+.localVoice-buttons-text {
+  padding-right: 10px;
 }
 
 @media screen and (min-width: 700px) {
