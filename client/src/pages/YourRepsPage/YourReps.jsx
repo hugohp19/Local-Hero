@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
@@ -16,6 +16,10 @@ const YourReps = ({ history }) => {
     'Enter Zip Code'
   );
   const { filteredRep, setFilteredRep } = useContext(AppContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -127,7 +131,7 @@ const YourReps = ({ history }) => {
       <div className="responselevel">
         <h3>
           {repData
-            ? 'Local (' + repData.officials[0].office.district.state + ')'
+            ? filter + ' (' + repData.officials[0].office.district.state + ')'
             : ''}
         </h3>
       </div>
