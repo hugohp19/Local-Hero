@@ -12,6 +12,7 @@ const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
   const [filter, setFilter] = useState('All');
+  const [isVisible, setIsVisible] = useState('hidden');
   const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
     'Enter Zip Code'
   );
@@ -19,8 +20,13 @@ const YourReps = ({ history }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
+    if (repData) {
+      setIsVisible('visible');
+    } else {
+      setIsVisible('hidden');
+    }
+  }, [repData]);
+  console.log(isVisible);
   const handleSearch = (e) => {
     e.preventDefault();
     setZipcodeplaceholder('Enter Zip Code');
@@ -73,7 +79,7 @@ const YourReps = ({ history }) => {
   };
 
   return (
-    <div>
+    <div className="yourReps-container">
       <div>
         <form className="form-container" name="city" onSubmit={handleAddress}>
           <div className="TopBar">
@@ -100,7 +106,8 @@ const YourReps = ({ history }) => {
           </div>
         </form>
       </div>
-      <div className="filters">
+
+      <div className="filters" style={{ visibility: `${isVisible}` }}>
         <input
           type="button"
           id={filter === 'All' ? 'yr-active' : ''}
