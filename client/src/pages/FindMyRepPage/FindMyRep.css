@@ -44,9 +44,9 @@ span {
 }
 
 .wrm-search p {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   width: 95%;
-  letter-spacing: 1px;
+  letter-spacing: 1.1px;
 }
 
 .wrm-search-container {
@@ -57,6 +57,9 @@ span {
 .wrm-search-container input {
   width: 90%;
   line-height: 2rem;
+  padding-left: 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
 }
 
 .wrm-right-image-container {
@@ -91,13 +94,17 @@ span {
   background-color: #788ac1;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 700px) {
   .whoRepresentsMe-container {
-    height: 90vh;
-    padding: 3rem 2rem;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
   }
 
   .whoRepresentsMe-container h2 {
+    padding-left: 10%;
     font-size: 3rem;
   }
 
@@ -106,16 +113,26 @@ span {
   }
 
   .wrm-search p {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
   }
 
   .wrm-search-container {
-    width: 50%;
+    width: 40%;
     height: 3rem;
     font-size: 1.5rem;
   }
+  .wrm-searchbar {
+    padding-left: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+
+  .wrm-right-image-container {
+    width: 20%;
+  }
 
   .wrm-searchButton {
-    width: 50%;
+    width: 40%;
   }
 }

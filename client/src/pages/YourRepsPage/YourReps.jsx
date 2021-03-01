@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import locationImage from '../../assets/images/location.svg';
 import axios from 'axios';
@@ -12,11 +12,21 @@ const YourReps = ({ history }) => {
   const { repData, setRepData } = useContext(AppContext);
   const { address, setAddress } = useContext(AppContext);
   const [filter, setFilter] = useState('All');
+  const [isVisible, setIsVisible] = useState('hidden');
   const [zipcodePlaceholder, setZipcodeplaceholder] = useState(
     'Enter Zip Code'
   );
   const { filteredRep, setFilteredRep } = useContext(AppContext);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (repData) {
+      setIsVisible('visible');
+    } else {
+      setIsVisible('hidden');
+    }
+  }, [repData]);
+  console.log(isVisible);
   const handleSearch = (e) => {
     e.preventDefault();
     setZipcodeplaceholder('Enter Zip Code');
@@ -69,7 +79,7 @@ const YourReps = ({ history }) => {
   };
 
   return (
-    <div>
+    <div className="yourReps-container">
       <div>
         <form className="form-container" name="city" onSubmit={handleAddress}>
           <div className="TopBar">
@@ -96,7 +106,8 @@ const YourReps = ({ history }) => {
           </div>
         </form>
       </div>
-      <div className="filters">
+
+      <div className="filters" style={{ visibility: `${isVisible}` }}>
         <input
           type="button"
           id={filter === 'All' ? 'yr-active' : ''}
@@ -127,7 +138,7 @@ const YourReps = ({ history }) => {
       <div className="responselevel">
         <h3>
           {repData
-            ? 'Local (' + repData.officials[0].office.district.state + ')'
+            ? filter + ' (' + repData.officials[0].office.district.state + ')'
             : ''}
         </h3>
       </div>
